@@ -1,0 +1,515 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google Identity Services -->
+<script async="" defer src="https://accounts.google.com/gsi/client"></script>
+<script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+<!-- Firebase (compat CDN - keep this if you're using compat init below) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+<meta charset="utf-8" />
+<title>Pokémon Quiz & Packs (All-in-one)</title>
+<meta content="width=device-width,initial-scale=1" name="viewport" />
+<link href="favicon.png" rel="icon">
+<style>
+/* (your existing styles - unchanged except small additions for carddex/market) */
+:root {
+	--blue-deep: #0d47a1;
+	--blue-mid: #1976d2;
+	--teal-dark: #006064;
+	--sv-red: #e53935;
+	--sv-violet: #7b1fa2;
+	--sv-accent: linear-gradient(135deg, var(--sv-red), var(--sv-violet));
+}
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	background: linear-gradient(to bottom, #e0f7fa, #b2ebf2);
+	color: #0b2545;
+}
+header {
+	background: var(--teal-dark);
+	color: white;
+	padding: 14px 16px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+.hamburger {
+	font-size: 22px;
+	background: none;
+	border: none;
+	color: white;
+	cursor: pointer;
+}
+h1 {
+	margin: 0;
+	font-size: 18px;
+}
+/* Sidebar */
+#sidebar {
+	position: fixed;
+	top: 0;
+	left: -260px;
+	width: 260px;
+	height: 100%;
+	background: var(--blue-deep);
+	color: white;
+	padding-top: 60px;
+	transition: left 0.28s ease;
+	z-index: 1000;
+}
+#sidebar.active {
+	left: 0;
+}
+#sidebar ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#sidebar li {
+	margin: 6px 0;
+}
+#sidebar button {
+	width: 100%;
+	background: none;
+	border: none;
+	color: white;
+	font-size: 16px;
+	text-align: left;
+	padding: 10px 18px;
+	cursor: pointer;
+}
+#sidebar button:hover {
+	background: var(--blue-mid);
+}
+/* overlay */
+#overlay {
+	position: fixed;
+	inset: 0;
+	display: none;
+	background: none;
+	z-index: 600;
+}
+#overlay.active {
+	display: block;
+}
+/* layout */
+main {
+	padding: 18px;
+	margin-left: 0;
+}
+.section {
+	display: none;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+.section.active {
+	display: block;
+}
+.box {
+	background: #fff;
+	border-radius: 10px;
+	padding: 14px;
+	margin: 12px 0;
+	border: 2px solid var(--teal-dark);
+	box-shadow: 0 2px 6px rgba(0,0,0,.08);
+}
+/* --- home cover styles --- */
+.home-cover {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: calc(70vh);
+	padding: 16px;
+}
+.home-cover img {
+	width: 100%;
+	max-width: 1100px;
+	height: auto;
+	border-radius: 14px;
+	box-shadow: 0 12px 30px rgba(11,37,69,0.18);
+	object-fit: cover;
+	border: 6px solid rgba(255,255,255,0.6);
+}
+/* pack overlay + stack */
+#packOverlay {
+	position: fixed;
+	inset: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	z-index: 999;
+	background: url("prismatic_bg.png") center/cover no-repeat;
+}
+#packOverlay.show {
+	display: flex;
+}
+.pack-stage, #overlayStack, #revealedGrid {
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	max-width: 980px;
+	box-sizing: border-box;
+}
+.overlay-close {
+	position: absolute;
+	top: 18px;
+	right: 18px;
+	z-index: 3;
+}
+/* pack visuals */
+.overlay-stack {
+	position: relative;
+	width: 240px;
+	height: 340px;
+	cursor: pointer;
+}
+.overlay-card {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition: transform .45s ease, opacity .45s ease;
+}
+.overlay-card img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	border-radius: 12px;
+}
+.overlay-card.slide-up {
+	transform: translateY(-380px);
+	opacity: 0;
+}
+/* small utilities */
+button.primary {
+	background: #00838f;
+	color: white;
+	border: none;
+	padding: 8px 14px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 14px;
+}
+button.primary:hover {
+	background: var(--teal-dark);
+}
+/* SV-styled profile accents */
+.profile-card {
+	background: var(--sv-accent);
+	color: white;
+	border: none;
+	padding: 18px;
+	border-radius: 14px;
+	box-shadow: 0 12px 30px rgba(123,31,162,0.18);
+	max-width: 780px;
+	margin: 18px auto;
+	display: flex;
+	gap: 14px;
+	align-items: center;
+}
+.profile-left {
+	width: 160px;
+	text-align: center;
+}
+.profile-left .avatar {
+	width: 140px;
+	height: 140px;
+	border-radius: 12px;
+	background-size: cover;
+	background-position: center;
+	margin: 0 auto 10px;
+	border: 4px solid rgba(255,255,255,0.12);
+}
+.profile-right {
+	flex: 1;
+}
+.profile-right h3 {
+	color: #fff;
+	margin: 0 0 6px;
+	font-size: 22px;
+	text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.profile-right p {
+	color: rgba(255,255,255,0.95);
+	margin: 6px 0;
+}
+/* small Google UI tweaks */
+#gsiButton {
+	display: inline-block;
+	margin-bottom: 8px;
+}
+#googleLogoutBtn {
+	display: none;
+	margin-left: 8px;
+	padding: 6px 10px;
+	font-size: 13px;
+	border-radius: 8px;
+	cursor: pointer;
+	background: rgba(255,255,255,0.12);
+	border: 1px solid rgba(255,255,255,0.12);
+	color: #fff;
+}
+#googleLogoutBtn:hover {
+	background: rgba(255,255,255,0.2);
+}
+/* card dex and market */
+.card-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(160px,1fr));
+	gap: 12px;
+}
+.card-tile {
+	background: #fff;
+	border-radius: 8px;
+	padding: 8px;
+	text-align: center;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.card-tile img {
+	width: 100%;
+	height: 120px;
+	object-fit: contain;
+	border-radius: 6px;
+}
+.market-listings {
+	display: grid;
+	gap: 8px;
+}
+.listing {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px;
+	border-radius: 8px;
+	background: #fff;
+}
+.listing img {
+	width: 56px;
+	height: 56px;
+	object-fit: cover;
+	border-radius: 6px;
+}
+.listing .meta {
+	flex: 1;
+}
+.listing .actions {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+/* responsive tweaks */
+@media (max-width: 720px) {
+.profile-card {
+	flex-direction: column;
+	gap: 10px;
+}
+.profile-left {
+	width: 100%;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Pack Overlay -->
+<div id="packOverlay">
+	<button id="packOverlayClose" class="overlay-close">✕</button>
+	<div class="pack-stage">
+		<div id="overlayStack" class="overlay-stack">
+		</div>
+		<div id="overlayRemaining" style="color: white; margin-top: 12px;">
+		</div>
+	</div>
+</div>
+<header>
+	<button id="menu-btn" aria-label="Open menu" class="hamburger">☰</button>
+	<h1>Year 10 — Quiz &amp; Packs</h1>
+</header>
+<nav id="sidebar" aria-label="Main menu">
+	<ul>
+		<li><button data-section="home">🏠 Home</button></li>
+		<li><button data-section="quiz">❓ Quiz</button></li>
+		<li><button data-section="packs">🎴 Packs</button></li>
+		<li><button data-section="carddex">📚 Card Dex</button></li>
+		<li><button data-section="bazaar">💱 Bazaar</button></li>
+		<li><button data-section="leaderboard">🏆 Leaderboard</button></li>
+		<li><button data-section="profile">👤 Profile</button></li>
+	</ul>
+</nav>
+<div id="overlay" aria-hidden="true">
+</div>
+
+<main>
+  <!-- Home -->
+<section id="home" class="section active">
+	<div class="home-cover">
+		<img id="homeCoverImg" alt="Home cover" src="home_cover.png" />
+	</div>
+</section>
+<!-- Quiz -->
+<section id="quiz" class="section">
+	<h2>Quiz — Choose category</h2>
+	<div class="box">
+		<div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+			<button class="primary quiz-cat" data-cat="biology">Biology</button>
+			<button class="primary quiz-cat" data-cat="chemistry">Chemistry
+			</button><button class="primary quiz-cat" data-cat="physics">Physics
+			</button><button class="primary quiz-cat" data-cat="math">Math
+			</button><button class="primary quiz-cat" data-cat="accounting">Accounting
+			</button><button class="primary quiz-cat" data-cat="econs">Econs
+			</button></div>
+		<div id="quizControls" style="margin-bottom: 12px;">
+		</div>
+		<div id="quizContainer" style="min-height: 140px;">
+		</div>
+	</div>
+</section>
+<!-- Packs -->
+<section id="packs" class="section">
+	<h2>Packs</h2>
+	<div class="box">
+		<p>Each pack costs <strong>150 coins</strong>. Click a pack to open:</p>
+		<div id="packMessage">
+		</div>
+		<div class="pack-grid">
+			<div class="pack-option" onclick="openPack('cards.json')">
+				<img alt="Prismatic Evolutions" src="prismatic_evolutions_art.png">
+				<div class="pack-title">
+					Prismatic Evolutions</div>
+			</div>
+			<div class="pack-option" onclick="openPack('twilightcards.json')">
+				<img alt="Twilight Masquerade" src="twilight_masquerade_art.png">
+				<div class="pack-title">
+					Twilight Masquerade</div>
+			</div>
+			<div class="pack-option" onclick="openPack('151cards.json')">
+				<img alt="Scarlet &amp; Violet 151" src="pokemon_151_art.png">
+				<div class="pack-title">
+					Scarlet &amp; Violet 151</div>
+			</div>
+		</div>
+		<!-- hidden packLauncher to keep renderPackLauncher safe -->
+		<div id="packLauncher" style="display: none">
+		</div>
+	</div>
+</section>
+<!-- Card Dex -->
+<section id="carddex" class="section">
+	<h2>Card Dex</h2>
+	<div class="box">
+		<p>Browse cards from each pack and see how many you own.</p>
+		<div id="cardDexContainer">
+			<div style="display: flex; gap: 8px; align-items: center; margin-bottom: 12px;">
+				<input id="cardDexSearch" placeholder="Search cards by name..." style="flex: 1; padding: 8px; border-radius: 8px; border: 1px solid #ddd" />
+				<label style="display: flex; gap: 6px; align-items: center;">
+				<input id="cardDexOnlyOwned" type="checkbox" />
+				<span style="font-size: 14px; color: #333">Only show owned</span>
+				</label><button id="cardDexRefresh" class="primary">Refresh
+				</button></div>
+			<div id="cardDexResults">
+				<!-- injected by JS --></div>
+		</div>
+	</div>
+</section>
+<!-- Bazaar / Market -->
+<section id="bazaar" class="section">
+	<h2>Bazaar</h2>
+	<div class="box">
+		<p>Create or buy listings (localStorage if not connected to Firebase).</p>
+		<div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 12px;">
+			<select id="bazaarPackSelect">
+			<option value="prismatic">Prismatic</option>
+			<option value="twilight">Twilight</option>
+			<option value="sv151">SV151</option>
+			</select>
+			<input id="bazaarCardName" placeholder="Card name (exact match from pack JSON)" />
+			<input id="bazaarPrice" placeholder="Price (coins)" style="width: 120px" type="number" />
+			<label style="display: flex; gap: 6px; align-items: center;">
+			<input id="bazaarFromInventory" type="checkbox" />
+			<span style="font-size: 13px">From inventory</span> </label>
+			<button id="listCardBtn" class="primary">List Card</button></div>
+		<div id="marketListings" class="market-listings">
+		</div>
+	</div>
+</section>
+<!-- Leaderboard -->
+<section id="leaderboard" class="section">
+	<h2>Leaderboard</h2>
+	<div id="leaderboardBox2" class="box">
+	</div>
+</section>
+<!-- Profile -->
+<section id="profile" class="section">
+	<h2>Trainer Profile</h2>
+	<!-- SV-styled profile card -->
+	<div id="profileCardWrapper" class="profile-card">
+		<div class="profile-left">
+			<div id="avatarImg" class="avatar" style="background-image: url('default_avatar.png')">
+			</div>
+			<!-- Google sign-in / logout area -->
+			<div id="gsiButton">
+			</div>
+			<button id="googleLogoutBtn">Logout</button></div>
+		<div class="profile-right">
+			<h3 id="playerNameDisplay">Player</h3>
+			<!-- Manual name input (hidden on Google sign-in) -->
+			<div style="margin: 8px 0;">
+				<input id="playerNameInput" placeholder="Enter name" type="text" />
+				<button id="saveNameBtn" class="primary">Save</button></div>
+			<div id="profileBox2" class="box" style="background: transparent; border: none; padding: 0;">
+				<p><strong>ID:</strong> <span id="playerID">000001</span></p>
+				<p><strong>Coins:</strong> <span id="playerCoins">0</span></p>
+				<p><strong>Packs Opened:</strong> <span id="packsOpened">0</span></p>
+				<p><strong>Total Cards:</strong> <span id="totalCards">0</span></p>
+				<p><strong>Unique Cards:</strong> <span id="uniqueCards">0</span></p>
+				<ul>
+					<li>Prismatic: <span id="uniquePrismatic">0</span></li>
+					<li>Twilight: <span id="uniqueTwilight">0</span></li>
+					<li>SV151: <span id="uniqueSV151">0</span></li>
+				</ul>
+				<p><strong>Quiz Score:</strong> <span id="quizScore">0</span></p>
+			</div>
+		</div>
+	</div>
+</section>
+
+</main>
+
+<footer class="note">
+	Files to place in same folder: card JSONs for packs (<code>cards.json</code>,
+	<code>twilightcards.json</code>, <code>151cards.json</code>) and quiz JSONs 
+	(e.g. <code>biology.json</code>).
+</footer>
+<!-- Firebase App (compat) - keep this initialization here and ensure values are correct -->
+<script>
+  // Your Firebase config - KEEP this (already in your project). This script must execute before main.js
+  const firebaseConfig = {
+    apiKey: "AIzaSyAUvR4sCv3mkMF7hqfgvxU2q3HOsEL3dbQ",
+    authDomain: "y10pkmnrevisiongame-532c9.firebaseapp.com",
+    projectId: "y10pkmnrevisiongame-532c9",
+    storageBucket: "y10pkmnrevisiongame-532c9.appspot.com",
+    messagingSenderId: "907520433089",
+    appId: "1:907520433089:web:5cde712de4d3a2c80b6d40",
+    measurementId: "G-HR2BCPKLPC"
+  };
+  // initialize firebase compat (if not already)
+  if (window.firebase && (!firebase.apps || !firebase.apps.length)) {
+    firebase.initializeApp(firebaseConfig);
+  }
+</script>
+<!-- main script -->
+<script src="main.js"></script>
+
+</body>
+
+</html>

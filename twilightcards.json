@@ -1,0 +1,1360 @@
+{
+  "commons": [
+    {
+      "name": "Tangela",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_tangela.png"
+    },
+    {
+      "name": "Tangrowth",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_tangrowth.png"
+    },
+    {
+      "name": "Pinsir",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_pinsir.png"
+    },
+    {
+      "name": "Spinarak",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_spinarak.png"
+    },
+    {
+      "name": "Ariados",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_ariados.png"
+    },
+    {
+      "name": "Sunkern",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_sunkern.png"
+    },
+    {
+      "name": "Sunflora",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_sunflora.png"
+    },
+    {
+      "name": "Heracross",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_heracross.png"
+    },
+    {
+      "name": "Volbeat",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_volbeat.png"
+    },
+    {
+      "name": "Illumise",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_illumise.png"
+    },
+    {
+      "name": "Leafeon",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_leafeon.png"
+    },
+    {
+      "name": "Phantump",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_phantump.png"
+    },
+    {
+      "name": "Trevenant",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_trevenant.png"
+    },
+    {
+      "name": "Grookey",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_grookey.png"
+    },
+    {
+      "name": "Thwackey",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_thwackey.png"
+    },
+    {
+      "name": "Rillaboom",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_rillaboom.png"
+    },
+    {
+      "name": "Applin",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_applin.png"
+    },
+    {
+      "name": "Dipplin",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_dipplin.png"
+    },
+    {
+      "name": "Iron Leaves",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_iron_leaves.png"
+    },
+    {
+      "name": "Poltchageist",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_poltchageist.png"
+    },
+    {
+      "name": "Poltchageist",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_poltchageist2.png"
+    },
+    {
+      "name": "Sinischa",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_sinischa.png"
+    },
+    {
+      "name": "Sinischa EX",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_sinischa_ex.png"
+    },
+    {
+      "name": "Teal Mask Ogerpon",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_teal_mask_ogerpon.png"
+    },
+    {
+      "name": "Teal Mask Ogerpon EX",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_teal_mask_ogerpon_ex.png"
+    },
+    {
+      "name": "Vulpix",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_vulpix.png"
+    },
+    {
+      "name": "Ninetales",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_ninetales.png"
+    },
+    {
+      "name": "Slugma",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_slugma.png"
+    },
+    {
+      "name": "Magcargo EX",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_magcargo_ex.png"
+    },
+    {
+      "name": "Torkoal",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_torkoal.png"
+    },
+    {
+      "name": "Chimchar",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_chimchar.png"
+    },
+    {
+      "name": "Monferno",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_monferno.png"
+    },
+    {
+      "name": "Infernape",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_infernape.png"
+    },
+    {
+      "name": "Darumaka",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_darumaka.png"
+    },
+    {
+      "name": "Darmanitan",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_darmanitan.png"
+    },
+    {
+      "name": "Litwick",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_litwick.png"
+    },
+    {
+      "name": "Lampent",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_lampent.png"
+    },
+    {
+      "name": "Chandelure",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_chandelure.png"
+    },
+    {
+      "name": "Chi-Yu",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_chi_yu.png"
+    },
+    {
+      "name": "Hearthflame Mask Ogerpon EX",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_hearthflame_mask_ogerpon_ex.png"
+    },
+    {
+      "name": "Poliwag",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_poliwag.png"
+    },
+    {
+      "name": "Poliwhirl",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_poliwhirl.png"
+    },
+    {
+      "name": "Poliwrath",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_poliwrath.png"
+    },
+    {
+      "name": "Goldeen",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_goldeen.png"
+    },
+    {
+      "name": "Seaking",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_seaking.png"
+    },
+    {
+      "name": "Jynx",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_jynx.png"
+    },
+    {
+      "name": "Corphish",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_corphish.png"
+    },
+    {
+      "name": "Crawdaunt",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_crawdaunt.png"
+    },
+    {
+      "name": "Feebas",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_feebas.png"
+    },
+    {
+      "name": "Milotic",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_milotic.png"
+    },
+    {
+      "name": "Snorunt",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_snorunt.png"
+    },
+    {
+      "name": "Glalie",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_glalie.png"
+    },
+    {
+      "name": "Froslass",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_froslass.png"
+    },
+    {
+      "name": "Glaceon",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_glaceon.png"
+    },
+    {
+      "name": "Phione",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_phione.png"
+    },
+    {
+      "name": "Froakie",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_froakie.png"
+    },
+    {
+      "name": "Frogadier",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_frogadier.png"
+    },
+    {
+      "name": "Cramorant",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_cramorant.png"
+    },
+    {
+      "name": "Finizen",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_finizen.png"
+    },
+    {
+      "name": "Palafin",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_palafin.png"
+    },
+    {
+      "name": "Palafin EX",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_palafin_ex.png"
+    },
+    {
+      "name": "Iron Bundle",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_iron_bundle.png"
+    },
+    {
+      "name": "Walking Wake",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_walking_wake.png"
+    },
+    {
+      "name": "Wellspring Mask Ogerpon EX",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_wellspring_mask_ogerpon_ex.png"
+    },
+    {
+      "name": "Zapdos",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_zapdos.png"
+    },
+    {
+      "name": "Shinx",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_shinx.png"
+    },
+    {
+      "name": "Luxio",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_luxio.png"
+    },
+    {
+      "name": "Luxray EX",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_luxray_ex.png"
+    },
+    {
+      "name": "Emolga",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_emolga.png"
+    },
+    {
+      "name": "Helioptile",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_helioptile.png"
+    },
+    {
+      "name": "Heliolisk",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_heliolisk.png"
+    },
+    {
+      "name": "Morpeko",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_morpeko.png"
+    },
+    {
+      "name": "Tadbulb",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_tadbulb.png"
+    },
+    {
+      "name": "Bellibolt",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_bellibolt.png"
+    },
+    {
+      "name": "Wattrel",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_wattrel.png"
+    },
+    {
+      "name": "Kilowattrel",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_kilowattrel.png"
+    },
+    {
+      "name": "Iron Throns EX",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_iron_throns_ex.png"
+    },
+    {
+      "name": "Clefairy",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_clefairy.png"
+    },
+    {
+      "name": "Clefable",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_clefable.png"
+    },
+    {
+      "name": "Abra",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_abra.png"
+    },
+    {
+      "name": "Kadabra",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_kadabra.png"
+    },
+    {
+      "name": "Alakazam",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_alakazam.png"
+    },
+    {
+      "name": "Girafarig",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_girafarig.png"
+    },
+    {
+      "name": "Farigiraf",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_farigiraf.png"
+    },
+    {
+      "name": "Chimecho",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_chimecho.png"
+    },
+    {
+      "name": "Flabébé",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_flabebe.png"
+    },
+    {
+      "name": "Floette",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_floette.png"
+    },
+    {
+      "name": "Florges",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_florges.png"
+    },
+    {
+      "name": "Swirlix",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_swirlix.png"
+    },
+    {
+      "name": "Slurpuff",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_slurpuff.png"
+    },
+    {
+      "name": "Sandygast",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_sandygast.png"
+    },
+    {
+      "name": "Palossand",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_palossand.png"
+    },
+    {
+      "name": "Enamorus",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images3/tm_enamorus.png"
+    },
+    {
+      "name": "Scream Tail EX",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_scream_tail_ex.png"
+    },
+    {
+      "name": "Munkidori",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_munkidori.png"
+    },
+    {
+      "name": "Fezandipiti",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_fezandipiti.png"
+    },
+    {
+      "name": "Sandshrew",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_sandshrew.png"
+    },
+    {
+      "name": "Sandslash",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_sandslash.png"
+    },
+    {
+      "name": "Hisuian Growlithe",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_hisuian_growlithe.png"
+    },
+    {
+      "name": "Hisuian Arcanine",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_hisuian_arcanine.png"
+    },
+    {
+      "name": "Nosepass",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_nosepass.png"
+    },
+    {
+      "name": "Probopass",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_probopass.png"
+    },
+    {
+      "name": "Timburr",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_timburr.png"
+    },
+    {
+      "name": "Gurdurr",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_gurdurr.png"
+    },
+    {
+      "name": "Conkeldurr",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_conkeldurr.png"
+    },
+    {
+      "name": "Greninja EX",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_greninja_ex.png"
+    },
+    {
+      "name": "Hawlucha",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_hawlucha.png"
+    },
+    {
+      "name": "Glimmet",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_glimmet.png"
+    },
+    {
+      "name": "Glimmora",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_glimmora.png"
+    },
+    {
+      "name": "Ting-Lu",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_ting_lu.png"
+    },
+    {
+      "name": "Okidogi",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_okidogi.png"
+    },
+    {
+      "name": "Cornerstone Mask Ogerpon EX",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_cornerstone_mask_ogerpon_ex.png"
+    },
+    {
+      "name": "Poochyena",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_poochyena.png"
+    },
+    {
+      "name": "Mightyena",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_mightyena.png"
+    },
+    {
+      "name": "Venipede",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_venipede.png"
+    },
+    {
+      "name": "Whirlipede",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_whirlipede.png"
+    },
+    {
+      "name": "Scolipede",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_scolipede.png"
+    },
+    {
+      "name": "Brute Bonnet",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_brute_bonnet.png"
+    },
+    {
+      "name": "Skarmory",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_skarmory.png"
+    },
+    {
+      "name": "Aron",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_aron.png"
+    },
+    {
+      "name": "Lairon",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_lairon.png"
+    },
+    {
+      "name": "Aggron",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_aggron.png"
+    },
+    {
+      "name": "Heatran",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_heatran.png"
+    },
+    {
+      "name": "Varoom",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_varoom.png"
+    },
+    {
+      "name": "Revavroom",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_revavroom.png"
+    },
+    {
+      "name": "Applin (dragon)",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_applin_dragon.png"
+    },
+    {
+      "name": "Dipplin (dragon)",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_dipplin_dragon.png"
+    },
+    {
+      "name": "Dreepy",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_dreepy.png"
+    },
+    {
+      "name": "Drakloak",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_drakloak.png"
+    },
+    {
+      "name": "Dragapult EX",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_dragapult_ex.png"
+    },
+    {
+      "name": "Tatsugiri",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_tatsugiri.png"
+    },
+    {
+      "name": "Farfetch'd",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_farfetchd.png"
+    },
+    {
+      "name": "Chansey",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_chansey.png"
+    },
+    {
+      "name": "Blissey EX",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_blissey_ex.png"
+    },
+    {
+      "name": "Eevee",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_eevee.png"
+    },
+    {
+      "name": "Snorlax",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_snorlax.png"
+    },
+    {
+      "name": "Aipom",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_aipom.png"
+    },
+    {
+      "name": "Ambipom",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_ambipom.png"
+    },
+    {
+      "name": "Ducklett",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_ducklett.png"
+    },
+    {
+      "name": "Swanna",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_swanna.png"
+    },
+    {
+      "name": "Bloodmoon Ursaluna EX",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_bloodmoon_ursaluna_ex.png"
+    },
+    {
+      "name": "Accompanying Flute",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_accompanying_flute.png"
+    },
+    {
+      "name": "Bug catching Set",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_bug_catching_set.png"
+    },
+    {
+      "name": "Caretaker",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_caretaker.png"
+    },
+    {
+      "name": "Carmine",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_carmine.png"
+    },
+    {
+      "name": "Community Center",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_community_center.png"
+    },
+    {
+      "name": "Cook",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_cook.png"
+    },
+    {
+      "name": "Enhanced Hammer",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_enhanced_hammer.png"
+    },
+    {
+      "name": "Festival Grounds",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_festival_grounds.png"
+    },
+    {
+      "name": "Handheld Fan",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_handheld_fan.png"
+    },
+    {
+      "name": "Hassel",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_hassel.png"
+    },
+    {
+      "name": "Hyper Aroma",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_hyper_aroma.png"
+    },
+    {
+      "name": "Jamming Tower",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_jamming_tower.png"
+    },
+    {
+      "name": "Kieran",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_kieran.png"
+    },
+    {
+      "name": "Lana's Aid",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_lanas_aid.png"
+    },
+    {
+      "name": "Love Ball",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_love_ball.png"
+    },
+    {
+      "name": "Lucian",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_lucian.png"
+    },
+    {
+      "name": "Lucky Helmet",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_lucky_helmet.png"
+    },
+    {
+      "name": "Ogre's Mask",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_ogres_mask.png"
+    },
+    {
+      "name": "Perrin",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_perrin.png"
+    },
+    {
+      "name": "Raifort",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_raifort.png"
+    },
+    {
+      "name": "Scoop Up Cyclone",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_scoop_up_cyclone.png"
+    },
+    {
+      "name": "Secret Box",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_secret_box.png"
+    },
+    {
+      "name": "Survival Brace",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_survival_brace.png"
+    },
+    {
+      "name": "Unfair Stamp",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_unfair_stamp.png"
+    },
+    {
+      "name": "Boomerang Energy",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_boomerang_energy.png"
+    },
+    {
+      "name": "Legacy Energy",
+      "rarity": "C",
+      "dropRate": 0.589,
+      "img": "images4/tm_legacy_energy.png"
+    }
+  ],
+  "FullArts": [
+    {
+      "name": "Full Art: Sinischa EX",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images4/tm_full_art_sinischa_ex.png"
+    },
+    {
+      "name": "Full Art: Teal Mask Ogerpon EX",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images4/tm_full_art_teal_mask_ogerpon_ex.png"
+    },
+    {
+      "name": "Full Art: Macargo EX",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images4/tm_full_art_magcargo_ex.png"
+    },
+    {
+      "name": "Full Art: Hearthflame Mask Ogerpon EX",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images4/tm_full_art_hearthflame_mask_ogerpon_ex.png"
+    },
+    {
+      "name": "Full Art: Palafin EX",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images4/tm_full_art_palafin_ex.png"
+    },
+    {
+      "name": "Full Art: Wellspring Mask Ogerpon EX",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images4/tm_full_art_wellspring_mask_ogerpon_ex.png"
+    },
+    {
+      "name": "Full Art: Luxray EX",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images5/tm_full_art_luxray_ex.png"
+    },
+    {
+      "name": "Full Art: Iron Throns EX",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images5/tm_full_art_iron_throngs_ex.png"
+    },
+    {
+      "name": "Full Art: Scream Tail EX",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images5/tm_full_art_scream_tail_ex.png"
+    },
+    {
+      "name": "Full Art: Greninja EX",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images5/tm_full_art_greninja_ex.png"
+    },
+    {
+      "name": "Full Art: Cornerstone Mask Ogerpon EX",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images5/tm_full_art_cornerstone_mask_ogerpon_ex.png"
+    },
+    {
+      "name": "Full Art: Dragapult EX",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images5/tm_full_art_dragapult_ex.png"
+    },
+    {
+      "name": "Full Art: Bloodmoon Ursaluna EX",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images5/tm_full_art_bloodmoon_ursaluna_ex.png"
+    },
+    {
+      "name": "Full Art: Blissey EX",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images5/tm_full_art_blissey_ex.png"
+    },
+    {
+      "name": "Full Art: Caretaker",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images5/tm_full_art_caretaker.png"
+    },
+    {
+      "name": "Full Art: Carmine",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images5/tm_full_art_carmine.png"
+    },
+    {
+      "name": "Full Art: Hassel",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images5/tm_full_art_hassel.png"
+    },
+    {
+      "name": "Full Art: Kieran",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images5/tm_full_art_kieran.png"
+    },
+    {
+      "name": "Full Art: Lana's Aid",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images5/tm_full_art_lanas_aid.png"
+    },
+    {
+      "name": "Full Art: Lucian",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images5/tm_full_art_lucian.png"
+    },
+    {
+      "name": "Full Art: Perrin",
+      "rarity": "FA",
+      "dropRate": 0.052,
+      "img": "images5/tm_full_art_perrin.png"
+    },
+    {
+      "name": "Illustration Rare: Pinsir",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_pinsir.png"
+    },
+    {
+      "name": "Illustration Rare: Sunflora",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_sunflora.png"
+    },
+    {
+      "name": "Illustration Rare: Dipplin",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_dipplin.png"
+    },
+    {
+      "name": "Illustration Rare: Polchageist",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_polchageist.png"
+    },
+    {
+      "name": "Illustration Rare: Torkoal",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_torkoal.png"
+    },
+    {
+      "name": "Illustration Rare: Infernape",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_infernape.png"
+    },
+    {
+      "name": "Illustration Rare: Froslass",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_froslass.png"
+    },
+    {
+      "name": "Illustration Rare: Phione",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_phione.png"
+    },
+    {
+      "name": "Illustration Rare: Cramorant",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_cramorant.png"
+    },
+    {
+      "name": "Illustration Rare: Heliolisk",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_heliolisk.png"
+    },
+    {
+      "name": "Illustration Rare: Wattrel",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_wattrel.png"
+    },
+    {
+      "name": "Illustration Rare: Chimecho",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_chimecho.png"
+    },
+    {
+      "name": "Illustration Rare: Enamorus",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_enamorus.png"
+    },
+    {
+      "name": "Illustration Rare: Hisuian Growlithe",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_hisuian_growlithe.png"
+    },
+    {
+      "name": "Illustration Rare: Timburr",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_timburr.png"
+    },
+    {
+      "name": "Illustration Rare: Lairon",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_lairon.png"
+    },
+    {
+      "name": "Illustration Rare: Applin",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_applin.png"
+    },
+    {
+      "name": "Illustration Rare: Tatsugiri",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_tatsugiri.png"
+    },
+    {
+      "name": "Illustration Rare: Chansey",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_chansey.png"
+    },
+    {
+      "name": "Illustration Rare: Eevee",
+      "rarity": "FA",
+      "dropRate": 0.05,
+      "img": "images4/tm_illustration_rare_eevee.png"
+    }
+  ],
+  "SpecialIllustrationRares": [
+    {
+      "name": "Special Illustration Rare: Sinischa EX",
+      "rarity": "SR",
+      "dropRate": 0.01,
+      "img": "images5/tm_special_illustration_rare_sinischa_ex.png"
+    },
+    {
+      "name": "Special Illustration Rare: Teal Mask Ogerpon EX",
+      "rarity": "SR",
+      "dropRate": 0.01,
+      "img": "images5/tm_special_illustration_rare_teal_mask_ogerpon_ex.png"
+    },
+    {
+      "name": "Special Illustration Rare: Hearthflame Mask Ogerpon EX",
+      "rarity": "SR",
+      "dropRate": 0.01,
+      "img": "images5/tm_special_illustration_rare_hearthflame_mask_ogerpon_ex.png"
+    },
+    {
+      "name": "Special Illustration Rare: Wellspring Mask Ogerpon EX",
+      "rarity": "SR",
+      "dropRate": 0.01,
+      "img": "images5/tm_special_illustration_rare_wellspring_mask_ogerpon_ex.png"
+    },
+    {
+      "name": "Special Illustration Rare: Greninja EX",
+      "rarity": "SR",
+      "dropRate": 0.01,
+      "img": "images5/tm_special_illustration_rare_greninja_ex.png"
+    },
+    {
+      "name": "Special Illustration Rare: Cornerstone Mask Ogerpon EX",
+      "rarity": "SR",
+      "dropRate": 0.01,
+      "img": "images5/tm_special_illustration_rare_cornerstone_mask_ogerpon_ex.png"
+    },
+    {
+      "name": "Special Illustration Rare: Bloodmoon Ursaluna EX",
+      "rarity": "SR",
+      "dropRate": 0.01,
+      "img": "images5/tm_special_illustration_rare_bloodmoon_ursaluna_ex.png"
+    },
+    {
+      "name": "Special Illustration Rare: Carmine",
+      "rarity": "SR",
+      "dropRate": 0.01,
+      "img": "images5/tm_special_illustration_rare_carmine.png"
+    },
+    {
+      "name": "Special Illustration Rare: Kieran",
+      "rarity": "SR",
+      "dropRate": 0.01,
+      "img": "images5/tm_special_illustration_rare_kieran.png"
+    },
+    {
+      "name": "Special Illustration Rare: Lana's Aid",
+      "rarity": "SR",
+      "dropRate": 0.01,
+      "img": "images5/tm_special_illustration_rare_lanas_aid.png"
+    },
+    {
+      "name": "Special Illustration Rare: Perrin",
+      "rarity": "SR",
+      "dropRate": 0.01,
+      "img": "images5/tm_special_illustration_rare_perrin.png"
+    }
+  ],
+  "GoldCards": [
+    {
+      "name": "Gold Teal Mask Ogerpon EX",
+      "rarity": "Gold",
+      "dropRate": 0.004,
+      "img": "images5/tm_gold_teal_mask_ogerpon_ex.png"
+    },
+    {
+      "name": "Gold Bloodmoon Ursaluna",
+      "rarity": "Gold",
+      "dropRate": 0.004,
+      "img": "images5/tm_gold_bloodmoon_ursaluna.png"
+    },
+    {
+      "name": "Gold Buddy-Buddy Poffin",
+      "rarity": "Gold",
+      "dropRate": 0.004,
+      "img": "images5/tm_gold_buddy_buddy_poffin.png"
+    },
+    {
+      "name": "Gold Enhanced Hammer",
+      "rarity": "Gold",
+      "dropRate": 0.004,
+      "img": "images5/tm_gold_enhanced_hammer.png"
+    },
+    {
+      "name": "Gold Rescue Board",
+      "rarity": "Gold",
+      "dropRate": 0.004,
+      "img": "images5/tm_gold_rescue_board.png"
+    },
+    {
+      "name": "Gold Luminous Energy",
+      "rarity": "Gold",
+      "dropRate": 0.004,
+      "img": "images5/tm_gold_luminous_energy.png"
+    }
+  ]
+}
