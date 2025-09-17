@@ -1,0 +1,1124 @@
+[
+  {
+    "question": "What is the SI unit of temperature?",
+    "options": [
+      "Kelvin",
+      "Calveen",
+      "Celsius",
+      "Fahrenheit"
+    ],
+    "answer": "Kelvin",
+    "points": 10
+  },
+  {
+    "question": "What is absolute zero to degrees celsius (°C)?",
+    "options": [
+      "0",
+      "273",
+      "-273",
+      "32"
+    ],
+    "answer": "-273",
+    "points": 10
+  },
+  {
+    "question": "Define mass",
+    "options": [],
+    "answer": [
+      "matter"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Define weight",
+    "options": [],
+    "answer": [
+      "gravitational pull",
+      "gravitationalpull"
+    ],
+    "points": 15
+  },
+  {
+    "question": "State the SI unit of force.",
+    "options": [
+      "Watt",
+      "Pascal",
+      "Newton",
+      "Joule"
+    ],
+    "answer": "Newton",
+    "points": 10
+  },
+  {
+    "question": "A train travels 180 km in 2 h. Find its average speed in m/s.",
+    "options": [
+      "12.5 m/s",
+      "25 m/s",
+      "50 m/s",
+      "90 m/s"
+    ],
+    "answer": "25 m/s",
+    "points": 10
+  },
+  {
+    "question": "Define power.",
+    "options": [
+      "Energy per second",
+      "Force per meter",
+      "Work per distance",
+      "Mass per time"
+    ],
+    "answer": "Energy per second",
+    "points": 10
+  },
+  {
+    "question": "distance–time graph for an object at constant speed.",
+    "options": [
+      "Horizontal line",
+      "Curved line",
+      "Straight line positive slope",
+      "Straight line negative slope"
+    ],
+    "answer": "Straight line with positive slope",
+    "points": 10
+  },
+  {
+    "question": "A box of mass 5 kg is pushed with a force of 20 N. Find its acceleration.",
+    "options": [
+      "2 m/s²",
+      "3 m/s²",
+      "4 m/s²",
+      "5 m/s²"
+    ],
+    "answer": "4 m/s²",
+    "points": 10
+  },
+  {
+    "question": "What force keeps a satellite in orbit?",
+    "options": [
+      "Electrostatic",
+      "Magnetic",
+      "Gravitational",
+      "Friction"
+    ],
+    "answer": "Gravitational",
+    "points": 10
+  },
+  {
+    "question": "State the principle of conservation of energy.",
+    "options": [
+      "Energy cannot be created or destroyed",
+      "Energy always lost as heat",
+      "Energy = mc²",
+      "Energy stored in fuels"
+    ],
+    "answer": "Energy cannot be created or destroyed",
+    "points": 10
+  },
+  {
+    "question": "A force of 50 N moves an object 4 m. Calculate work done.",
+    "options": [
+      "50 J",
+      "100 J",
+      "150 J",
+      "200 J"
+    ],
+    "answer": "200 J",
+    "points": 10
+  },
+  {
+    "question": "A 2 kg object is raised 5 m above the ground (g = 10). Find GPE.",
+    "options": [
+      "50 J",
+      "100 J",
+      "200 J",
+      "20 J"
+    ],
+    "answer": "100 J",
+    "points": 10
+  },
+  {
+    "question": "Define density.",
+    "options": [
+      "Mass/length",
+      "Mass/area",
+      "Mass/volume",
+      "Volume/mass"
+    ],
+    "answer": "Mass/volume",
+    "points": 10
+  },
+  {
+    "question": "Name a method of heat transfer.",
+    "options": [],
+    "answer": [
+      "Conduction",
+      "conduction",
+      "Convection",
+      "convection",
+      "Radiation",
+      "radiation"
+    ],
+    "points": 15
+  },
+  {
+    "question": "A car accelerates from rest to 20 m/s in 10 s. Calculate the acceleration.",
+    "options": [
+      "0.5 m/s²",
+      "2 m/s²",
+      "5 m/s²",
+      "10 m/s²"
+    ],
+    "answer": "2 m/s²",
+    "points": 10
+  },
+  {
+    "question": "State Newton’s Third Law of Motion.",
+    "options": [
+      "For every action there is an equal and opposite reaction",
+      "Force = mass × acceleration",
+      "Energy is conserved",
+      "An object stays at rest unless a force acts"
+    ],
+    "answer": "For every action there is an equal and opposite reaction",
+    "points": 10
+  },
+  {
+    "question": "Define kinetic energy.",
+    "options": [
+      "Energy in position",
+      "Energy due to motion",
+      "Energy in food",
+      "Energy transferred by heat"
+    ],
+    "answer": "Energy due to motion",
+    "points": 10
+  },
+  {
+    "question": "A bulb transfers 600 J in 30 s. Calculate power",
+    "options": [
+      "10 W",
+      "20 W",
+      "30 W",
+      "40 W"
+    ],
+    "answer": "20 W",
+    "points": 10
+  },
+  {
+    "question": "A car engine does 300 kJ in 60 s. Calculate power",
+    "options": [
+      "3 kW",
+      "5 kW",
+      "10 kW",
+      "15 kW"
+    ],
+    "answer": "5 kW",
+    "points": 10
+  },
+  {
+    "question": "A block mass 200 g, volume 50 cm³. calculate density",
+    "options": [
+      "2 g/cm³",
+      "4 g/cm³",
+      "5 g/cm³",
+      "10 g/cm³"
+    ],
+    "answer": "4 g/cm³",
+    "points": 10
+  },
+  {
+    "question": "Man weight 800 N on 0.4 m². Calculate pressure",
+    "options": [
+      "100 Pa",
+      "2000 Pa",
+      "4000 Pa",
+      "200 Pa"
+    ],
+    "answer": "2000 Pa",
+    "points": 10
+  },
+  {
+    "question": "Define specific heat capacity.",
+    "options": [
+      "Energy per mass per temp",
+      "Energy per volume",
+      "Energy per length",
+      "Energy per area"
+    ],
+    "answer": "Energy per unit mass per temp rise",
+    "points": 10
+  },
+  {
+    "question": "Heat 2 kg water by 10°C (heat capacity = 4200/°C per kg). Calculate the energy.",
+    "options": [
+      "4200 J",
+      "8400 J",
+      "42000 J",
+      "84000 J"
+    ],
+    "answer": "84000 J",
+    "points": 10
+  },
+  {
+    "question": "A car moves 200 m in 25 s. Find its average speed.",
+    "options": [
+      "6 m/s",
+      "8 m/s",
+      "10 m/s",
+      "12 m/s"
+    ],
+    "answer": "8 m/s",
+    "points": 10
+  },
+  {
+    "question": "A 2 kg block (c = 500 J/kg°C) rises 5°C. Heat absorbed?",
+    "options": [
+      "2000 J",
+      "3000 J",
+      "4000 J",
+      "5000 J"
+    ],
+    "answer": "5000 J",
+    "points": 10
+  },
+  {
+    "question": "in a velocity-time graph, gradient represents:",
+    "options": [
+      "Speed",
+      "Distance",
+      "Acceleration",
+      "Force"
+    ],
+    "answer": "Acceleration",
+    "points": 10
+  },
+  {
+    "question": "A bus accelerates from 10 m/s to 30 m/s in 5 s. Find acceleration.",
+    "options": [
+      "2 m/s²",
+      "4 m/s²",
+      "5 m/s²",
+      "6 m/s²"
+    ],
+    "answer": "4 m/s²",
+    "points": 10
+  },
+  {
+    "question": "State a vector quantitiy.",
+    "options": [],
+    "answer": [
+      "displacement",
+      "velocity",
+      "acceleration",
+      "force",
+      "momentum",
+      "torque",
+      "electric field",
+      "electricfield",
+      "magnetic field",
+      "magneticfield"
+    ],
+    "points": 10
+  },
+  {
+    "question": "A ball takes 4.0 s to fall from a building. Find its height (g = 10).",
+    "options": [
+      "40 m",
+      "60 m",
+      "80 m",
+      "100 m"
+    ],
+    "answer": "80 m",
+    "points": 10
+  },
+  {
+    "question": "A resultant force acts on an object. What happens?",
+    "options": [
+      "It stays at rest",
+      "It changes motion",
+      "It keeps constant velocity",
+      "It disappears"
+    ],
+    "answer": "It changes motion",
+    "points": 10
+  },
+  {
+    "question": "A 50 N force stretches a spring by 10 cm. Find k (constant).",
+    "options": [
+      "100 N/m",
+      "200 N/m",
+      "300 N/m",
+      "500 N/m"
+    ],
+    "answer": "500 N/m",
+    "points": 10
+  },
+  {
+    "question": "Define momentum.",
+    "options": [
+      "Mass × velocity",
+      "Force × distance",
+      "Energy × time",
+      "Work ÷ speed"
+    ],
+    "answer": "Mass × velocity",
+    "points": 10
+  },
+  {
+    "question": "Hydroelectric power converts",
+    "options": [
+      "GPE → KE → Electrical",
+      "Heat → Electrical",
+      "Nuclear → Heat",
+      "Chemical → Heat"
+    ],
+    "answer": "GPE → KE → Electrical",
+    "points": 10
+  },
+  {
+    "question": "Define work done.",
+    "options": [
+      "Force × distance",
+      "Energy ÷ mass",
+      "Power × time",
+      "Pressure × volume"
+    ],
+    "answer": "Force × distance",
+    "points": 10
+  },
+  {
+    "question": "200 N force moves box 3 m. Work done?",
+    "options": [
+      "200 J",
+      "400 J",
+      "600 J",
+      "800 J"
+    ],
+    "answer": "600 J",
+    "points": 10
+  },
+  {
+    "question": "Impulse is equal to?",
+    "options": [
+      "Force × distance",
+      "Force × time",
+      "Energy ÷ mass",
+      "Momentum ÷ time"
+    ],
+    "answer": "Force × time",
+    "points": 10
+  },
+  {
+    "question": "A 2 kg ball moving at 6 m/s hits and stops. Change in momentum?",
+    "options": [
+      "0",
+      "6",
+      "12",
+      "18"
+    ],
+    "answer": "12 kg·m/s",
+    "points": 10
+  },
+  {
+    "question": "Define pressure.",
+    "options": [
+      "Force ÷ mass",
+      "Force ÷ area",
+      "Mass ÷ area",
+      "Weight ÷ time"
+    ],
+    "answer": "Force ÷ area",
+    "points": 10
+  },
+  {
+    "question": "Which expands most when heated?",
+    "options": [
+      "Solids",
+      "Liquids",
+      "Gases",
+      "All equal"
+    ],
+    "answer": "Gases",
+    "points": 10
+  },
+  {
+    "question": "State a renewable energy source",
+    "options": [],
+    "answer": [
+      "solar",
+      "wind",
+      "hydropower",
+      "water",
+      "biomass",
+      "tidal",
+      "geothermal"
+    ],
+    "points": 10
+  },
+  {
+    "question": "Explain why sweating cools the body.",
+    "options": [
+      "Water expands",
+      "Evaporation removes latent heat",
+      "Radiation occurs",
+      "Water conducts heat away"
+    ],
+    "answer": "Evaporation removes latent heat",
+    "points": 10
+  },
+  {
+    "question": "In kinetic particle theory, temperature is proportional to…",
+    "options": [
+      "Mass of molecules",
+      "Velocity of molecules",
+      "Kinetic energy of molecules",
+      "Density of molecules"
+    ],
+    "answer": "KE of molecules",
+    "points": 10
+  },
+  {
+    "question": "Define conduction.",
+    "options": [
+      "Heat transfer by waves",
+      "Heat transfer by bulk motion",
+      "Heat transfer by particle vibration and free electrons",
+      "Heat transfer without medium"
+    ],
+    "answer": "Heat transfer by particle vibration and free electrons",
+    "points": 10
+  },
+  {
+    "question": "Define convection.",
+    "options": [
+      "Heat transfer by particle vibration",
+      "Heat transfer by bulk movement of fluid",
+      "Heat transfer by radiation",
+      "Heat transfer in solids only"
+    ],
+    "answer": "Heat transfer by bulk movement of fluid",
+    "points": 10
+  },
+  {
+    "question": "Why does hot air rise?",
+    "options": [
+      "It is lighter",
+      "Pressure increases",
+      "Density decreases",
+      "Molecules stop moving"
+    ],
+    "answer": "Density decreases",
+    "points": 10
+  },
+  {
+    "question": "Melting of ice is an example of…",
+    "options": [
+      "Conduction",
+      "Convection",
+      "Radiation",
+      "Change of state"
+    ],
+    "answer": "Change of state",
+    "points": 10
+  },
+  {
+    "question": "Define thermal capacity.",
+    "options": [
+      "Energy per unit mass per °C",
+      "Energy needed to raise whole object by 1°C",
+      "Energy per volume",
+      "Heat lost per second"
+    ],
+    "answer": "Energy to raise whole object by 1°C",
+    "points": 10
+  },
+  {
+    "question": "Define efficiency.",
+    "options": [
+      "Useful ÷ input energy × 100%",
+      "Input ÷ useful × 100%",
+      "Output × time",
+      "Work ÷ force"
+    ],
+    "answer": "Useful ÷ input energy × 100%",
+    "points": 10
+  },
+  {
+    "question": "Which of these is a base SI unit?",
+    "options": [
+      "Newton",
+      "Kilogram",
+      "Joule",
+      "Watt"
+    ],
+    "answer": "Kilogram",
+    "points": 10
+  },
+  {
+    "question": "Define velocity.",
+    "options": [],
+    "answer": [
+      "Displacement per unit time",
+      "displacement per unit time",
+      "displacementperunittime"
+    ],
+    "points": 15
+  },
+  {
+    "question": "A car of mass 1200 kg accelerates at 3 m/s². Find resultant force.",
+    "options": [],
+    "answer": [
+      "3600 N",
+      "3600 n",
+      "3600n"
+    ],
+    "points": 20
+  },
+  {
+    "question": "Which of these is a scalar quantity?",
+    "options": [
+      "Force",
+      "Velocity",
+      "Mass",
+      "Displacement"
+    ],
+    "answer": "Mass",
+    "points": 10
+  },
+  {
+    "question": "A trolley of mass 2 kg is pushed with 8 N. Find acceleration.",
+    "options": [
+      "2 m/s²",
+      "3 m/s²",
+      "4 m/s²",
+      "16 m/s²"
+    ],
+    "answer": "4 m/s²",
+    "points": 10
+  },
+  {
+    "question": "A 2 kg ball moving at 6 m/s collides and stops. What is momentum change?",
+    "options": [],
+    "answer": [
+      "12 kg·m",
+      "12kg·m",
+      "s"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Work done when 50 N force moves 4 m?",
+    "options": [
+      "100 J",
+      "150 J",
+      "200 J",
+      "250 J"
+    ],
+    "answer": "200 J",
+    "points": 10
+  },
+  {
+    "question": "A motor transfers 1200 J in 60 s. Find power.",
+    "options": [],
+    "answer": [
+      "20 W",
+      "20 w",
+      "20w"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Which form of energy is stored in a stretched spring?",
+    "options": [
+      "Kinetic",
+      "Potential",
+      "Elastic potential",
+      "Chemical"
+    ],
+    "answer": "Elastic potential",
+    "points": 10
+  },
+  {
+    "question": "A stone of mass 0.5 kg is raised 4 m. Find gain in GPE (g = 10).",
+    "options": [],
+    "answer": [
+      "20 J",
+      "20 j",
+      "20j"
+    ],
+    "points": 15
+  },
+  {
+    "question": "A machine uses 600 J input, gives 450 J useful. Efficiency?",
+    "options": [
+      "60%",
+      "70%",
+      "75%",
+      "80%"
+    ],
+    "answer": "75%",
+    "points": 10
+  },
+  {
+    "question": "A block of mass 2 kg has volume 0.001 m³. Find density.",
+    "options": [],
+    "answer": [
+      "2000 kg",
+      "2000kg",
+      "m³"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Define pressure.",
+    "options": [],
+    "answer": [
+      "Force per unit area",
+      "force per unit area",
+      "forceperunitarea"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Which expands most on heating?",
+    "options": [
+      "Solids",
+      "Liquids",
+      "Gases",
+      "All equally"
+    ],
+    "answer": "Gases",
+    "points": 10
+  },
+  {
+    "question": "A box of 300 N rests on an area 0.5 m². Find pressure.",
+    "options": [],
+    "answer": [
+      "600 Pa",
+      "600 pa",
+      "600pa"
+    ],
+    "points": 20
+  },
+  {
+    "question": "Define specific heat capacity.",
+    "options": [],
+    "answer": [
+      "Energy required to raise 1 kg of substance by 1°C",
+      "energy required to raise 1 kg of substance by 1°c",
+      "energyrequiredtoraise1kgofsubstanceby1°c"
+    ],
+    "points": 20
+  },
+  {
+    "question": "A 2 kg block heated by 8000 J increases 10°C. Find heat capacity",
+    "options": [],
+    "answer": [
+      "400 J",
+      "400 j",
+      "400j",
+      "kg°C",
+      "kg°c"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Which heat transfer works in a vacuum?",
+    "options": [
+      "Conduction",
+      "Convection",
+      "Radiation",
+      "All"
+    ],
+    "answer": "Radiation",
+    "points": 10
+  },
+  {
+    "question": "Why are vacuum flasks silvered?",
+    "options": [
+      "Reduce conduction",
+      "Reduce convection",
+      "Reduce radiation",
+      "Reduce all heat transfer"
+    ],
+    "answer": "Reduce radiation",
+    "points": 10
+  },
+  {
+    "question": "Why does smoke rise above a flame?",
+    "options": [],
+    "answer": [
+      "Convection",
+      "convection",
+      "hot air rises",
+      "hotairrises"
+    ],
+    "points": 15
+  },
+  {
+    "question": "A kettle uses 2000 W, heats 1 kg water from 20°C to 100°C (heat capacity=4200). calculate time needed in seconds.",
+    "options": [],
+    "answer": [
+      "168 s",
+      "168s"
+    ],
+    "points": 20
+  },
+  {
+    "question": "Why do icebergs float?",
+    "options": [],
+    "answer": [
+      "less dense",
+      "lessdense"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Write the equation linking speed, distance, and time. (no space, if got times use x, divide use /, if got fractions use like 1/2, if got to power use ^, like 2^2)",
+    "options": [],
+    "answer": [
+      "distance",
+      "time"
+    ],
+    "points": 15
+  },
+  {
+    "question": "A car travels 150 m in 12 s. Calculate its average speed.",
+    "options": [],
+    "answer": [
+      "12.5 m",
+      "12.5m",
+      "s"
+    ],
+    "points": 20
+  },
+  {
+    "question": "Write the kinematic equation linking v, u, a, and t. (no space, if got times use x, divide use /, if got fractions use like 1/2, if got to power use ^, like 2^2)",
+    "options": [],
+    "answer": [
+      "v=u+at"
+    ],
+    "points": 15
+  },
+  {
+    "question": "A bus accelerates from rest at 2 m/s² for 8 s. Find final velocity.",
+    "options": [],
+    "answer": [
+      "16 m",
+      "16m",
+      "s"
+    ],
+    "points": 20
+  },
+  {
+    "question": "Write the kinematic equation linking s, u, a, and t. (no space, if got times use x, divide use /, if got fractions use like 1/2, if got to power use ^, like 2^2)",
+    "options": [],
+    "answer": [
+      "s=ut+1",
+      "2at^2"
+    ],
+    "points": 15
+  },
+  {
+    "question": "A ball is thrown at 5 m/s upwards. Find time to reach max height (g = 10).",
+    "options": [],
+    "answer": [
+      "0.5 s",
+      "0.5s"
+    ],
+    "points": 20
+  },
+  {
+    "question": "Write the kinematic equation linking v, u, a, and s. (no space, if got times use x, divide use /, if got fractions use like 1/2, if got to power use ^, like 2^2)",
+    "options": [],
+    "answer": [
+      "v^2=u^2+2as"
+    ],
+    "points": 15
+  },
+  {
+    "question": "A car accelerates from 10 m/s to 30 m/s over 100 m. Find acceleration. (no space, if got times use x, divide use /, if got fractions use like 1/2, if got to power use ^, like 2^2)",
+    "options": [],
+    "answer": [
+      "4m",
+      "s^2"
+    ],
+    "points": 20
+  },
+  {
+    "question": "Define resultant force.",
+    "options": [],
+    "answer": [
+      "The single force that has the same effect as all forces acting on an object",
+      "the single force that has the same effect as all forces acting on an object",
+      "thesingleforcethathasthesameeffectasallforcesactingonanobject"
+    ],
+    "points": 15
+  },
+  {
+    "question": "A 600 N force acts on 300 kg. Find acceleration. (no space, if got times use x, divide use /, if got fractions use like 1/2, if got to power use ^, like 2^2)",
+    "options": [],
+    "answer": [
+      "2m",
+      "s^2"
+    ],
+    "points": 20
+  },
+  {
+    "question": "State Newton’s First Law of Motion.",
+    "options": [],
+    "answer": [
+      "An object remains at rest",
+      "an object remains at rest",
+      "anobjectremainsatrest",
+      "moves at constant velocity unless acted on by a resultant force",
+      "movesatconstantvelocityunlessactedonbyaresultantforce"
+    ],
+    "points": 15
+  },
+  {
+    "question": "A rocket engine provides 40 kN thrust. Mass = 8000 kg. Find acceleration. (no space, if got times use x, divide use /, if got fractions use like 1/2, if got to power use ^, like 2^2)",
+    "options": [],
+    "answer": [
+      "5m",
+      "s^2"
+    ],
+    "points": 20
+  },
+  {
+    "question": "Define momentum.",
+    "options": [],
+    "answer": [
+      "Momentum = mass × velocity",
+      "momentum = mass × velocity",
+      "momentum=mass×velocity"
+    ],
+    "points": 15
+  },
+  {
+    "question": "A 3 kg trolley moving at 4 m/s collides and stops. Find change in momentum. (no space, if got times use x, divide use /, if got fractions use like 1/2, if got to power use ^, like 2^2)",
+    "options": [],
+    "answer": [
+      "12kgm",
+      "s"
+    ],
+    "points": 20
+  },
+  {
+    "question": "A spring constant is 200 N/m. It is stretched 0.08 m. Find force.",
+    "options": [],
+    "answer": [
+      "16 N",
+      "16 n",
+      "16n"
+    ],
+    "points": 20
+  },
+  {
+    "question": "A spring constant 50 N/m stretched 0.2 m. Find elastic energy.",
+    "options": [],
+    "answer": [
+      "1 J",
+      "1 j",
+      "1j"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Define work done. (no space, if got times use x, divide use /, if got fractions use like 1/2, if got to power use ^, like 2^2)",
+    "options": [],
+    "answer": [
+      "Forcexdistance",
+      "forcexdistance"
+    ],
+    "points": 15
+  },
+  {
+    "question": "A 30 N force moves 5 m. Find work done.",
+    "options": [],
+    "answer": [
+      "150 J",
+      "150 j",
+      "150j"
+    ],
+    "points": 20
+  },
+  {
+    "question": "State the equation for kinetic energy. (no space, if got times use x, divide use /, if got fractions use like 1/2, if got to power use ^, like 2^2)",
+    "options": [],
+    "answer": [
+      "1",
+      "2mv^2"
+    ],
+    "points": 15
+  },
+  {
+    "question": "A 0.5 kg ball moves at 12 m/s. Find kinetic energy.",
+    "options": [],
+    "answer": [
+      "36 J",
+      "36 j",
+      "36j"
+    ],
+    "points": 20
+  },
+  {
+    "question": "Define gravitational potential energy (GPE).  (no space, if got times use x, divide use /, if got fractions use like 1/2, if got to power use ^, like 2^2)",
+    "options": [],
+    "answer": [
+      "GPE=mgh",
+      "gpe=mgh"
+    ],
+    "points": 15
+  },
+  {
+    "question": "A 4 kg object raised 2.5 m (g=10). Find GPE gained.",
+    "options": [],
+    "answer": [
+      "100 J",
+      "100 j",
+      "100j"
+    ],
+    "points": 20
+  },
+  {
+    "question": "Define power. (no space, if got times use x, divide use /, if got fractions use like 1/2, if got to power use ^, like 2^2)",
+    "options": [],
+    "answer": [
+      "Power=work",
+      "power=work",
+      "time"
+    ],
+    "points": 15
+  },
+  {
+    "question": "A machine transfers 1200 J in 20 s. Find power.",
+    "options": [],
+    "answer": [
+      "60 W",
+      "60 w",
+      "60w"
+    ],
+    "points": 20
+  },
+  {
+    "question": "A motor input = 2000 J, useful output = 1500 J. Efficiency?",
+    "options": [],
+    "answer": [
+      "75%"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Define density. (no space, if got times use x, divide use /, if got fractions use like 1/2, if got to power use ^, like 2^2)",
+    "options": [],
+    "answer": [
+      "Density=mass",
+      "density=mass",
+      "volume"
+    ],
+    "points": 15
+  },
+  {
+    "question": "A block has mass 600 g and volume 200 cm³. Find density. (no space, if got times use x, divide use /, if got fractions use like 1/2, if got to power use ^, like 2^2)",
+    "options": [],
+    "answer": [
+      "3g",
+      "cm^3"
+    ],
+    "points": 20
+  },
+  {
+    "question": "State the equation for pressure. (no space, if got times use x, divide use /, if got fractions use like 1/2, if got to power use ^, like 2^2)",
+    "options": [],
+    "answer": [
+      "p=F",
+      "p=f",
+      "A",
+      "a"
+    ],
+    "points": 15
+  },
+  {
+    "question": "A man weight 700 N stands on 0.35 m². Find pressure.",
+    "options": [],
+    "answer": [
+      "2000 Pa",
+      "2000 pa",
+      "2000pa"
+    ],
+    "points": 20
+  },
+  {
+    "question": "Define specific heat capacity (c).",
+    "options": [],
+    "answer": [
+      "Energy needed to raise 1 kg by 1°C",
+      "energy needed to raise 1 kg by 1°c",
+      "energyneededtoraise1kgby1°c"
+    ],
+    "points": 15
+  },
+  {
+    "question": "2 kg water heated from 20°C to 60°C, c = 4200. Find energy.",
+    "options": [],
+    "answer": [
+      "336000 J",
+      "336000 j",
+      "336000j"
+    ],
+    "points": 20
+  },
+  {
+    "question": "Define thermal capacity.",
+    "options": [],
+    "answer": [
+      "Energy needed",
+      "energy needed",
+      "energyneeded"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Why does sweating cool the body?",
+    "options": [],
+    "answer": [
+      "Evaporation removes latent heat from skin",
+      "evaporation removes latent heat from skin",
+      "evaporationremoveslatentheatfromskin"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Which heat transfer occurs in a vacuum?",
+    "options": [
+      "Conduction",
+      "Convection",
+      "Radiation",
+      "All"
+    ],
+    "answer": "Radiation",
+    "points": 10
+  },
+  {
+    "question": "Why are saucepan handles made of wood or plastic?",
+    "options": [],
+    "answer": [
+      "poor heat conductor",
+      "poorheatconductor"
+    ],
+    "points": 10
+  },
+  {
+    "question": "Why are vacuum flasks silvered inside?",
+    "options": [
+      "Reduce conduction",
+      "Reduce convection",
+      "Reduce radiation",
+      "Reduce all"
+    ],
+    "answer": "Reduce radiation",
+    "points": 10
+  }
+]

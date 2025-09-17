@@ -1,0 +1,1246 @@
+[
+  {
+    "question": "What is the purpose of accounting?",
+    "options": [
+      "To prepare the financial statements of the business",
+      "To write up all ledger accounts",
+      "To know how long trade receivables take to pay",
+      "To record all financial transactions"
+    ],
+    "answer": "To know how long trade receivables take to pay",
+    "points": 10
+  },
+  {
+    "question": "Which of the following is a current asset?",
+    "options": [
+      "Machinery",
+      "Cash",
+      "Loan",
+      "Capital"
+    ],
+    "answer": "Cash",
+    "points": 10
+  },
+  {
+    "question": "Which of the following contains an intangible asset?",
+    "options": [
+      "Land, Machinery, Computer",
+      "Cash, Trade receivable, Bank",
+      "Bank loan, Inventory, Rent",
+      "Cash, Trade payable, Goodwill"
+    ],
+    "answer": "Cash, Trade payable, Goodwill",
+    "points": 10
+  },
+  {
+    "question": "Who prepares a bank reconcilliation statement?",
+    "options": [
+      "Bank",
+      "Customer",
+      "Business",
+      "Business, Bank and customer"
+    ],
+    "answer": "Business",
+    "points": 10
+  },
+  {
+    "question": "A business buys goods on credit. Which account is debited?",
+    "options": [
+      "Creditors",
+      "Purchases",
+      "Cash",
+      "Capital"
+    ],
+    "answer": "Purchases",
+    "points": 10
+  },
+  {
+    "question": "A cash sale of $500 was recorded as a credit sale. What type of error is this?",
+    "options": [
+      "Error of principle",
+      "Error of commission",
+      "Error of omission",
+      "Error of reversal"
+    ],
+    "answer": "Error of commission",
+    "points": 10
+  },
+  {
+    "question": "A payment to a supplier was completely omitted from the books. What type of error is this?",
+    "options": [
+      "Error of commission",
+      "Error of omission",
+      "Error of principle",
+      "Compensating error"
+    ],
+    "answer": "Error of omission",
+    "points": 10
+  },
+  {
+    "question": "A debtor paid $1,000 but was credited $100. Which error is this?",
+    "options": [
+      "Error of omission",
+      "Error of commission",
+      "Error of principle",
+      "Error of reversal"
+    ],
+    "answer": "Error of commission",
+    "points": 10
+  },
+  {
+    "question": "Goods sold on credit to a customer were posted to the wrong customer’s account. Which error has occurred?",
+    "options": [
+      "Error of omission",
+      "Error of principle",
+      "Error of commission",
+      "Error of reversal"
+    ],
+    "answer": "Error of commission",
+    "points": 10
+  },
+  {
+    "question": "A business receives goods but finds 5 chairs damaged. Which document should they request?",
+    "options": [
+      "Credit Note",
+      "Debit Note",
+      "Invoice",
+      "Receipt"
+    ],
+    "answer": "Credit Note",
+    "points": 10
+  },
+  {
+    "question": "The supplier sends a bill to the business for the chairs delivered. Which document is this?",
+    "options": [
+      "Invoice",
+      "Debit Note",
+      "Receipt",
+      "Statement of account"
+    ],
+    "answer": "Invoice",
+    "points": 10
+  },
+  {
+    "question": "The bank statement shows $5,000 received from a debtor, but the cash book shows $4,800. What should be prepared to correct this?",
+    "options": [
+      "Statement of financial position",
+      "Bank reconciliation statement",
+      "Invoice",
+      "Statement of account"
+    ],
+    "answer": "Bank reconciliation statement",
+    "points": 10
+  },
+  {
+    "question": "A credit note is issued when:",
+    "options": [
+      "Goods are returned by the customer",
+      "Goods are sold on credit",
+      "Payment is made",
+      "Bank charges occur"
+    ],
+    "answer": "Goods are returned by the customer",
+    "points": 10
+  },
+  {
+    "question": "The cash book shows $1,200, the bank statement shows $1,500. A $300 deposit was made but not yet cleared. What will the reconciliation statement show?",
+    "options": [
+      "Add $300",
+      "Deduct $300",
+      "Ignore",
+      "Add $1,500"
+    ],
+    "answer": "Deduct $300",
+    "points": 10
+  },
+  {
+    "question": "Prepaid insurance is shown on which financial statement?",
+    "options": [
+      "Statement of financial position",
+      "Income statement",
+      "Statement of account",
+      "Bank reconciliation"
+    ],
+    "answer": "Statement of financial position",
+    "points": 10
+  },
+  {
+    "question": "Accrued income is shown in which part of the Statement of financial position?",
+    "options": [
+      "Asset",
+      "Liability",
+      "Capital",
+      "Expense"
+    ],
+    "answer": "Asset",
+    "points": 10
+  },
+  {
+    "question": "Goods returned by a customer are recorded in the sales account. What error occurred?",
+    "options": [
+      "Error of omission",
+      "Error of principle",
+      "Error of commission",
+      "Compensating error"
+    ],
+    "answer": "Error of commission",
+    "points": 10
+  },
+  {
+    "question": "Which statement shows the financial position of a business at a specific date?",
+    "options": [
+      "Income statement",
+      "Statement of financial position",
+      "Cash flow statement",
+      "Statement of account"
+    ],
+    "answer": "Statement of financial position",
+    "points": 10
+  },
+  {
+    "question": "What does an income statement show?",
+    "options": [
+      "Assets and liabilities",
+      "Revenue, expenses, and profit",
+      "Bank balances",
+      "Stock levels"
+    ],
+    "answer": "Revenue, expenses, and profit",
+    "points": 10
+  },
+  {
+    "question": "Which of the following is a liability?",
+    "options": [
+      "Cash",
+      "Trade payables",
+      "Inventory",
+      "Capital"
+    ],
+    "answer": "Trade payables",
+    "points": 10
+  },
+  {
+    "question": "Which document is issued when goods are returned to a supplier?",
+    "options": [
+      "Credit note",
+      "Debit note",
+      "Invoice",
+      "Statement of account"
+    ],
+    "answer": "Debit note",
+    "points": 10
+  },
+  {
+    "question": "The purchases day book is used to record:",
+    "options": [
+      "Cash purchases",
+      "Credit purchases",
+      "Cash sales",
+      "Credit sales"
+    ],
+    "answer": "Credit purchases",
+    "points": 10
+  },
+  {
+    "question": "The trial balance checks:",
+    "options": [
+      "Arithmetic accuracy",
+      "Valuation of assets",
+      "Profit earned",
+      "Bank reconciliation"
+    ],
+    "answer": "Arithmetic accuracy",
+    "points": 10
+  },
+  {
+    "question": "Which of these is NOT an error revealed by the trial balance?",
+    "options": [
+      "Error of omission",
+      "Error of addition",
+      "Error of posting",
+      "Error of balancing"
+    ],
+    "answer": "Error of omission",
+    "points": 10
+  },
+  {
+    "question": "Which account records irrecoverable debts?",
+    "options": [
+      "Purchases",
+      "Bad debts",
+      "Sales returns",
+      "Accrued income"
+    ],
+    "answer": "Bad debts",
+    "points": 10
+  },
+  {
+    "question": "A bank reconciliation is prepared by:",
+    "options": [
+      "Supplier",
+      "Customer",
+      "Business",
+      "Auditor"
+    ],
+    "answer": "Business",
+    "points": 10
+  },
+  {
+    "question": "Which of the following is a capital expenditure?",
+    "options": [
+      "Wages",
+      "Rent",
+      "Machinery purchase",
+      "Stationery"
+    ],
+    "answer": "Machinery purchase",
+    "points": 10
+  },
+  {
+    "question": "Which principle states that revenue is recorded when earned, not when received?",
+    "options": [
+      "Consistency",
+      "Prudence",
+      "Accruals",
+      "Going concern"
+    ],
+    "answer": "Accruals",
+    "points": 10
+  },
+  {
+    "question": "Which book of prime entry records goods returned by customers?",
+    "options": [
+      "Purchases returns journal",
+      "Sales return journal",
+      "Journal",
+      "Cash book"
+    ],
+    "answer": "Sales return journal",
+    "points": 10
+  },
+  {
+    "question": "Which error affects both debit and credit equally, keeping the trial balance balanced?",
+    "options": [
+      "Error of commission",
+      "Error of principle",
+      "Compensating error",
+      "Error of reversal"
+    ],
+    "answer": "Compensating error",
+    "points": 10
+  },
+  {
+    "question": "Which is shown in the statement of financial position?",
+    "options": [
+      "Profit",
+      "Assets and liabilities",
+      "Expenses",
+      "Revenue"
+    ],
+    "answer": "Assets and liabilities",
+    "points": 10
+  },
+  {
+    "question": "Which is an intangible asset?",
+    "options": [
+      "Building",
+      "Vehicle",
+      "Goodwill",
+      "Inventory"
+    ],
+    "answer": "Goodwill",
+    "points": 10
+  },
+  {
+    "question": "A payment of rent was recorded in wages account. This is an error of:",
+    "options": [
+      "Omission",
+      "Commission",
+      "Principle",
+      "Reversal"
+    ],
+    "answer": "Principle",
+    "points": 10
+  },
+  {
+    "question": "Which side of the cash book records receipts?",
+    "options": [
+      "Debit",
+      "Credit",
+      "Both",
+      "None"
+    ],
+    "answer": "Debit",
+    "points": 10
+  },
+  {
+    "question": "Trade receivables are also known as:",
+    "options": [
+      "Creditors",
+      "Debtors",
+      "Purchasers",
+      "Liabilities"
+    ],
+    "answer": "Debtors",
+    "points": 10
+  },
+  {
+    "question": "Which of the following accounts normally has a credit balance?",
+    "options": [
+      "Sales",
+      "Purchases",
+      "Rent",
+      "Wages"
+    ],
+    "answer": "Sales",
+    "points": 10
+  },
+  {
+    "question": "Which statement shows profit or loss of a business?",
+    "options": [
+      "Trial balance",
+      "Statement of financial position",
+      "Income statement",
+      "Cash book"
+    ],
+    "answer": "Income statement",
+    "points": 10
+  },
+  {
+    "question": "Discounts received are recorded in:",
+    "options": [
+      "Purchases ledger",
+      "Sales ledger",
+      "Nominal ledger",
+      "Cash book"
+    ],
+    "answer": "Nominal ledger",
+    "points": 10
+  },
+  {
+    "question": "Which document acts as a request for payment from supplier?",
+    "options": [
+      "Invoice",
+      "Receipt",
+      "Credit note",
+      "Debit note"
+    ],
+    "answer": "Invoice",
+    "points": 10
+  },
+  {
+    "question": "Which error occurs when $500 is posted as $50?",
+    "options": [
+      "Error of commission",
+      "Error of omission",
+      "Error of transposition",
+      "Error of principle"
+    ],
+    "answer": "Error of transposition",
+    "points": 10
+  },
+  {
+    "question": "The principle of prudence means:",
+    "options": [
+      "Understate profit and assets",
+      "Overstate profit",
+      "Ignore liabilities",
+      "Increase expenses"
+    ],
+    "answer": "Understate profit and assets",
+    "points": 10
+  },
+  {
+    "question": "Which account is used to transfer profit to capital?",
+    "options": [
+      "Suspense",
+      "Current",
+      "Capital",
+      "Drawings"
+    ],
+    "answer": "Capital",
+    "points": 10
+  },
+  {
+    "question": "Carriage inwards is treated as:",
+    "options": [
+      "Expense",
+      "Asset",
+      "Liability",
+      "Addition to purchases"
+    ],
+    "answer": "Addition to purchases",
+    "points": 10
+  },
+  {
+    "question": "If wages are undercast by $200, the suspense account will be:",
+    "options": [
+      "Debited $200",
+      "Credited $200",
+      "Balanced $200",
+      "Not affected"
+    ],
+    "answer": "Debited $200",
+    "points": 10
+  },
+  {
+    "question": "A debit balance in bank column of cash book means:",
+    "options": [
+      "Overdraft",
+      "Money at bank",
+      "Error",
+      "Loan taken"
+    ],
+    "answer": "Money at bank",
+    "points": 10
+  },
+  {
+    "question": "Which item is shown under current liabilities?",
+    "options": [
+      "Motor vehicle",
+      "Trade payables",
+      "Prepaid rent",
+      "Building"
+    ],
+    "answer": "Trade payables",
+    "points": 10
+  },
+  {
+    "question": "Which of the following increases owner’s equity?",
+    "options": [
+      "Drawings",
+      "Loss",
+      "Profit",
+      "Expenses"
+    ],
+    "answer": "Profit",
+    "points": 10
+  },
+  {
+    "question": "In accounting, the term “drawings” refers to:",
+    "options": [
+      "Business expenses",
+      "Goods taken for personal use",
+      "Owner’s investment",
+      "Credit purchases"
+    ],
+    "answer": "Goods taken for personal use",
+    "points": 10
+  },
+  {
+    "question": "Define a trial balance.",
+    "options": [],
+    "answer": "A list of debit and credit balances",
+    "points": 15
+  },
+  {
+    "question": "State one advantage of dividing ledger into sales, purchases and nominal.",
+    "options": [],
+    "answer": [
+      "easier",
+      "not cramped",
+      "clean",
+      "easier to locate errors"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Give one example of a business document.",
+    "options": [],
+    "answer": [
+      "Invoice",
+      "receipt",
+      "credit note",
+      "cheque counterfoil",
+      "debit note",
+      "statement of account"
+    ],
+    "points": 15
+  },
+  {
+    "question": "State one advantage of preparing a bank reconciliation.",
+    "options": [],
+    "answer": [
+      "Detects errors",
+      "fraud",
+      "updates",
+      "cash book",
+      "ensures accuracy"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Explain the difference between debtors and creditors.",
+    "options": [],
+    "answer": [
+      "owe money",
+      "liability",
+      "asset",
+      "owes money"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Define prepayment.",
+    "options": [],
+    "answer": "Payment made in advance",
+    "points": 15
+  },
+  {
+    "question": "Give one example of intangible asset.",
+    "options": [],
+    "answer": [
+      "Goodwill",
+      "patents",
+      "trademarks"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Which account is used to record cash received?",
+    "options": [
+      "Sales",
+      "Purchases",
+      "Cash book",
+      "Suspense"
+    ],
+    "answer": "Cash book",
+    "points": 10
+  },
+  {
+    "question": "Which of the following is NOT an expense?",
+    "options": [
+      "Rent",
+      "Wages",
+      "Capital",
+      "Insurance"
+    ],
+    "answer": "Capital",
+    "points": 10
+  },
+  {
+    "question": "Which account is used to record goods returned by customers?",
+    "options": [
+      "Purchases returns",
+      "Sales returns",
+      "Purchases",
+      "Sales"
+    ],
+    "answer": "Sales returns",
+    "points": 10
+  },
+  {
+    "question": "Define capital.",
+    "options": [
+      "Business profit",
+      "Amount owner invests",
+      "Current liabilities",
+      "Fixed assets"
+    ],
+    "answer": "Amount owner invests",
+    "points": 10
+  },
+  {
+    "question": "Which account records goods taken by owner for personal use?",
+    "options": [
+      "Drawings",
+      "Capital",
+      "Purchases",
+      "Cash"
+    ],
+    "answer": "Drawings",
+    "points": 10
+  },
+  {
+    "question": "Accrued income is shown as:",
+    "options": [
+      "Asset",
+      "Liability",
+      "Expense",
+      "Revenue"
+    ],
+    "answer": "Asset",
+    "points": 10
+  },
+  {
+    "question": "Which financial statement shows profit?",
+    "options": [
+      "Income statement",
+      "Bank reconciliation",
+      "Statement of financial position",
+      "Cash book"
+    ],
+    "answer": "Income statement",
+    "points": 10
+  },
+  {
+    "question": "Which of these is a book of prime entry?",
+    "options": [
+      "Cash book",
+      "Statement of account",
+      "Trial balance",
+      "Income statement"
+    ],
+    "answer": "Cash book",
+    "points": 10
+  },
+  {
+    "question": "Which account is credited when owner invests cash?",
+    "options": [
+      "Drawings",
+      "Sales",
+      "Capital",
+      "Purchases"
+    ],
+    "answer": "Capital",
+    "points": 10
+  },
+  {
+    "question": "Which error does NOT affect trial balance?",
+    "options": [
+      "Error of omission",
+      "Error of addition",
+      "Error of posting",
+      "Error of casting"
+    ],
+    "answer": "Error of omission",
+    "points": 10
+  },
+  {
+    "question": "Which book of prime entry records credit sales?",
+    "options": [
+      "Purchases day book",
+      "Sales day book",
+      "Cash book",
+      "Journal"
+    ],
+    "answer": "Sales day book",
+    "points": 10
+  },
+  {
+    "question": "Which type of error occurs if transaction is not recorded at all?",
+    "options": [
+      "Error of omission",
+      "Error of commission",
+      "Error of principle",
+      "Compensating error"
+    ],
+    "answer": "Error of omission",
+    "points": 10
+  },
+  {
+    "question": "Define accruals.",
+    "options": [
+      "Expenses and income carried forward",
+      "Cash received in advance",
+      "Payments by cheque",
+      "Goods returned"
+    ],
+    "answer": "Expenses and income carried forward",
+    "points": 10
+  },
+  {
+    "question": "Which of the following is a liability?",
+    "options": [
+      "Motor vehicle",
+      "Inventory",
+      "Trade payables",
+      "Prepaid rent"
+    ],
+    "answer": "Trade payables",
+    "points": 10
+  },
+  {
+    "question": "Which is NOT a current asset?",
+    "options": [
+      "Inventory",
+      "Cash",
+      "Trade receivables",
+      "Building"
+    ],
+    "answer": "Building",
+    "points": 10
+  },
+  {
+    "question": "Which document acts as a request for payment?",
+    "options": [
+      "Invoice",
+      "Debit note",
+      "Credit note",
+      "Receipt"
+    ],
+    "answer": "Invoice",
+    "points": 10
+  },
+  {
+    "question": "State one example of revenue income.",
+    "options": [],
+    "answer": [
+      "sales",
+      "revenue",
+      "received"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Which side of trial balance are expenses shown?",
+    "options": [
+      "Debit",
+      "Credit",
+      "Both",
+      "None"
+    ],
+    "answer": "Debit",
+    "points": 10
+  },
+  {
+    "question": "Discount allowed is treated as:",
+    "options": [
+      "Expense",
+      "Revenue",
+      "Asset",
+      "Liability"
+    ],
+    "answer": "Expense",
+    "points": 10
+  },
+  {
+    "question": "Which financial statement shows owner’s equity?",
+    "options": [
+      "Statement of financial position",
+      "Bank reconciliation",
+      "Income statement",
+      "Cash book"
+    ],
+    "answer": "Statement of financial position",
+    "points": 10
+  },
+  {
+    "question": "What is goodwill?",
+    "options": [
+      "Cash received",
+      "Intangible asset",
+      "Current asset",
+      "Liability"
+    ],
+    "answer": "Intangible asset",
+    "points": 10
+  },
+  {
+    "question": "Which principle requires income and expense to match same period?",
+    "options": [
+      "Matching",
+      "Prudence",
+      "Consistency",
+      "Materiality"
+    ],
+    "answer": "Matching",
+    "points": 10
+  },
+  {
+    "question": "Which of these errors is a compensating error?",
+    "options": [
+      "Two errors cancel each other",
+      "Wrong account used",
+      "Omission of transaction",
+      "Transposition of digits"
+    ],
+    "answer": "Two errors cancel each other",
+    "points": 10
+  },
+  {
+    "question": "accounting80",
+    "options": [
+      "Owner introduces cash into business",
+      "A",
+      "B",
+      "C"
+    ],
+    "answer": "D",
+    "points": 10
+  },
+  {
+    "question": "accounting81",
+    "options": [
+      "Goods purchased on credit from Ali",
+      "A",
+      "B",
+      "C"
+    ],
+    "answer": "D",
+    "points": 10
+  },
+  {
+    "question": "accounting82",
+    "options": [
+      "Rent paid by cheque",
+      "A",
+      "B",
+      "C"
+    ],
+    "answer": "D",
+    "points": 10
+  },
+  {
+    "question": "accounting83",
+    "options": [
+      "Cash received from debtor John",
+      "A",
+      "B",
+      "C"
+    ],
+    "answer": "D",
+    "points": 10
+  },
+  {
+    "question": "accounting84",
+    "options": [
+      "Goods returned to supplier Ahmad",
+      "A",
+      "B",
+      "C"
+    ],
+    "answer": "D",
+    "points": 10
+  },
+  {
+    "question": "Which of the following is recorded in the cash book?",
+    "options": [
+      "Credit purchases",
+      "Cash sales",
+      "Depreciation",
+      "Bad debts"
+    ],
+    "answer": "Cash sales",
+    "points": 10
+  },
+  {
+    "question": "What type of account is “Bank overdraft”?",
+    "options": [
+      "Asset",
+      "Liability",
+      "Income",
+      "Expense"
+    ],
+    "answer": "Liability",
+    "points": 10
+  },
+  {
+    "question": "Which of these is an expense?",
+    "options": [
+      "Purchase of building",
+      "Purchase of delivery van",
+      "Repairs to machinery",
+      "Extension of factory"
+    ],
+    "answer": "Repairs to machinery",
+    "points": 10
+  },
+  {
+    "question": "Which error occurs when an entry is made on the wrong side of an account?",
+    "options": [
+      "Error of principle",
+      "Error of reversal",
+      "Error of omission",
+      "Compensating error"
+    ],
+    "answer": "Error of reversal",
+    "points": 10
+  },
+  {
+    "question": "Which account is debited when goods are bought for cash?",
+    "options": [
+      "Purchases",
+      "Cash",
+      "Capital",
+      "Sales"
+    ],
+    "answer": "Purchases",
+    "points": 10
+  },
+  {
+    "question": "Where is depreciation expense recorded?",
+    "options": [
+      "Statement of financial position",
+      "Income statement",
+      "Purchases day book",
+      "Cash book"
+    ],
+    "answer": "Income statement",
+    "points": 10
+  },
+  {
+    "question": "What is the main purpose of double entry bookkeeping?",
+    "options": [
+      "To calculate profit",
+      "To ensure accuracy",
+      "To record every transaction twice",
+      "To make accounts equal"
+    ],
+    "answer": "To ensure accuracy",
+    "points": 10
+  },
+  {
+    "question": "Which of these is a non-current liability?",
+    "options": [
+      "Bank overdraft",
+      "Mortgage loan",
+      "Accrued wages",
+      "Trade payables"
+    ],
+    "answer": "Mortgage loan",
+    "points": 10
+  },
+  {
+    "question": "Which of these is an example of drawings?",
+    "options": [
+      "Cash paid for rent",
+      "Owner takes stock for home use",
+      "Payment to supplier",
+      "Wages paid"
+    ],
+    "answer": "Owner takes stock for home use",
+    "points": 10
+  },
+  {
+    "question": "Which is a source document?",
+    "options": [
+      "Trial balance",
+      "Cash book",
+      "Invoice",
+      "Bank reconciliation"
+    ],
+    "answer": "Invoice",
+    "points": 10
+  },
+  {
+    "question": "Which account is credited when cash is received from a debtor?",
+    "options": [
+      "Cash",
+      "Debtors",
+      "Capital",
+      "Sales"
+    ],
+    "answer": "Debtors",
+    "points": 10
+  },
+  {
+    "question": "What does a suspense account record?",
+    "options": [
+      "Irrecoverable debts",
+      "Errors yet to be located",
+      "Goods returned",
+      "Depreciation"
+    ],
+    "answer": "Errors yet to be located",
+    "points": 10
+  },
+  {
+    "question": "Which principle requires that financial statements remain consistent from year to year?",
+    "options": [
+      "Prudence",
+      "Consistency",
+      "Accruals",
+      "Matching"
+    ],
+    "answer": "Consistency",
+    "points": 10
+  },
+  {
+    "question": "The capital account represents:",
+    "options": [
+      "Owner’s investment",
+      "Business profits only",
+      "Debtors",
+      "Liabilities"
+    ],
+    "answer": "Owner’s investment",
+    "points": 10
+  },
+  {
+    "question": "What is the purpose of the purchases ledger?",
+    "options": [
+      "Record all expenses",
+      "Record trade payables",
+      "Record cash purchases",
+      "Record assets"
+    ],
+    "answer": "Record trade payables",
+    "points": 10
+  },
+  {
+    "question": "Carriage outwards is shown as:",
+    "options": [
+      "Asset",
+      "Expense",
+      "Liability",
+      "Revenue"
+    ],
+    "answer": "Expense",
+    "points": 10
+  },
+  {
+    "question": "Which error is made if sales are recorded twice?",
+    "options": [
+      "Error of omission",
+      "Error of duplication",
+      "Error of commission",
+      "Error of reversal"
+    ],
+    "answer": "Error of duplication",
+    "points": 10
+  },
+  {
+    "question": "Which account is debited for drawings in goods?",
+    "options": [
+      "Purchases",
+      "Sales",
+      "Drawings",
+      "Capital"
+    ],
+    "answer": "Drawings",
+    "points": 10
+  },
+  {
+    "question": "Where are trade receivables listed?",
+    "options": [
+      "Statement of financial position (assets)",
+      "Income statement",
+      "Purchases ledger",
+      "Suspense account"
+    ],
+    "answer": "Statement of financial position (assets)",
+    "points": 10
+  },
+  {
+    "question": "Which principle prevents overstatement of assets?",
+    "options": [
+      "Prudence",
+      "Matching",
+      "Consistency",
+      "Accruals"
+    ],
+    "answer": "Prudence",
+    "points": 10
+  },
+  {
+    "question": "Which book of prime entry records petty cash transactions?",
+    "options": [
+      "Cash book",
+      "Petty cash book",
+      "Sales returns journal",
+      "Purchases journal"
+    ],
+    "answer": "Petty cash book",
+    "points": 10
+  },
+  {
+    "question": "Which of these errors does not affect the trial balance?",
+    "options": [
+      "human error",
+      "Error of principle",
+      "Posting error",
+      "Error of addition"
+    ],
+    "answer": "Error of principle",
+    "points": 10
+  },
+  {
+    "question": "Which of these is NOT a current liability?",
+    "options": [
+      "Trade payables",
+      "Bank overdraft",
+      "Loan repayable in 5 years",
+      "Accrued expenses"
+    ],
+    "answer": "Loan repayable in 5 years",
+    "points": 10
+  },
+  {
+    "question": "Which account is credited when bank charges are deducted?",
+    "options": [
+      "Bank",
+      "Capital",
+      "Expenses",
+      "Cash"
+    ],
+    "answer": "Bank",
+    "points": 10
+  },
+  {
+    "question": "A business purchased fixtures on credit. Which accounts are affected?",
+    "options": [
+      "Fixtures and trade payables",
+      "Purchases and bank",
+      "Fixtures and bank",
+      "Capital and fixtures"
+    ],
+    "answer": "Fixtures and trade payables",
+    "points": 10
+  },
+  {
+    "question": "Which type of error occurs if figures are reversed, e.g., $54 as $45?",
+    "options": [
+      "Error of omission",
+      "Error of transposition",
+      "Error of commission",
+      "Error of principle"
+    ],
+    "answer": "Error of transposition",
+    "points": 10
+  },
+  {
+    "question": "Which item is NOT shown in the income statement?",
+    "options": [
+      "Sales",
+      "Purchases",
+      "Rent",
+      "Motor vehicles"
+    ],
+    "answer": "Motor vehicles",
+    "points": 10
+  },
+  {
+    "question": "Which side of the ledger shows credit balances?",
+    "options": [
+      "Left",
+      "Right",
+      "Both",
+      "None"
+    ],
+    "answer": "Right",
+    "points": 10
+  },
+  {
+    "question": "What is entered in the purchases returns day book?",
+    "options": [
+      "Goods sold",
+      "Goods returned by customers",
+      "Goods returned to suppliers",
+      "Goods bought for cash"
+    ],
+    "answer": "Goods returned to suppliers",
+    "points": 10
+  },
+  {
+    "question": "Which financial statement shows assets, liabilities, and capital?",
+    "options": [
+      "Statement of financial position",
+      "Income statement",
+      "Trial balance",
+      "Bank reconciliation"
+    ],
+    "answer": "Statement of financial position",
+    "points": 10
+  },
+  {
+    "question": "Define accrued expense.",
+    "options": [],
+    "answer": [
+      "not yet paid",
+      "haven't paid",
+      "have not paid"
+    ],
+    "points": 15
+  }
+]

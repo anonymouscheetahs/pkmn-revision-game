@@ -7,32 +7,32 @@ const PACKS = {
   twilight:  { name: "Twilight Masquerade", image: "twilight_masquerade_art.png", pool: "twilightcards.json", background: "yellow.png" },
   sv151:     { name: "Scarlet & Violet 151", image: "pokemon_151_art.png", pool: "151cards.json", background: "blue.png" }
 };
-const QUIZ_CATEGORIES = ['biology','chemistry','physics','math','accounting','econs'];
+// math removed
+const QUIZ_CATEGORIES = ['biology','chemistry','physics','accounting','econs'];
 
 // -----------------
-// Player Profile / Leaderboard / Market
+// Local storage keys & leaderboard
+// -----------------
+const LS_PROFILE = "pk_profile_v1";
+const LS_LEADERBOARD = "pk_leaderboard_v1";
+const LS_MARKET = "pk_market_v1";
+
+let leaderboard = []; // will hold { name, uniqueCards, uid? }
+
+// -----------------
+// Player Profile / Market
 // -----------------
 let playerProfile = {
+  uid: null,
   name: "Player",
   coins: 500,
   packsOpened: 0,
   quizScore: 0,
-  collection: { prismatic: new Set(), twilight: new Set(), sv151: new Set() }, // unique ids
-  inventoryCounts: { prismatic: {}, twilight: {}, sv151: {} }, // counts per card id/name
+  collection: { prismatic: new Set(), twilight: new Set(), sv151: new Set() },
+  inventoryCounts: { prismatic: {}, twilight: {}, sv151: {} },
   totalCards: 0,
   avatar: null
 };
-
-let leaderboard = [
-  { name: "Ash", score: 80 },
-  { name: "Misty", score: 70 },
-  { name: "Brock", score: 60 },
-  { name: playerProfile.name, score: playerProfile.quizScore }
-];
-
-const LS_PROFILE = "pk_profile_v1";
-const LS_LEADERBOARD = "pk_leaderboard_v1";
-const LS_MARKET = "pk_market_v1";
 
 // Firestore/auth refs (attached if firebase present)
 let firestore = null;
@@ -66,7 +66,7 @@ async function fetchTextWithEncodingFallback(url) {
 }
 
 // -----------------
-// Firebase init (detect if already initialized in index.html)
+// Firebase init
 // -----------------
 function initFirebase() {
   if (!window.firebase) {
@@ -107,7 +107,10 @@ function loadLocalState() {
 
   try {
     const lb = localStorage.getItem(LS_LEADERBOARD);
-    if (lb) leaderboard = JSON.parse(lb);
+    if (lb) {
+      leaderboard = JSON.parse(lb);
+      if (!Array.isArray(leaderboard)) leaderboard = [];
+    }
   } catch (e) { console.warn("load leaderboard failed", e); }
 }
 
@@ -178,7 +181,6 @@ function updateProfile() {
   if (el("playerID")) el("playerID").textContent = playerProfile.id || "000001";
   if (el("quizScore")) el("quizScore").textContent = playerProfile.quizScore || 0;
 
-  // avatar
   const avatarEl = document.getElementById("avatarImg");
   if (avatarEl) {
     const url = playerProfile.avatar || "default_avatar.png";
@@ -187,60 +189,12 @@ function updateProfile() {
 
   saveLocalState();
 
-  // push to firestore leaderboard (best-effort)
-  saveLeaderboardToFirebase(playerProfile).catch(()=>{});
-}
-
-function updateLeaderboard() {
-  document.querySelectorAll("#leaderboardBox, #leaderboardBox2, .leaderboard-box").forEach(box => {
-    box.innerHTML = "<h3>Leaderboard</h3>";
-    leaderboard
-      .sort((a,b)=>( (b.uniqueCards ?? b.score ?? 0) - (a.uniqueCards ?? a.score ?? 0) ))
-      .slice(0,10)
-      .forEach(e => {
-        const val = e.uniqueCards ?? e.score ?? 0;
-        box.innerHTML += `<p>${e.name}: ${val}</p>`;
-      });
-  });
+  // best-effort push current player's profile to firestore players collection
+  saveProfileToFirestore().catch(()=>{});
 }
 
 // -----------------
-// Firestore leaderboard helpers
-// -----------------
-async function saveLeaderboardToFirebase(profile) {
-  if (!firestore || !firebaseAuth) return;
-  try {
-    const user = firebaseAuth.currentUser;
-    if (!user) return;
-    const uid = user.uid;
-    const name = profile.name || user.displayName || "anonymous";
-    const unique = getTotalUniqueCards(profile);
-    await firestore.collection("leaderboard").doc(uid).set({
-      uid,
-      name,
-      uniqueCards: unique,
-      coins: Number(profile.coins || 0),
-      packsOpened: Number(profile.packsOpened || 0),
-      updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-    }, { merge: true });
-    dbg("Saved leaderboard to firestore");
-  } catch (e) { console.warn("saveLeaderboardToFirebase", e); }
-}
-
-async function loadLeaderboardFromFirebase(limit=50) {
-  if (!firestore) return;
-  try {
-    const q = firestore.collection("leaderboard").orderBy("uniqueCards","desc").limit(limit);
-    const snap = await q.get();
-    const arr = [];
-    snap.forEach(doc => arr.push(doc.data()));
-    leaderboard = arr;
-    updateLeaderboard();
-  } catch (e) { console.warn("loadLeaderboardFromFirebase", e); }
-}
-
-// -----------------
-// Helpers
+// Leaderboard functions (local + firestore)
 // -----------------
 function getTotalUniqueCards(profile) {
   const coll = profile && profile.collection ? profile.collection : {};
@@ -253,8 +207,86 @@ function getTotalUniqueCards(profile) {
   return up + ut + us;
 }
 
+async function saveProfileToFirestore() {
+  if (!firestore || !playerProfile.uid) return;
+  try {
+    const uniqueCards = getTotalUniqueCards(playerProfile);
+    await firestore.collection("players").doc(playerProfile.uid).set({
+      name: playerProfile.name,
+      uniqueCards,
+      coins: playerProfile.coins,
+      packsOpened: playerProfile.packsOpened,
+      totalCards: playerProfile.totalCards,
+      avatar: playerProfile.avatar || null,
+      updated: firebase.firestore.FieldValue.serverTimestamp()
+    }, { merge: true });
+    dbg("Saved profile to Firestore");
+  } catch(e) { console.warn("saveProfileToFirestore failed", e); }
+}
+
+async function loadLeaderboardFromFirebase(limit=20) {
+  if (!firestore) return;
+  try {
+    const snapshot = await firestore.collection("players").orderBy("uniqueCards","desc").limit(limit).get();
+    const arr = [];
+    let rank = 1;
+    const box = document.getElementById("leaderboardBox2");
+    if (!box) return;
+    let html = "<h3>Top Trainers</h3>";
+    snapshot.forEach(doc => {
+      const d = doc.data();
+      html += `<p>${rank}. ${d.name || 'Unknown'} — ${d.uniqueCards || 0} unique cards</p>`;
+      rank++;
+    });
+    box.innerHTML = html;
+  } catch (e) { console.warn("loadLeaderboardFromFirebase", e); }
+}
+
+function updateLeaderboard() {
+  // prefer Firestore view if available & connected
+  if (firestore) {
+    loadLeaderboardFromFirebase().catch(()=>{});
+    return;
+  }
+
+  // local fallback: read saved leaderboard array, ensure current player is included and sorted
+  try {
+    const local = Array.isArray(leaderboard) ? leaderboard.slice() : [];
+    // ensure current player exists in array (match by uid or name)
+    const unique = getTotalUniqueCards(playerProfile);
+    const ident = playerProfile.uid || playerProfile.name || "local-player";
+    let found = false;
+    for (let i=0;i<local.length;i++){
+      if ((local[i].uid && playerProfile.uid && local[i].uid === playerProfile.uid) || local[i].name === playerProfile.name) {
+        local[i].uniqueCards = unique;
+        found = true;
+        break;
+      }
+    }
+    if (!found) local.push({ uid: playerProfile.uid || null, name: playerProfile.name || "Player", uniqueCards: unique });
+
+    // sort descending
+    local.sort((a,b) => (b.uniqueCards || 0) - (a.uniqueCards || 0));
+    // keep top 20
+    const shown = local.slice(0,20);
+    // render
+    document.querySelectorAll("#leaderboardBox, #leaderboardBox2, .leaderboard-box").forEach(box => {
+      let html = "<h3>Leaderboard</h3>";
+      shown.forEach((e, idx) => {
+        html += `<p>${idx+1}. ${e.name}: ${e.uniqueCards || 0}</p>`;
+      });
+      box.innerHTML = html;
+    });
+    // persist
+    leaderboard = local;
+    localStorage.setItem(LS_LEADERBOARD, JSON.stringify(leaderboard));
+  } catch (e) {
+    console.warn("updateLeaderboard error", e);
+  }
+}
+
 // -----------------
-// Pack opening (inventory counts tracked & saved)
+// Pack opening
 // -----------------
 async function loadPack(keyOrFile) {
   let key = keyOrFile;
@@ -266,10 +298,7 @@ async function loadPack(keyOrFile) {
   const cfg = PACKS[key];
   if (!cfg) return alert("Bad pack");
 
-  if (playerProfile.coins < 150) {
-    alert("Not enough coins!");
-    return;
-  }
+  if (playerProfile.coins < 150) { alert("Not enough coins!"); return; }
   playerProfile.coins -= 150;
   playerProfile.packsOpened++;
   updateProfile();
@@ -319,8 +348,6 @@ async function loadPack(keyOrFile) {
   pack.forEach((card,i) => {
     const div = document.createElement("div");
     div.className = "overlay-card";
-    div.style.setProperty("--t", `${i*2}px`);
-    div.style.setProperty("--l", `${i*2}px`);
     div.style.zIndex = 100 + i;
     const imgSrc = card && card.img ? card.img : (cfg.image || "");
     const alt = (card && (card.name || card.id)) ? (card.name || card.id) : "card";
@@ -343,11 +370,9 @@ async function loadPack(keyOrFile) {
       try { topEl.remove(); } catch(e){}
       const cardId = (data && (data.name || data.id)) ? (data.name || data.id) : JSON.stringify(data);
 
-      // increment counts
       playerProfile.inventoryCounts = playerProfile.inventoryCounts || { prismatic:{}, twilight:{}, sv151:{} };
       playerProfile.inventoryCounts[key][cardId] = (playerProfile.inventoryCounts[key][cardId] || 0) + 1;
 
-      // also add to unique set
       if (!playerProfile.collection[key]) playerProfile.collection[key] = new Set();
       playerProfile.collection[key].add(cardId);
 
@@ -355,9 +380,7 @@ async function loadPack(keyOrFile) {
       updateProfile();
 
       if (remainingEl) remainingEl.textContent = topIdx >= 0 ? `${topIdx + 1} cards left` : "All cards revealed!";
-      if (topIdx < 0) {
-        setTimeout(() => { document.getElementById("packOverlayClose")?.click(); }, 900);
-      }
+      if (topIdx < 0) { setTimeout(() => { document.getElementById("packOverlayClose")?.click(); }, 900); }
     }, { once: true });
   };
 }
@@ -365,10 +388,76 @@ async function loadPack(keyOrFile) {
 function openPack(file) { return loadPack(file); }
 
 // -----------------
-// Quiz (per-category JSON) - unchanged from earlier implementation
+// Quiz (spammable, points from JSON, images, typing answers, wrong -> 3s X overlay)
 // -----------------
-let currentQuiz = { questions: [], idx: 0, score: 0, category: null };
+let currentQuiz = {
+  fullQuestions: [],   // all loaded questions for the category
+  pool: [],            // remaining questions to ask (popped)
+  scoreThisSession: 0, // optional local counter (playerProfile.quizScore is global/cumulative)
+  category: null
+};
 
+// utility to create a fullscreen X overlay for wrong answers (re-used)
+function showWrongOverlay(durationMs = 3000) {
+  // if overlay already exists, don't duplicate
+  let o = document.getElementById("wrongOverlay");
+  if (!o) {
+    o = document.createElement("div");
+    o.id = "wrongOverlay";
+    // inline styles so no HTML/CSS edits required
+    Object.assign(o.style, {
+      position: "fixed",
+      inset: "0",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      zIndex: "3200",
+      background: "rgba(255,0,0,0.12)",
+      backdropFilter: "blur(2px)",
+      transition: "opacity 200ms ease",
+      opacity: "0"
+    });
+    const cross = document.createElement("div");
+    cross.innerHTML = "✕";
+    Object.assign(cross.style, {
+      fontSize: "120px",
+      color: "rgba(255,0,0,0.92)",
+      textShadow: "0 6px 18px rgba(0,0,0,0.25)",
+      transform: "scale(0.9)",
+      transition: "transform 180ms ease"
+    });
+    o.appendChild(cross);
+    document.body.appendChild(o);
+    // force reflow to animate
+    requestAnimationFrame(()=> { o.style.opacity = "1"; cross.style.transform = "scale(1)"; });
+  } else {
+    // ensure visible
+    o.style.opacity = "1";
+    if (o.firstChild) o.firstChild.style.transform = "scale(1)";
+  }
+
+  // hide after duration
+  return new Promise(resolve => {
+    setTimeout(()=> {
+      if (!o) return resolve();
+      o.style.opacity = "0";
+      if (o.firstChild) o.firstChild.style.transform = "scale(0.9)";
+      // remove after animation
+      setTimeout(()=> { try { o.remove(); } catch(e){}; resolve(); }, 220);
+    }, durationMs);
+  });
+}
+
+// shuffle in-place
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; --i) {
+    const j = Math.floor(Math.random()*(i+1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// load the category JSON and prepare an infinite-ish pool
 async function loadQuizCategory(cat) {
   const container = document.getElementById("quizContainer");
   container.innerHTML = "<p>Loading questions...</p>";
@@ -380,11 +469,28 @@ async function loadQuizCategory(cat) {
       for (const k in parsed) if (Array.isArray(parsed[k])) qarr = qarr.concat(parsed[k]);
     }
     if (!qarr.length) { container.innerHTML = "<p>No questions found for this category.</p>"; return; }
-    const shuffled = qarr.slice().sort(()=>Math.random()-0.5);
-    currentQuiz.questions = shuffled.slice(0, 10);
-    currentQuiz.idx = 0;
-    currentQuiz.score = 0;
+
+    // Normalize: ensure 'answer' maybe array, ensure points numeric, optional image
+    qarr = qarr.map(q => {
+      const copy = Object.assign({}, q);
+      // unify answer to either array or string as given (we accept either)
+      if (Array.isArray(copy.answer)) {
+        copy._answers = copy.answer.map(a => String(a).toLowerCase().trim());
+      } else {
+        copy._answers = [String(copy.answer || "").toLowerCase().trim()];
+      }
+      copy.points = Number(copy.points || 1);
+      return copy;
+    });
+
+    // store fullQuestions (clone & shuffle)
+    currentQuiz.fullQuestions = shuffleArray(qarr.slice());
+    // pool starts as a copy; we'll pop from it, and when empty refill with shuffle of fullQuestions
+    currentQuiz.pool = currentQuiz.fullQuestions.slice();
     currentQuiz.category = cat;
+    currentQuiz.scoreThisSession = 0;
+
+    // render immediately the first question and then continue infinitely
     renderQuizQuestion();
   } catch (e) {
     console.error("loadQuizCategory", e);
@@ -392,77 +498,178 @@ async function loadQuizCategory(cat) {
   }
 }
 
+// pick next question from pool, refill if empty
+function getNextQuestion() {
+  if (!currentQuiz.pool || !currentQuiz.pool.length) {
+    // refill a shuffled copy of fullQuestions
+    currentQuiz.pool = shuffleArray(currentQuiz.fullQuestions.slice());
+  }
+  return currentQuiz.pool.pop();
+}
+
+// render a single question (no Next button) — after answering we immediately show another
 function renderQuizQuestion() {
   const container = document.getElementById("quizContainer");
   const controls = document.getElementById("quizControls");
   container.innerHTML = "";
   controls.innerHTML = "";
 
-  const q = currentQuiz.questions[currentQuiz.idx];
+  // choose question
+  const q = getNextQuestion();
   if (!q) {
-    container.innerHTML = `<p>Quiz finished. Score: ${currentQuiz.score}/${currentQuiz.questions.length}</p>`;
-    playerProfile.quizScore = currentQuiz.score;
-    updateProfile();
+    container.innerHTML = "<p>No questions available.</p>";
     return;
   }
 
+  // show question
   const qBox = document.createElement("div");
-  qBox.innerHTML = `<h3>Q${currentQuiz.idx+1}. ${q.question || "(no question text)"}</h3>`;
-  const options = q.options && Array.isArray(q.options) ? q.options.slice() : [];
+  qBox.innerHTML = `<h3 style="margin:0 0 8px"> ${q.question || "(no question text)"} </h3>`;
 
-  if (!options.length && typeof q.answer !== "undefined") options.push(q.answer);
-
-  for (let i = options.length - 1; i > 0; --i) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [options[i], options[j]] = [options[j], options[i]];
+  // optional image
+  if (q.image) {
+    const img = document.createElement("img");
+    img.src = q.image;
+    img.alt = "question image";
+    img.style.maxWidth = "360px";
+    img.style.display = "block";
+    img.style.margin = "10px 0";
+    qBox.appendChild(img);
   }
 
-  const list = document.createElement("div");
-  options.forEach(opt => {
-    const btn = document.createElement("button");
-    btn.className = "option-btn";
-    btn.textContent = opt;
-    btn.addEventListener("click", () => {
-      Array.from(list.querySelectorAll("button")).forEach(b => b.disabled = true);
-      const correct = String(opt).trim() === String(q.answer).trim();
-      if (correct) {
-        btn.classList.add("correct");
-        currentQuiz.score++;
-      } else {
-        btn.classList.add("wrong");
-        Array.from(list.querySelectorAll("button")).forEach(b => {
-          if (b.textContent.trim() === String(q.answer).trim()) b.classList.add("correct");
-        });
-      }
-      const next = document.createElement("button");
-      next.className = "primary";
-      next.textContent = (currentQuiz.idx + 1 < currentQuiz.questions.length) ? "Next" : "Finish";
-      next.addEventListener("click", () => {
-        currentQuiz.idx++;
-        renderQuizQuestion();
-      });
-      controls.innerHTML = `<div>Score: ${currentQuiz.score}/${currentQuiz.questions.length}</div>`;
-      controls.appendChild(next);
-    });
-    list.appendChild(btn);
-  });
+  // show controls (score display)
+  controls.innerHTML = `<div>Score: ${playerProfile.quizScore || 0}</div>`;
 
-  qBox.appendChild(list);
+  // if options exist, render buttons; otherwise typing box
+  const options = (q.options && Array.isArray(q.options) && q.options.length) ? q.options.slice() : null;
+
+  // helper to continue to next question
+  const continueToNext = (delayMs = 400) => {
+    setTimeout(()=> {
+      // immediately render next question
+      renderQuizQuestion();
+    }, delayMs);
+  };
+
+  if (options) {
+    // shuffle options
+    shuffleArray(options);
+    const list = document.createElement("div");
+    list.style.marginTop = "8px";
+    options.forEach(opt => {
+      const btn = document.createElement("button");
+      btn.className = "option-btn";
+      btn.textContent = opt;
+      btn.style.cursor = "pointer";
+      btn.style.marginBottom = "8px";
+      btn.addEventListener("click", async () => {
+        // disable all options
+        Array.from(list.querySelectorAll("button")).forEach(b => b.disabled = true);
+        const guess = String(opt).trim().toLowerCase();
+        const isCorrect = q._answers.some(a => a === guess);
+        if (isCorrect) {
+          // award points
+          playerProfile.quizScore = Number(playerProfile.quizScore || 0) + Number(q.points || 1);
+          currentQuiz.scoreThisSession += Number(q.points || 1);
+          // visual feedback
+          btn.classList.add("correct");
+          updateProfile();
+          // continue quickly
+          continueToNext(450);
+        } else {
+          btn.classList.add("wrong");
+          // highlight the correct option if present
+          Array.from(list.querySelectorAll("button")).forEach(b => {
+            if (String(b.textContent).trim().toLowerCase() === q._answers[0]) b.classList.add("correct");
+            b.disabled = true;
+          });
+          // show big overlay X for 3s then continue (no points)
+          await showWrongOverlay(3000);
+          continueToNext(120);
+        }
+      });
+      list.appendChild(btn);
+    });
+    qBox.appendChild(list);
+  } else {
+    // typing input mode
+    const row = document.createElement("div");
+    row.style.marginTop = "10px";
+    const input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "Type your answer...";
+    input.style.padding = "8px";
+    input.style.width = "65%";
+    input.style.borderRadius = "8px";
+    const submit = document.createElement("button");
+    submit.className = "primary";
+    submit.textContent = "Submit";
+    submit.style.marginLeft = "8px";
+
+    let locked = false;
+    const doSubmit = async () => {
+      if (locked) return;
+      locked = true;
+      input.disabled = true;
+      submit.disabled = true;
+      const user = String(input.value || "").trim().toLowerCase();
+      // correct if user's answer contains any acceptable answer OR matches exactly any answer
+      let isCorrect = q._answers.some(a => {
+        if (!a) return false;
+        return user.includes(a) || a.includes(user) || user === a;
+      });
+
+      if (isCorrect) {
+        playerProfile.quizScore = Number(playerProfile.quizScore || 0) + Number(q.points || 1);
+        currentQuiz.scoreThisSession += Number(q.points || 1);
+        updateProfile();
+        // quick success flash
+        input.style.border = "2px solid green";
+        continueToNext(500);
+      } else {
+        input.style.border = "2px solid red";
+        await showWrongOverlay(3000);
+        continueToNext(120);
+      }
+    };
+
+    submit.addEventListener("click", doSubmit);
+    input.addEventListener("keydown", (e) => { if (e.key === "Enter") doSubmit(); });
+    row.appendChild(input);
+    row.appendChild(submit);
+    qBox.appendChild(row);
+  }
+
   container.appendChild(qBox);
-  controls.innerHTML = `<div>Category: ${currentQuiz.category} — Question ${currentQuiz.idx+1}/${currentQuiz.questions.length}</div>`;
+  // show small meta about points
+  const pts = document.createElement("div");
+  pts.style.fontSize = "13px";
+  pts.style.color = "#444";
+  pts.style.marginTop = "8px";
+  pts.textContent = `Points for this question: ${q.points || 1}`;
+  container.appendChild(pts);
 }
 
+// start quiz: load category JSON if not loaded already and begin
 function startQuiz(category) {
   if (!category) {
     const container = document.getElementById("quizContainer");
     container.innerHTML = "<p>Select a category above to start the quiz.</p>";
     return;
   }
-  loadQuizCategory(category);
+  // if loaded and different category, reload
+  if (currentQuiz.category && currentQuiz.category !== category) {
+    currentQuiz.fullQuestions = [];
+    currentQuiz.pool = [];
+  }
+  if (!currentQuiz.fullQuestions.length || currentQuiz.category !== category) {
+    loadQuizCategory(category);
+  } else {
+    // already loaded: just render next question
+    renderQuizQuestion();
+  }
 }
-
 // -----------------
-// Card Dex: load pack JSON and show counts + filtering
+// Card Dex (unchanged)
 // -----------------
 async function loadPackJson(poolFile) {
   try {
@@ -504,7 +711,6 @@ async function renderCardDex() {
     items.forEach(card => {
       const id = card.name || card.id || JSON.stringify(card);
       const count = (playerProfile.inventoryCounts && playerProfile.inventoryCounts[p.key] && playerProfile.inventoryCounts[p.key][id]) ? playerProfile.inventoryCounts[p.key][id] : 0;
-      // filter logic
       if (searchText && !(String(id).toLowerCase().includes(searchText))) return;
       if (ownedOnly && count <= 0) return;
 
@@ -522,7 +728,7 @@ async function renderCardDex() {
 }
 
 // -----------------
-// Marketplace: local storage + Firestore sync (list from inventory enforced)
+// Marketplace (unchanged except keys)
 // -----------------
 function loadMarketLocal() {
   try {
@@ -530,19 +736,14 @@ function loadMarketLocal() {
     return raw ? JSON.parse(raw) : [];
   } catch (e) { return []; }
 }
-function saveMarketLocal(listings) {
-  localStorage.setItem(LS_MARKET, JSON.stringify(listings));
-}
+function saveMarketLocal(listings) { localStorage.setItem(LS_MARKET, JSON.stringify(listings)); }
 
 async function createMarketListing(packKey, cardName, price, fromInventory=false) {
   if (!cardName || !price) return alert("Card name and price required.");
-  // If listing from inventory: require ownership
   if (fromInventory) {
     const count = (playerProfile.inventoryCounts && playerProfile.inventoryCounts[packKey] && playerProfile.inventoryCounts[packKey][cardName]) ? playerProfile.inventoryCounts[packKey][cardName] : 0;
     if (count <= 0) return alert("You don't own any copy of that card to list.");
-    // decrement immediately (reserve)
     playerProfile.inventoryCounts[packKey][cardName] = count - 1;
-    // if count becomes zero, keep the key with 0
     updateProfile();
     saveLocalState();
   }
@@ -556,19 +757,15 @@ async function createMarketListing(packKey, cardName, price, fromInventory=false
     sellerName: playerProfile.name || "anonymous",
     sellerId: (window.firebase && firebase.auth && firebase.auth().currentUser) ? firebase.auth().currentUser.uid : `local-${id}`,
     createdAt: Date.now(),
-    reserved: !!fromInventory // mark reserved so we can restore if cancelled
+    reserved: !!fromInventory
   };
 
-  // store locally
   const local = loadMarketLocal();
   local.push(listing);
   saveMarketLocal(local);
 
-  // push to firestore if available
   if (firestore) {
-    try {
-      await firestore.collection("marketplace").doc(listing.id).set(listing);
-    } catch (e) { console.warn("Failed to save listing to firestore", e); }
+    try { await firestore.collection("marketplace").doc(listing.id).set(listing); } catch (e) { console.warn("Failed to save listing to firestore", e); }
   }
 
   renderMarketListings();
@@ -588,23 +785,16 @@ async function fetchMarketListings() {
 }
 
 async function cancelListing(listingId) {
-  // find listing (local or firestore)
   let listing = null;
-  // check local first
   let local = loadMarketLocal();
   const li = local.find(l => l.id === listingId);
   if (li) listing = li;
-  // delete in firestore if present
   if (firestore) {
-    try {
-      await firestore.collection("marketplace").doc(listingId).delete();
-    } catch (e) { /* ignore if not found */ }
+    try { await firestore.collection("marketplace").doc(listingId).delete(); } catch (e) {}
   }
-  // always remove from local store too
   local = local.filter(l => l.id !== listingId);
   saveMarketLocal(local);
 
-  // if this listing reserved a seller card and this client is the seller, restore inventory
   if (listing && listing.reserved) {
     const sellerMatches = listing.sellerId && ((window.firebase && firebase.auth && firebase.auth().currentUser && listing.sellerId === firebase.auth().currentUser.uid) || listing.sellerId.startsWith("local-"));
     if (sellerMatches) {
@@ -614,7 +804,6 @@ async function cancelListing(listingId) {
       saveLocalState();
     }
   }
-
   renderMarketListings();
 }
 
@@ -623,29 +812,20 @@ async function buyListing(listingId) {
   const ls = listings.find(l => l.id === listingId);
   if (!ls) return alert("Listing not found.");
   if (ls.sellerId === ((window.firebase && firebase.auth && firebase.auth().currentUser) ? firebase.auth().currentUser.uid : `local-${listingId}`) ) {
-    // seller trying to buy their own listing -> treat as cancel
     return cancelListing(listingId);
   }
   if (playerProfile.coins < ls.price) return alert("Not enough coins.");
-  // transfer coin from buyer
   playerProfile.coins -= ls.price;
-  // buyer receives the card (1 copy)
   playerProfile.inventoryCounts = playerProfile.inventoryCounts || { prismatic:{}, twilight:{}, sv151:{} };
   playerProfile.inventoryCounts[ls.pack][ls.cardName] = (playerProfile.inventoryCounts[ls.pack][ls.cardName] || 0) + 1;
   playerProfile.totalCards = Number(playerProfile.totalCards || 0) + 1;
 
-  // remove listing from stores
   if (firestore) {
-    try {
-      await firestore.collection("marketplace").doc(listingId).delete();
-    } catch (e) { console.warn("Failed to delete listing from firestore", e); }
+    try { await firestore.collection("marketplace").doc(listingId).delete(); } catch (e) { console.warn("Failed to delete listing from firestore", e); }
   } else {
     const local = loadMarketLocal().filter(l => l.id !== listingId);
     saveMarketLocal(local);
   }
-
-  // Optionally credit seller — for now we do **not** automatically credit seller's local coins unless you want that behaviour.
-  // (If you want seller credited, we can implement a Firestore update to their profile doc when seller exists.)
 
   updateProfile();
   renderMarketListings();
@@ -657,9 +837,7 @@ async function renderMarketListings() {
   container.innerHTML = "<p>Loading market...</p>";
   const listings = await fetchMarketListings();
   container.innerHTML = "";
-  if (!listings.length) {
-    container.innerHTML = "<p>No listings currently.</p>"; return;
-  }
+  if (!listings.length) { container.innerHTML = "<p>No listings currently.</p>"; return; }
   listings.forEach(l => {
     const el = document.createElement("div");
     el.className = "listing";
@@ -671,17 +849,14 @@ async function renderMarketListings() {
     }).catch(()=>{});
     const meta = document.createElement("div");
     meta.className = "meta";
-    meta.innerHTML = `<div style="font-weight:700">${l.cardName}</div>
-                      <div style="font-size:13px;color:#666">${l.sellerName} • ${l.pack} ${l.reserved ? '• (from inventory)' : ''}</div>`;
+    meta.innerHTML = `<div style="font-weight:700">${l.cardName}</div><div style="font-size:13px;color:#666">${l.sellerName} • ${l.pack} ${l.reserved ? '• (from inventory)' : ''}</div>`;
     const actions = document.createElement("div");
     actions.className = "actions";
     const price = document.createElement("div");
-    price.style.fontWeight = "700";
-    price.textContent = `${l.price} coins`;
+    price.style.fontWeight = "700"; price.textContent = `${l.price} coins`;
     const buyBtn = document.createElement("button");
     buyBtn.className = "primary";
 
-    // decide whether currently signed in user is the seller
     const isSeller = (window.firebase && firebase.auth && firebase.auth().currentUser && l.sellerId === firebase.auth().currentUser.uid) || (l.sellerId && l.sellerId.startsWith("local-") && l.sellerId.endsWith(l.id));
     buyBtn.textContent = isSeller ? "Cancel" : "Buy";
     buyBtn.addEventListener("click", () => {
@@ -698,7 +873,41 @@ async function renderMarketListings() {
 }
 
 // -----------------
-// Wire up UI controls: quiz categories, profile save, carddex filter, bazaar form
+// Small helper: pack launcher to avoid earlier error
+// -----------------
+function renderPackLauncher() {
+  const launcher = document.getElementById("packLauncher");
+  if (!launcher) return;
+  launcher.innerHTML = "";
+  Object.entries(PACKS).forEach(([key,cfg]) => {
+    const card = document.createElement("div");
+    card.className = "pack-option";
+    card.innerHTML = `<img src="${cfg.image}" alt="${cfg.name}" style="width:160px;border-radius:10px"><div style="font-weight:700;margin-top:6px;color:#0b2545">${cfg.name}</div>`;
+    card.addEventListener("click", () => loadPack(key));
+    launcher.appendChild(card);
+  });
+}
+
+// -----------------
+// Menu helpers (mobile friendly)
+// -----------------
+function openMenu() {
+  document.getElementById("sidebar")?.classList.add("active");
+  document.getElementById("overlay")?.classList.add("active");
+  document.body.classList.add("menu-open");
+}
+function closeMenu() {
+  document.getElementById("sidebar")?.classList.remove("active");
+  document.getElementById("overlay")?.classList.remove("active");
+  document.body.classList.remove("menu-open");
+}
+function toggleMenu() {
+  const isActive = document.getElementById("sidebar")?.classList.contains("active");
+  if (isActive) closeMenu(); else openMenu();
+}
+
+// -----------------
+// Wire up UI controls
 // -----------------
 function wireUI() {
   // quiz category buttons
@@ -706,15 +915,17 @@ function wireUI() {
     btn.addEventListener("click", () => {
       const cat = btn.dataset.cat;
       startQuiz(cat);
+      closeMenu();
     });
   });
 
-  // menu buttons
+  // menu buttons (also close menu when selecting)
   document.querySelectorAll('#sidebar button[data-section]').forEach(btn => {
     btn.addEventListener('click', () => {
       showSection(btn.dataset.section);
       if (btn.dataset.section === "carddex") renderCardDex();
       if (btn.dataset.section === "bazaar") renderMarketListings();
+      closeMenu();
     });
   });
 
@@ -733,11 +944,8 @@ function wireUI() {
       if (v) {
         playerProfile.name = v;
         if (nameDisplay) nameDisplay.textContent = v;
-        // if firebase auth present, update profile there too
         if (window.firebase && firebase.auth && firebase.auth().currentUser) {
-          try {
-            firebase.auth().currentUser.updateProfile({ displayName: v }).catch(()=>{});
-          } catch(e){/* ignore */ }
+          try { firebase.auth().currentUser.updateProfile({ displayName: v }).catch(()=>{}); } catch(e){}
         }
         updateProfile();
       } else {
@@ -763,7 +971,7 @@ function wireUI() {
 }
 
 // -----------------
-// show section helper
+// Sections
 // -----------------
 function showSection(sectionId) {
   document.querySelectorAll(".section").forEach(s => s.style.display = "none");
@@ -780,23 +988,29 @@ window.addEventListener("DOMContentLoaded", () => {
   dbg("app init");
   loadLocalState();
   initFirebase();
-  if (firestore && firebase.auth) {
+
+  if (window.firebase && firebase.auth) {
     firebaseAuth = firebase.auth();
     firebaseAuth.onAuthStateChanged(u => {
       if (u) {
         dbg("User signed in:", u.uid);
-        // optionally auto-load leaderboard
+        playerProfile.uid = u.uid;
+        // sync name/avatar if firebase knows it
+        playerProfile.name = playerProfile.name || u.displayName || playerProfile.name;
+        playerProfile.avatar = playerProfile.avatar || u.photoURL || playerProfile.avatar;
+        initFirebase();
         loadLeaderboardFromFirebase().catch(()=>{});
       }
     });
   }
+
   renderPackLauncher();
   updateProfile();
   updateLeaderboard();
   showSection("home");
   wireUI();
 
-  // show placeholder for quiz
+  // placeholder for quiz
   startQuiz();
 
   // init Google Identity btn if present
@@ -811,86 +1025,67 @@ window.addEventListener("DOMContentLoaded", () => {
       if (gsiButtonContainer) {
         google.accounts.id.renderButton(gsiButtonContainer, { theme: "outline", size: "large" });
       }
-    } else {
-      dbg("Google Identity SDK not loaded (yet)");
-    }
+    } else dbg("Google Identity SDK not loaded (yet)");
   } catch (e) { console.warn("Google init error", e); }
 
   document.getElementById("googleLogoutBtn")?.addEventListener("click", handleGoogleLogout);
-  document.getElementById("menu-btn")?.addEventListener("click", () => {
-    document.getElementById("sidebar")?.classList.toggle("active");
-    document.getElementById("overlay")?.classList.toggle("active");
-  });
-  document.getElementById("overlay")?.addEventListener("click", () => {
-    document.getElementById("sidebar")?.classList.remove("active");
-    document.getElementById("overlay")?.classList.remove("active");
-  });
+
+  // menu toggle
+  document.getElementById("menu-btn")?.addEventListener("click", () => toggleMenu());
+  document.getElementById("overlay")?.addEventListener("click", () => closeMenu());
+  // close on Esc
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
 });
 
 // -----------------
-// Google sign-in handlers (update: prompt for display name & save)
+// Google sign-in handlers
 // -----------------
 let prevManualName = null;
 
 function handleGoogleLogin(response) {
   try {
-    if (!response || !response.credential) {
-      console.warn("handleGoogleLogin: no credential present", response);
-      return;
-    }
+    if (!response || !response.credential) { console.warn("handleGoogleLogin: no credential present", response); return; }
     const data = jwt_decode(response.credential);
     dbg("Google user:", data);
 
     prevManualName = playerProfile.name || "Player";
-
-    // default name from Google
     const googleName = data.name || prevManualName || "Player";
-
-    // ask user to confirm/choose display name
     const chosen = window.prompt("Choose your display name (this will be saved):", googleName);
     const finalName = (chosen && chosen.trim()) ? chosen.trim() : googleName;
 
     playerProfile.name = finalName;
     if (data.picture) playerProfile.avatar = data.picture;
 
-    // hide manual name input & save button (we'll still allow editing via profile page if desired)
     const ni = document.getElementById("playerNameInput");
     const sb = document.getElementById("saveNameBtn");
     if (ni) ni.style.display = "none";
     if (sb) sb.style.display = "none";
 
-    // hide google button and show logout
     const gbtn = document.getElementById("gsiButton");
     if (gbtn) gbtn.style.display = "none";
     const logoutBtn = document.getElementById("googleLogoutBtn");
     if (logoutBtn) logoutBtn.style.display = "inline-block";
 
-    // sign into firebase if compat auth exists (this lets Firestore actions be tied to user)
     if (window.firebase && firebase.auth) {
       const cred = firebase.auth.GoogleAuthProvider.credential(response.credential);
       firebase.auth().signInWithCredential(cred)
         .then(userCred => {
           dbg("Signed into Firebase as:", userCred.user.uid);
-          // update firebase user displayName if different
+          playerProfile.uid = userCred.user.uid;
           try {
             if (firebase.auth().currentUser && firebase.auth().currentUser.updateProfile) {
               firebase.auth().currentUser.updateProfile({ displayName: finalName }).catch(()=>{});
             }
           } catch(e){}
-          // attach firestore/auth instances now that we're signed in
           initFirebase();
           updateProfile();
         })
-        .catch(err => {
-          console.warn("Firebase sign-in failed", err);
-          updateProfile();
-        });
-    } else {
-      updateProfile();
-    }
+        .catch(err => { console.warn("Firebase sign-in failed", err); updateProfile(); });
+    } else updateProfile();
 
     saveLocalState();
     alert(`Welcome, ${playerProfile.name}!`);
+    closeMenu();
   } catch (e) {
     console.error("Google login failed", e);
   }

@@ -1,0 +1,933 @@
+[
+  {
+    "question": "What is meant by scarcity?",
+    "options": [
+      "Unlimited wants but limited resources",
+      "Limited wants and unlimited resources",
+      "Unlimited resources and limited wants",
+      "Resources equal wants"
+    ],
+    "answer": "Unlimited wants but limited resources",
+    "points": 10
+  },
+  {
+    "question": "Define opportunity cost.",
+    "options": [],
+    "answer": "The value of the next best alternative forgone",
+    "points": 15
+  },
+  {
+    "question": "Which of the following is a renewable resource?",
+    "options": [
+      "Oil",
+      "Coal",
+      "Wind",
+      "Gas"
+    ],
+    "answer": "Wind",
+    "points": 15
+  },
+  {
+    "question": "What are the four factors of production?",
+    "options": [
+      "Land, Labour, Wages, Enterprise",
+      "Land, Labour, Capital, Enterprise",
+      "Land, Labour, Money, Trade",
+      "Land, Labour, Skills, Profit"
+    ],
+    "answer": "Land, Labour, Capital, Enterprise",
+    "points": 10
+  },
+  {
+    "question": "Explain the law of demand.",
+    "options": [],
+    "answer": [
+      "As price increases",
+      "quantity demanded decreases",
+      "ceteris paribus"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Which way does a demand curve slope?",
+    "options": [
+      "Upwards",
+      "Downwards",
+      "Horizontal",
+      "Vertical"
+    ],
+    "answer": "Downwards",
+    "points": 10
+  },
+  {
+    "question": "What is equilibrium price?",
+    "options": [
+      "Where demand > supply",
+      "Where supply > demand",
+      "Where demand = supply",
+      "Price set by government"
+    ],
+    "answer": "Where demand = supply",
+    "points": 10
+  },
+  {
+    "question": "If the price is below equilibrium:",
+    "options": [
+      "Surplus",
+      "Shortage",
+      "Equilibrium",
+      "Inflation"
+    ],
+    "answer": "Shortage",
+    "points": 10
+  },
+  {
+    "question": "What is a substitute good?",
+    "options": [
+      "Used with another good",
+      "Replaces another good",
+      "Cannot be replaced",
+      "Necessity"
+    ],
+    "answer": "Replaces another good",
+    "points": 10
+  },
+  {
+    "question": "What is a complementary good?",
+    "options": [
+      "Used with another good",
+      "Replaces another good",
+      "Luxury item",
+      "Inferior good"
+    ],
+    "answer": "Used with another good",
+    "points": 10
+  },
+  {
+    "question": "Give one example of a merit good.",
+    "options": [],
+    "answer": [
+      "Education",
+      "healthcare"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Which of these is a demerit good?",
+    "options": [
+      "Vaccinations",
+      "Education",
+      "Alcohol",
+      "Street lights"
+    ],
+    "answer": "Alcohol",
+    "points": 10
+  },
+  {
+    "question": "What is a public good?",
+    "options": [
+      "Rival and excludable",
+      "Rival and non-excludable",
+      "Non-rival and non-excludable",
+      "Private ownership only"
+    ],
+    "answer": "Non-rival and non-excludable",
+    "points": 10
+  },
+  {
+    "question": "Define market failure.",
+    "options": [],
+    "answer": "When the market does not allocate resources efficiently",
+    "points": 15
+  },
+  {
+    "question": "Which is NOT a factor of production?",
+    "options": [
+      "Labour",
+      "Land",
+      "Wages",
+      "Capital"
+    ],
+    "answer": "Wages",
+    "points": 10
+  },
+  {
+    "question": "What is meant by human capital?",
+    "options": [
+      "Land",
+      "Skills of workers",
+      "Factories",
+      "Raw materials"
+    ],
+    "answer": "Skills of workers",
+    "points": 10
+  },
+  {
+    "question": "State two types of unemployment.",
+    "options": [],
+    "answer": [
+      "Structural",
+      "frictional"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What is cyclical unemployment?",
+    "options": [
+      "Unemployment caused by high wages",
+      "Unemployment caused by lack of skills",
+      "Unemployment during recessions",
+      "Seasonal job loss"
+    ],
+    "answer": "Unemployment during recessions",
+    "points": 10
+  },
+  {
+    "question": "Which statement about inflation is correct?",
+    "options": [
+      "Fall in prices",
+      "Rise in general price level",
+      "Increase in unemployment",
+      "Decrease in GDP"
+    ],
+    "answer": "Rise in general price level",
+    "points": 10
+  },
+  {
+    "question": "What is deflation?",
+    "options": [
+      "Fall in general price level",
+      "Rise in demand",
+      "Increase in output",
+      "Decrease in unemployment"
+    ],
+    "answer": "Fall in general price level",
+    "points": 10
+  },
+  {
+    "question": "Give one cause of demand-pull inflation.",
+    "options": [],
+    "answer": "Increase in aggregate demand",
+    "points": 15
+  },
+  {
+    "question": "Give one cause of cost-push inflation.",
+    "options": [],
+    "answer": "Rising wages or production costs",
+    "points": 15
+  },
+  {
+    "question": "What does GDP measure?",
+    "options": [
+      "Imports",
+      "Exports",
+      "Value of goods/services produced in a country",
+      "Government spending only"
+    ],
+    "answer": "Value of goods/services produced in a country",
+    "points": 10
+  },
+  {
+    "question": "Differentiate between real and nominal GDP.",
+    "options": [],
+    "answer": [
+      "Real GDP is adjusted for inflation",
+      "nominal is not"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What does WTO stand for?",
+    "options": [
+      "World Tax Organisation",
+      "World Trade Organisation",
+      "World Transport Organisation",
+      "World Tourism Organisation"
+    ],
+    "answer": "World Trade Organisation",
+    "points": 10
+  },
+  {
+    "question": "Which is a benefit of free trade?",
+    "options": [
+      "Lower choice",
+      "Higher prices",
+      "Greater efficiency",
+      "Less competition"
+    ],
+    "answer": "Greater efficiency",
+    "points": 10
+  },
+  {
+    "question": "Define protectionism.",
+    "options": [],
+    "answer": [
+      "Restricting trade using tariffs",
+      "quotas",
+      "subsidies"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Give two examples of trade barriers.",
+    "options": [],
+    "answer": [
+      "Tariffs",
+      "quotas"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What is meant by subsidy?",
+    "options": [
+      "Tax on goods",
+      "Government payment to reduce costs",
+      "Consumer tax",
+      "Import restriction"
+    ],
+    "answer": "Government payment to reduce costs",
+    "points": 10
+  },
+  {
+    "question": "What is indirect tax?",
+    "options": [
+      "Tax on wages",
+      "Tax on profits",
+      "Tax on goods/services",
+      "Tax on exports"
+    ],
+    "answer": "Tax on goods/services",
+    "points": 10
+  },
+  {
+    "question": "Which policy uses interest rates to control inflation?",
+    "options": [
+      "Fiscal policy",
+      "Monetary policy",
+      "Trade policy",
+      "Supply-side policy"
+    ],
+    "answer": "Monetary policy",
+    "points": 10
+  },
+  {
+    "question": "Which policy uses taxation and government spending?",
+    "options": [
+      "Fiscal policy",
+      "Monetary policy",
+      "Market policy",
+      "Free trade policy"
+    ],
+    "answer": "Fiscal policy",
+    "points": 10
+  },
+  {
+    "question": "What is meant by balance of payments?",
+    "options": [],
+    "answer": "Record of financial transactions between a country and the world",
+    "points": 15
+  },
+  {
+    "question": "Which is a type of externality?",
+    "options": [
+      "Internal cost",
+      "Tax",
+      "Subsidy",
+      "Pollution"
+    ],
+    "answer": "Pollution",
+    "points": 15
+  },
+  {
+    "question": "What is meant by positive externality?",
+    "options": [
+      "Harmful side-effect",
+      "Benefit to third party",
+      "Cost to producer",
+      "Cost to consumer"
+    ],
+    "answer": "Benefit to third party",
+    "points": 10
+  },
+  {
+    "question": "Give one example of a positive externality.",
+    "options": [],
+    "answer": "Vaccinations",
+    "points": 15
+  },
+  {
+    "question": "Give one example of a negative externality.",
+    "options": [],
+    "answer": "Pollution",
+    "points": 15
+  },
+  {
+    "question": "What is meant by specialisation?",
+    "options": [
+      "Doing all tasks equally",
+      "Concentrating on one task to increase efficiency",
+      "Producing fewer goods",
+      "Reducing trade"
+    ],
+    "answer": "Concentrating on one task to increase efficiency",
+    "points": 10
+  },
+  {
+    "question": "State one advantage of specialisation.",
+    "options": [],
+    "answer": "Higher efficiency/productivity",
+    "points": 15
+  },
+  {
+    "question": "State one disadvantage of specialisation.",
+    "options": [],
+    "answer": "Over-dependence on one skill/market",
+    "points": 15
+  },
+  {
+    "question": "What is inflation target typically set by central banks?",
+    "options": [
+      "1–2%",
+      "2–3%",
+      "5–6%",
+      "8–10%"
+    ],
+    "answer": "2–3%",
+    "points": 10
+  },
+  {
+    "question": "What is the main role of central banks?",
+    "options": [
+      "Collect taxes",
+      "Print newspapers",
+      "Control money supply and interest rates",
+      "Manage imports"
+    ],
+    "answer": "Control money supply and interest rates",
+    "points": 10
+  },
+  {
+    "question": "What is meant by income inequality?",
+    "options": [],
+    "answer": "Unequal distribution of income among population",
+    "points": 15
+  },
+  {
+    "question": "Name one government policy to reduce income inequality.",
+    "options": [],
+    "answer": "Progressive taxation or welfare benefits",
+    "points": 15
+  },
+  {
+    "question": "What is meant by economic growth?",
+    "options": [],
+    "answer": "An increase in the output of goods and services in an economy over time",
+    "points": 15
+  },
+  {
+    "question": "What is meant by recession?",
+    "options": [
+      "Increase in GDP",
+      "Negative GDP growth for two consecutive quarters",
+      "Fall in unemployment",
+      "High inflation"
+    ],
+    "answer": "Negative GDP growth for two consecutive quarters",
+    "points": 10
+  },
+  {
+    "question": "What is meant by mixed economy?",
+    "options": [],
+    "answer": "An economy with both market forces and government intervention",
+    "points": 15
+  },
+  {
+    "question": "What is meant by planned economy?",
+    "options": [],
+    "answer": "An economy where resources are allocated mainly by the government",
+    "points": 15
+  },
+  {
+    "question": "What is meant by market economy?",
+    "options": [],
+    "answer": "An economy where resources are allocated mainly by supply and demand",
+    "points": 15
+  },
+  {
+    "question": "Which diagram shows a shift of demand curve to the right?",
+    "options": [
+      "Upward slope",
+      "Downward slope",
+      "Parallel shift outward",
+      "Shift inward"
+    ],
+    "answer": "Parallel shift outward",
+    "points": 10
+  },
+  {
+    "question": "What happens to equilibrium price if supply decreases?",
+    "options": [
+      "Price falls",
+      "Price rises",
+      "Price stays the same",
+      "Price doubles"
+    ],
+    "answer": "Price rises",
+    "points": 10
+  },
+  {
+    "question": "What is meant by demand?",
+    "options": [
+      "Quantity consumers are willing and able to buy at a given price",
+      "Quantity producers sell",
+      "Quantity consumers want regardless of price",
+      "Government spending"
+    ],
+    "answer": "Quantity consumers are willing and able to buy at a given price",
+    "points": 10
+  },
+  {
+    "question": "What is meant by supply?",
+    "options": [
+      "Goods imported",
+      "Quantity firms are willing and able to sell at a given price",
+      "Government services",
+      "Consumer demand"
+    ],
+    "answer": "Quantity firms are willing and able to sell at a given price",
+    "points": 10
+  },
+  {
+    "question": "Which factor would shift demand for a good?",
+    "options": [
+      "Change in production cost",
+      "Change in consumer income",
+      "Change in weather",
+      "Both b and c"
+    ],
+    "answer": "Both b and c",
+    "points": 10
+  },
+  {
+    "question": "Which factor would shift supply of a good?",
+    "options": [
+      "Consumer tastes",
+      "Advertising",
+      "Cost of raw materials",
+      "Population size"
+    ],
+    "answer": "Cost of raw materials",
+    "points": 10
+  },
+  {
+    "question": "Give one example of a necessity good.",
+    "options": [],
+    "answer": "Food, water, shelter",
+    "points": 15
+  },
+  {
+    "question": "Which type of good increases demand when income rises?",
+    "options": [
+      "Inferior good",
+      "Normal good",
+      "Complementary good",
+      "Public good"
+    ],
+    "answer": "Normal good",
+    "points": 10
+  },
+  {
+    "question": "Which type of good decreases demand when income rises?",
+    "options": [
+      "Inferior good",
+      "Normal good",
+      "Luxury good",
+      "Complementary good"
+    ],
+    "answer": "Inferior good",
+    "points": 10
+  },
+  {
+    "question": "What is elasticity of demand?",
+    "options": [
+      "Responsiveness of demand to change in supply",
+      "Responsiveness of demand to change in price",
+      "Responsiveness of supply to change in demand",
+      "Responsiveness of supply to wages"
+    ],
+    "answer": "Responsiveness of demand to change in price",
+    "points": 10
+  },
+  {
+    "question": "Define price elasticity of supply.",
+    "options": [],
+    "answer": "Responsiveness of supply to a change in price",
+    "points": 15
+  },
+  {
+    "question": "If PED > 1, demand is:",
+    "options": [
+      "Inelastic",
+      "Elastic",
+      "Perfectly inelastic",
+      "Perfectly elastic"
+    ],
+    "answer": "Elastic",
+    "points": 10
+  },
+  {
+    "question": "If PED < 1, demand is:",
+    "options": [
+      "Inelastic",
+      "Elastic",
+      "Perfectly inelastic",
+      "Perfectly elastic"
+    ],
+    "answer": "Inelastic",
+    "points": 10
+  },
+  {
+    "question": "If price increases and total revenue falls, demand is:",
+    "options": [
+      "Inelastic",
+      "Elastic",
+      "Perfectly inelastic",
+      "Unit elastic"
+    ],
+    "answer": "Elastic",
+    "points": 10
+  },
+  {
+    "question": "State one determinant of price elasticity of demand.",
+    "options": [],
+    "answer": "Availability of substitutes",
+    "points": 15
+  },
+  {
+    "question": "State one determinant of supply elasticity.",
+    "options": [],
+    "answer": "Time period",
+    "points": 15
+  },
+  {
+    "question": "Which is NOT a market structure?",
+    "options": [
+      "Monopoly",
+      "Oligopoly",
+      "Perfect competition",
+      "Inflation"
+    ],
+    "answer": "Inflation",
+    "points": 10
+  },
+  {
+    "question": "What is monopoly?",
+    "options": [
+      "Market with many sellers",
+      "Single seller",
+      "Few sellers",
+      "Government market"
+    ],
+    "answer": "Single seller",
+    "points": 10
+  },
+  {
+    "question": "What is oligopoly?",
+    "options": [
+      "One seller",
+      "Two sellers",
+      "Few large firms dominate",
+      "Free entry and exit"
+    ],
+    "answer": "Few large firms dominate",
+    "points": 10
+  },
+  {
+    "question": "Give one characteristic of perfect competition.",
+    "options": [],
+    "answer": "Many buyers and sellers",
+    "points": 15
+  },
+  {
+    "question": "Which of the following is a fixed cost?",
+    "options": [
+      "Wages",
+      "Rent",
+      "Raw materials",
+      "Electricity used in production"
+    ],
+    "answer": "Rent",
+    "points": 10
+  },
+  {
+    "question": "Which of the following is a variable cost?",
+    "options": [
+      "Rent",
+      "Interest on loans",
+      "Raw materials",
+      "Insurance"
+    ],
+    "answer": "Raw materials",
+    "points": 10
+  },
+  {
+    "question": "How is profit calculated?",
+    "options": [
+      "TR – TC",
+      "TC – TR",
+      "Price × Quantity",
+      "Cost × Output"
+    ],
+    "answer": "TR – TC",
+    "points": 10
+  },
+  {
+    "question": "State two economies of scale.",
+    "options": [],
+    "answer": "Technical, financial",
+    "points": 15
+  },
+  {
+    "question": "What is diseconomies of scale?",
+    "options": [
+      "Falling unit costs",
+      "Rising unit costs when firm grows too large",
+      "Lower efficiency from specialisation",
+      "Increase in demand"
+    ],
+    "answer": "Rising unit costs when firm grows too large",
+    "points": 10
+  },
+  {
+    "question": "What does PPC stand for?",
+    "options": [
+      "Price Production Curve",
+      "Production Possibility Curve",
+      "Product Policy Chart",
+      "Producer Price Cost"
+    ],
+    "answer": "Production Possibility Curve",
+    "points": 10
+  },
+  {
+    "question": "What does a point inside PPC show?",
+    "options": [
+      "Efficient use of resources",
+      "Unemployment/underutilisation",
+      "Overuse of resources",
+      "Economic growth"
+    ],
+    "answer": "Unemployment/underutilisation",
+    "points": 10
+  },
+  {
+    "question": "What does a point outside PPC represent?",
+    "options": [
+      "Efficient use of resources",
+      "Unattainable with current resources",
+      "Economic decline",
+      "Maximum efficiency"
+    ],
+    "answer": "Unattainable with current resources",
+    "points": 10
+  },
+  {
+    "question": "What does a shift of PPC outward show?",
+    "options": [
+      "Economic decline",
+      "No change",
+      "Economic growth",
+      "Unemployment"
+    ],
+    "answer": "Economic growth",
+    "points": 10
+  },
+  {
+    "question": "Define fiscal deficit.",
+    "options": [],
+    "answer": "When government spending exceeds revenue",
+    "points": 15
+  },
+  {
+    "question": "Define budget surplus.",
+    "options": [],
+    "answer": "When government revenue exceeds spending",
+    "points": 15
+  },
+  {
+    "question": "Which of these is a regressive tax?",
+    "options": [
+      "VAT",
+      "Income tax (progressive)",
+      "Wealth tax",
+      "Corporate tax"
+    ],
+    "answer": "VAT",
+    "points": 10
+  },
+  {
+    "question": "Which of these is a progressive tax?",
+    "options": [
+      "Sales tax",
+      "Excise duty",
+      "Income tax",
+      "VAT"
+    ],
+    "answer": "Income tax",
+    "points": 10
+  },
+  {
+    "question": "What is meant by disposable income?",
+    "options": [],
+    "answer": "Income left after taxes and transfers",
+    "points": 15
+  },
+  {
+    "question": "State one monetary policy tool.",
+    "options": [],
+    "answer": "Interest rates",
+    "points": 15
+  },
+  {
+    "question": "State one fiscal policy tool.",
+    "options": [],
+    "answer": "Government spending",
+    "points": 15
+  },
+  {
+    "question": "Which body sets interest rates in most countries?",
+    "options": [
+      "Parliament",
+      "Central bank",
+      "Ministry of Trade",
+      "IMF"
+    ],
+    "answer": "Central bank",
+    "points": 10
+  },
+  {
+    "question": "Which is NOT part of current account in BOP?",
+    "options": [
+      "Goods",
+      "Services",
+      "Investment income",
+      "Government budget"
+    ],
+    "answer": "Government budget",
+    "points": 10
+  },
+  {
+    "question": "What is foreign direct investment (FDI)?",
+    "options": [],
+    "answer": "Investment by foreign firms in domestic businesses/assets",
+    "points": 15
+  },
+  {
+    "question": "What is exchange rate?",
+    "options": [
+      "Price of imports",
+      "Price of exports",
+      "Value of one currency compared to another",
+      "Interest rate"
+    ],
+    "answer": "Value of one currency compared to another",
+    "points": 10
+  },
+  {
+    "question": "When currency appreciates, exports become:",
+    "options": [
+      "Cheaper",
+      "More expensive",
+      "Unchanged",
+      "Subsidised"
+    ],
+    "answer": "More expensive",
+    "points": 10
+  },
+  {
+    "question": "When currency depreciates, imports become:",
+    "options": [
+      "Cheaper",
+      "More expensive",
+      "Unchanged",
+      "Subsidised"
+    ],
+    "answer": "More expensive",
+    "points": 10
+  },
+  {
+    "question": "Define hyperinflation.",
+    "options": [],
+    "answer": "Extremely rapid inflation, usually >50% per month",
+    "points": 15
+  },
+  {
+    "question": "Which of these groups benefits from inflation?",
+    "options": [
+      "Savers",
+      "Lenders",
+      "Borrowers",
+      "Pensioners"
+    ],
+    "answer": "Borrowers",
+    "points": 10
+  },
+  {
+    "question": "Which of these groups loses from inflation?",
+    "options": [
+      "Borrowers",
+      "Debtors",
+      "Savers",
+      "Government"
+    ],
+    "answer": "Savers",
+    "points": 10
+  },
+  {
+    "question": "What is labour productivity?",
+    "options": [
+      "Output ÷ input",
+      "Output per worker per unit time",
+      "Wages per hour",
+      "Capital × labour"
+    ],
+    "answer": "Output per worker per unit time",
+    "points": 10
+  },
+  {
+    "question": "State one way to increase labour productivity.",
+    "options": [],
+    "answer": "Training or technology",
+    "points": 15
+  },
+  {
+    "question": "What is meant by privatisation?",
+    "options": [],
+    "answer": "Transfer of ownership from public to private sector",
+    "points": 15
+  },
+  {
+    "question": "What is meant by nationalisation?",
+    "options": [],
+    "answer": "Transfer of ownership from private to public sector",
+    "points": 15
+  },
+  {
+    "question": "What is meant by globalisation?",
+    "options": [],
+    "answer": "Increasing interconnection of economies through trade and investment",
+    "points": 15
+  },
+  {
+    "question": "State one advantage of globalisation.",
+    "options": [],
+    "answer": "Access to larger markets",
+    "points": 15
+  },
+  {
+    "question": "State one disadvantage of globalisation.",
+    "options": [],
+    "answer": "Loss of domestic industries/jobs",
+    "points": 15
+  }
+]

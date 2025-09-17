@@ -315,6 +315,71 @@ button.primary:hover {
 .profile-left {
 	width: 100%;
 }
+/* ---------------- Mobile / Responsive Tweaks ---------------- */
+@media (max-width: 720px) {
+header {
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 10px 12px;
+}
+h1 {
+	font-size: 16px;
+}
+/* Sidebar takes full width on mobile */
+#sidebar {
+	width: 100%;
+	left: -100%;
+}
+#sidebar.active {
+	left: 0;
+}
+/* Overlay dims background when menu open */
+#overlay.active {
+	display: block;
+	background: rgba(0,0,0,0.5);
+}
+/* Profile card stacks */
+.profile-card {
+	flex-direction: column;
+	text-align: center;
+}
+.profile-left {
+	width: 100%;
+}
+.profile-left .avatar {
+	width: 120px;
+	height: 120px;
+}
+/* Pack options grid */
+.pack-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	gap: 12px;
+}
+.pack-option img {
+	width: 100%;
+	max-width: 140px;
+}
+/* Card grid smaller on mobile */
+.card-grid {
+	grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+.card-tile img {
+	height: 100px;
+}
+/* Listings shrink */
+.listing {
+	flex-direction: column;
+	align-items: flex-start;
+}
+.listing img {
+	width: 80px;
+	height: 80px;
+}
+.listing .actions {
+	width: 100%;
+	justify-content: space-between;
+}
 }
 </style>
 </head>
@@ -353,8 +418,7 @@ button.primary:hover {
   <!-- Home -->
 <section id="home" class="section active">
 	<div class="home-cover">
-		<img id="homeCoverImg" alt="Home cover" src="home_cover.png" />
-	</div>
+		<img id="homeCoverImg" alt="Home cover" src="home_cover.png" /> </div>
 </section>
 <!-- Quiz -->
 <section id="quiz" class="section">
@@ -364,7 +428,6 @@ button.primary:hover {
 			<button class="primary quiz-cat" data-cat="biology">Biology</button>
 			<button class="primary quiz-cat" data-cat="chemistry">Chemistry
 			</button><button class="primary quiz-cat" data-cat="physics">Physics
-			</button><button class="primary quiz-cat" data-cat="math">Math
 			</button><button class="primary quiz-cat" data-cat="accounting">Accounting
 			</button><button class="primary quiz-cat" data-cat="econs">Econs
 			</button></div>

@@ -1,0 +1,1182 @@
+[
+  {
+    "question": "Which of these element does not form a metal hydroxide when reacts with water?",
+    "options": [
+      "Bromine",
+      "Iodine",
+      "Francium",
+      "Chlorine"
+    ],
+    "answer": "Francium",
+    "points": 10
+  },
+  {
+    "question": "An ionic bond is formed by?",
+    "options": [
+      "Sharing of electrons",
+      "Removing electrons",
+      "Giving of electrons",
+      "Transfer of electrons"
+    ],
+    "answer": "Transfer of electrons",
+    "points": 10
+  },
+  {
+    "question": "Which of these in a mineral acid?",
+    "options": [
+      "Carbonic acid",
+      "Tartaric acid",
+      "Tannic acid",
+      "Ethanoic acid"
+    ],
+    "answer": "Carbonic acid",
+    "points": 10
+  },
+  {
+    "question": "Which is NOT a way to prepare a salt?",
+    "options": [
+      "Excess solid in acid",
+      "Precipitation",
+      "Neutralisation",
+      "Titration"
+    ],
+    "answer": "Neutralisation",
+    "points": 10
+  },
+  {
+    "question": "What is different in an isotope compared to its element",
+    "options": [
+      "Proton",
+      "Electron",
+      "Shells",
+      "Neutrons"
+    ],
+    "answer": "Neutrons",
+    "points": 10
+  },
+  {
+    "question": "What is meant by an atomic number?",
+    "options": [
+      "Proton + Electron",
+      "Neutron + Proton",
+      "Electron + Neutron",
+      "Proton + Proton"
+    ],
+    "answer": "Neutron + Proton",
+    "points": 10
+  },
+  {
+    "question": "How many groups are in the periodic table",
+    "options": [
+      "10",
+      "9",
+      "8",
+      "7"
+    ],
+    "answer": "8",
+    "points": 10
+  },
+  {
+    "question": "Why do crystals form as solution cools?",
+    "options": [
+      "Because solubility of solid decreases as temperature decreases",
+      "Because solubility increases as temperature decreases",
+      "Because the solution becomes less dense as it cools",
+      "Because the solid evaporates out of the solution"
+    ],
+    "answer": "Because solubility of solid decreases as temperature decreases",
+    "points": 10
+  },
+  {
+    "question": "Which of the following best describes a saturated solution?",
+    "options": [
+      "A solution that can dissolve no more solute at a given temperature",
+      "A solution that can still dissolve more solute at a given temperature.",
+      "A solution that contains only solute and no solvent",
+      "A solution that contains only solvent and no solute"
+    ],
+    "answer": "A solution that can dissolve no more solute at a given temperature",
+    "points": 10
+  },
+  {
+    "question": "What is the number of moles of zinc chloride, ZnCl2 , in 34.0g of zinc chloride?",
+    "options": [
+      "0.34mol",
+      "0.25mol",
+      "0.52mol",
+      "2.50mol"
+    ],
+    "answer": "0.25mol",
+    "points": 10
+  },
+  {
+    "question": "Which statement about aqueous ethanoic acid is correct?",
+    "options": [
+      "It reacts with sodium hydroxide to produce a salt and hydrogen",
+      "It turns red litmus blue",
+      "It reacts with ammonium salts to produce ammonia",
+      "It reacts with magnesium to produce a salt and hydrogen"
+    ],
+    "answer": "It reacts with magnesium to produce a salt and hydrogen",
+    "points": 10
+  },
+  {
+    "question": "What is the mass of oxygen that contains 3 x 10^23 molecules of oxygen?",
+    "options": [
+      "4g",
+      "8g",
+      "16g",
+      "32g"
+    ],
+    "answer": "16g",
+    "points": 10
+  },
+  {
+    "question": "Which element forms an amphoteric oxide?",
+    "options": [
+      "Carbon",
+      "Magnesium",
+      "Zinc",
+      "Silicon"
+    ],
+    "answer": "Zinc",
+    "points": 10
+  },
+  {
+    "question": "Which electronic structure is most likely to be found as a gas filled in light bulbs?",
+    "options": [
+      "2,1",
+      "2,8,2",
+      "2,8,8",
+      "2,8,6"
+    ],
+    "answer": "2,8,8",
+    "points": 10
+  },
+  {
+    "question": "Which test is use to show that a sample of water is pure?",
+    "options": [
+      "Evaporate the water to see if any solids remain",
+      "Heat the water to check its boiling point",
+      "Test with anhydrous cobalt(II) chloride",
+      "Use universal indicator paper to check its pH"
+    ],
+    "answer": "Heat the water to check its boiling point",
+    "points": 10
+  },
+  {
+    "question": "Which statement about the Periodic Table is correct?",
+    "options": [
+      "Most metallic elements are on the left",
+      "Elements in the same period have the same number of outer electrons",
+      "Elements on the left are usually gasses",
+      "The relative atomic mass of the element increases from right to left"
+    ],
+    "answer": "Most metallic elements are on the left",
+    "points": 10
+  },
+  {
+    "question": "The concentration of hydrochloric acid solution is 0.5mol/dm^3. How many moles of hydrochloric acid are present in 25cm^3 of this solution?",
+    "options": [
+      "0.0125",
+      "0.02",
+      "12.5",
+      "20"
+    ],
+    "answer": "0.0125",
+    "points": 10
+  },
+  {
+    "question": "The Nobel gasses are in Group VII of the periodic table. Which statement explains why noble gases are unreactive?",
+    "options": [
+      "They all have eight electrons in their outer shell.",
+      "They are all gasses",
+      "They are all monatomic",
+      "They all have either two or eight electrons in their outer shell"
+    ],
+    "answer": "They all have either two or eight electrons in their outer shell",
+    "points": 10
+  },
+  {
+    "question": "Which statement about graphite and diamond is correct?",
+    "options": [
+      "Diamond has high melting point but graphite does not",
+      "Graphite and diamond both conduct electricity",
+      "Graphite and diamond both have giant structures",
+      "Graphite is ionic and diamond is covalent"
+    ],
+    "answer": "Graphite and diamond both have giant structures",
+    "points": 10
+  },
+  {
+    "question": "Which subatomic particle has a positive charge?",
+    "options": [
+      "Proton",
+      "Neutron",
+      "Electron",
+      "Positron"
+    ],
+    "answer": "Proton",
+    "points": 10
+  },
+  {
+    "question": "Which subatomic particle has no charge?",
+    "options": [
+      "Proton",
+      "Neutron",
+      "Electron",
+      "Positron"
+    ],
+    "answer": "Neutron",
+    "points": 10
+  },
+  {
+    "question": "Which subatomic particle orbits the nucleus?",
+    "options": [
+      "Proton",
+      "Neutron",
+      "Electron",
+      "Nucleon"
+    ],
+    "answer": "Electron",
+    "points": 10
+  },
+  {
+    "question": "What is the relative charge of an electron?",
+    "options": [
+      "1",
+      "0",
+      "\u20131",
+      "2"
+    ],
+    "answer": "\u20131",
+    "points": 10
+  },
+  {
+    "question": "Which type of bond involves the sharing of electrons?",
+    "options": [
+      "Covalent",
+      "Ionic",
+      "Metallic",
+      "Hydrogen"
+    ],
+    "answer": "Covalent",
+    "points": 10
+  },
+  {
+    "question": "Which type of bond involves the transfer of electrons?",
+    "options": [
+      "Covalent",
+      "Ionic",
+      "Metallic",
+      "Hydrogen"
+    ],
+    "answer": "Ionic",
+    "points": 10
+  },
+  {
+    "question": "Which gas relights a glowing splint?",
+    "options": [
+      "Carbon dioxide",
+      "Oxygen",
+      "Hydrogen",
+      "Nitrogen"
+    ],
+    "answer": "Oxygen",
+    "points": 10
+  },
+  {
+    "question": "Which gas pops with a lighted splint?",
+    "options": [
+      "Carbon dioxide",
+      "Oxygen",
+      "Hydrogen",
+      "Chlorine"
+    ],
+    "answer": "Hydrogen",
+    "points": 10
+  },
+  {
+    "question": "Which gas turns limewater milky?",
+    "options": [
+      "Oxygen",
+      "Carbon dioxide",
+      "Sulfur dioxide",
+      "Ammonia"
+    ],
+    "answer": "Carbon dioxide",
+    "points": 10
+  },
+  {
+    "question": "Which solution turns red litmus blue?",
+    "options": [
+      "Acid",
+      "Alkali",
+      "Salt",
+      "Water"
+    ],
+    "answer": "Alkali",
+    "points": 10
+  },
+  {
+    "question": "Which solution turns blue litmus red?",
+    "options": [
+      "Acid",
+      "Alkali",
+      "Salt",
+      "Water"
+    ],
+    "answer": "Acid",
+    "points": 10
+  },
+  {
+    "question": "Which ion is responsible for acidity?",
+    "options": [
+      "OH\u207b",
+      "H\u207a",
+      "Na\u207a",
+      "Cl\u207b"
+    ],
+    "answer": "H\u207a",
+    "points": 10
+  },
+  {
+    "question": "Which ion is responsible for alkalinity?",
+    "options": [
+      "OH\u207b",
+      "H\u207a",
+      "Na\u207a",
+      "Cl\u207b"
+    ],
+    "answer": "OH\u207b",
+    "points": 10
+  },
+  {
+    "question": "Which pH value represents a neutral solution?",
+    "options": [
+      "0",
+      "7",
+      "14",
+      "1"
+    ],
+    "answer": "7",
+    "points": 10
+  },
+  {
+    "question": "Which indicator is used in titration of strong acid and strong base?",
+    "options": [
+      "Universal indicator",
+      "Litmus",
+      "Methyl orange",
+      "Phenolphthalein"
+    ],
+    "answer": "Phenolphthalein",
+    "points": 10
+  },
+  {
+    "question": "What is the mass number of an atom?",
+    "options": [
+      "Number of protons",
+      "Number of electrons",
+      "Protons + Neutrons",
+      "Protons + Electrons"
+    ],
+    "answer": "Protons + Neutrons",
+    "points": 10
+  },
+  {
+    "question": "What is the atomic number of an atom?",
+    "options": [
+      "Protons + Neutrons",
+      "Protons",
+      "Electrons + Neutrons",
+      "Mass number \u2013 Neutrons"
+    ],
+    "answer": "Protons",
+    "points": 10
+  },
+  {
+    "question": "What is the electronic configuration of sodium (Na, Z = 11)?",
+    "options": [
+      "2,8,1",
+      "2,8,2",
+      "2,7,2",
+      "2,8,8"
+    ],
+    "answer": "2,8,1",
+    "points": 10
+  },
+  {
+    "question": "Which element is a halogen?",
+    "options": [
+      "Sodium",
+      "Magnesium",
+      "Chlorine",
+      "Calcium"
+    ],
+    "answer": "Chlorine",
+    "points": 10
+  },
+  {
+    "question": "Which element is a noble gas?",
+    "options": [
+      "Oxygen",
+      "Argon",
+      "Hydrogen",
+      "Fluorine"
+    ],
+    "answer": "Argon",
+    "points": 10
+  },
+  {
+    "question": "Name the group of unreactive elements in the periodic table.",
+    "options": [],
+    "answer": "Noble gases",
+    "points": 10
+  },
+  {
+    "question": "What is the chemical formula of hydrochloric acid?",
+    "options": [
+      "HNO\u2083",
+      "HCl",
+      "H\u2082SO\u2084",
+      "CH\u2083COOH"
+    ],
+    "answer": "HCl",
+    "points": 10
+  },
+  {
+    "question": "What is the chemical formula of sulfuric acid?",
+    "options": [
+      "HNO\u2083",
+      "HCl",
+      "H\u2082SO\u2084",
+      "CH\u2083COOH"
+    ],
+    "answer": "H\u2082SO\u2084",
+    "points": 10
+  },
+  {
+    "question": "Which acid is found in vinegar?",
+    "options": [
+      "Sulfuric acid",
+      "Hydrochloric acid",
+      "Nitric acid",
+      "Ethanoic acid"
+    ],
+    "answer": "Ethanoic acid",
+    "points": 10
+  },
+  {
+    "question": "Which particle is shared in a covalent bond?",
+    "options": [
+      "Neutron",
+      "Proton",
+      "Electron",
+      "Nucleon"
+    ],
+    "answer": "Electron",
+    "points": 10
+  },
+  {
+    "question": "Which type of oxide reacts with both acids and bases?",
+    "options": [
+      "Acidic oxide",
+      "Basic oxide",
+      "Neutral oxide",
+      "Amphoteric oxide"
+    ],
+    "answer": "Amphoteric oxide",
+    "points": 10
+  },
+  {
+    "question": "Which metal reacts vigorously with cold water?",
+    "options": [
+      "Copper",
+      "Sodium",
+      "Gold",
+      "Silver"
+    ],
+    "answer": "Sodium",
+    "points": 10
+  },
+  {
+    "question": "Which metal does not react with dilute hydrochloric acid?",
+    "options": [
+      "Magnesium",
+      "Zinc",
+      "Copper",
+      "Calcium"
+    ],
+    "answer": "Copper",
+    "points": 10
+  },
+  {
+    "question": "Which element has the electronic configuration 2,8,8,2?",
+    "options": [
+      "Calcium",
+      "Magnesium",
+      "Sodium",
+      "Potassium"
+    ],
+    "answer": "Calcium",
+    "points": 10
+  },
+  {
+    "question": "What is the chemical formula for methane?",
+    "options": [
+      "CH\u2083",
+      "CH\u2084",
+      "C\u2082H\u2086",
+      "C\u2082H\u2084"
+    ],
+    "answer": "CH\u2084",
+    "points": 10
+  },
+  {
+    "question": "What is the chemical formula for ethane?",
+    "options": [
+      "CH\u2084",
+      "C\u2082H\u2086",
+      "C\u2082H\u2084",
+      "C\u2083H\u2088"
+    ],
+    "answer": "C\u2082H\u2086",
+    "points": 10
+  },
+  {
+    "question": "What is the chemical formula for ethene?",
+    "options": [
+      "CH\u2084",
+      "C\u2082H\u2086",
+      "C\u2082H\u2084",
+      "C\u2083H\u2088"
+    ],
+    "answer": "C\u2082H\u2084",
+    "points": 10
+  },
+  {
+    "question": "Which gas is produced when a carbonate reacts with acid?",
+    "options": [
+      "Oxygen",
+      "Hydrogen",
+      "Carbon dioxide",
+      "Nitrogen"
+    ],
+    "answer": "Carbon dioxide",
+    "points": 10
+  },
+  {
+    "question": "Which gas has a pungent smell and turns red litmus blue?",
+    "options": [
+      "Ammonia",
+      "Sulfur dioxide",
+      "Oxygen",
+      "Hydrogen chloride"
+    ],
+    "answer": "Ammonia",
+    "points": 10
+  },
+  {
+    "question": "Which gas smells like rotten eggs?",
+    "options": [
+      "Ammonia",
+      "Hydrogen sulfide",
+      "Carbon dioxide",
+      "Oxygen"
+    ],
+    "answer": "Hydrogen sulfide",
+    "points": 10
+  },
+  {
+    "question": "Which test identifies hydrogen gas?",
+    "options": [
+      "Glowing splint relights",
+      "Pops with a lighted splint",
+      "Turns limewater milky",
+      "Damp red litmus turns blue"
+    ],
+    "answer": "Pops with a lighted splint",
+    "points": 10
+  },
+  {
+    "question": "Which test identifies oxygen gas?",
+    "options": [
+      "Glowing splint relights",
+      "Pops with a lighted splint",
+      "Turns limewater milky",
+      "Damp red litmus turns blue"
+    ],
+    "answer": "Glowing splint relights",
+    "points": 10
+  },
+  {
+    "question": "Which test identifies carbon dioxide?",
+    "options": [
+      "Glowing splint relights",
+      "Pops with a lighted splint",
+      "Turns limewater milky",
+      "Damp red litmus turns blue"
+    ],
+    "answer": "Turns limewater milky",
+    "points": 10
+  },
+  {
+    "question": "Which test identifies chlorine gas?",
+    "options": [
+      "Turns limewater milky",
+      "Pops with a lighted splint",
+      "Damp blue litmus turns red then bleaches",
+      "Glowing splint relights"
+    ],
+    "answer": "Damp blue litmus turns red then bleaches",
+    "points": 10
+  },
+  {
+    "question": "Which test identifies ammonia gas?",
+    "options": [
+      "Damp red litmus turns blue",
+      "Damp blue litmus bleaches",
+      "Pops with a splint",
+      "Glowing splint relights"
+    ],
+    "answer": "Damp red litmus turns blue",
+    "points": 10
+  },
+  {
+    "question": "Which test identifies water is pure?",
+    "options": [],
+    "answer": "boiling point, 100",
+    "points": 15
+  },
+  {
+    "question": "What is the structure of diamond?",
+    "options": [],
+    "answer": "Giant covalent tetrahedral",
+    "points": 15
+  },
+  {
+    "question": "What is the structure of graphite?",
+    "options": [],
+    "answer": "hexagonal carbon atoms",
+    "points": 15
+  },
+  {
+    "question": "Name the energy change when bonds are broken.",
+    "options": [],
+    "answer": "Endothermic",
+    "points": 15
+  },
+  {
+    "question": "Name the energy change when bonds are formed.",
+    "options": [],
+    "answer": "Exothermic",
+    "points": 15
+  },
+  {
+    "question": "What is the molar mass of NaOH?",
+    "options": [
+      "23 g/mol",
+      "40 g/mol",
+      "56 g/mol",
+      "18 g/mol"
+    ],
+    "answer": "40 g/mol",
+    "points": 10
+  },
+  {
+    "question": "How many moles are in 36 g of water (H\u2082O)?",
+    "options": [
+      "1 mol",
+      "2 mol",
+      "3 mol",
+      "0.5 mol"
+    ],
+    "answer": "2 mol",
+    "points": 10
+  },
+  {
+    "question": "What is the mass of 0.5 mol of carbon dioxide (CO\u2082)?",
+    "options": [
+      "11 g",
+      "22 g",
+      "44 g",
+      "88 g"
+    ],
+    "answer": "22 g",
+    "points": 10
+  },
+  {
+    "question": "What is the number of moles in 12 g of carbon (C)?",
+    "options": [
+      "0.5 mol",
+      "1 mol",
+      "2 mol",
+      "6 mol"
+    ],
+    "answer": "1 mol",
+    "points": 10
+  },
+  {
+    "question": "What is the molar volume of a gas at r.t.p?",
+    "options": [
+      "12 dm\u00b3",
+      "22.4 dm\u00b3",
+      "24 dm\u00b3",
+      "44 dm\u00b3"
+    ],
+    "answer": "24 dm\u00b3",
+    "points": 10
+  },
+  {
+    "question": "How many moles are in 48 g of oxygen gas (O\u2082)?",
+    "options": [
+      "1 mol",
+      "1.5 mol",
+      "2 mol",
+      "3 mol"
+    ],
+    "answer": "1.5 mol",
+    "points": 10
+  },
+  {
+    "question": "What mass of sodium (Na) contains 2 mol?",
+    "options": [
+      "11 g",
+      "22 g",
+      "23 g",
+      "46 g"
+    ],
+    "answer": "46 g",
+    "points": 10
+  },
+  {
+    "question": "What is the number of moles in 25 g of NaOH (Mr = 40)?",
+    "options": [
+      "0.25 mol",
+      "0.5 mol",
+      "0.625 mol",
+      "1 mol"
+    ],
+    "answer": "0.625 mol",
+    "points": 10
+  },
+  {
+    "question": "How many moles are in 98 g of H\u2082SO\u2084 (Mr = 98)?",
+    "options": [
+      "0.5 mol",
+      "1 mol",
+      "2 mol",
+      "98 mol"
+    ],
+    "answer": "1 mol",
+    "points": 10
+  },
+  {
+    "question": "What is the mass of 0.2 mol of calcium carbonate (CaCO\u2083, Mr = 100)?",
+    "options": [
+      "10 g",
+      "20 g",
+      "25 g",
+      "50 g"
+    ],
+    "answer": "20 g",
+    "points": 10
+  },
+  {
+    "question": "How many molecules are in 1 mol of a substance?",
+    "options": [
+      "6.02 \u00d7 10\u00b2\u00b2",
+      "6.02 \u00d7 10\u00b2\u00b3",
+      "6.02 \u00d7 10\u00b2\u2074",
+      "6.02 \u00d7 10\u00b2\u2075"
+    ],
+    "answer": "6.02 \u00d7 10\u00b2\u00b3",
+    "points": 10
+  },
+  {
+    "question": "What is the volume of 0.5 mol of gas at r.t.p (24 dm\u00b3 per mol)?",
+    "options": [
+      "6 dm\u00b3",
+      "10 dm\u00b3",
+      "12 dm\u00b3",
+      "24 dm\u00b3"
+    ],
+    "answer": "12 dm\u00b3",
+    "points": 10
+  },
+  {
+    "question": "How many moles are in 4 g of hydrogen gas (H\u2082)?",
+    "options": [
+      "1 mol",
+      "2 mol",
+      "4 mol",
+      "0.5 mol"
+    ],
+    "answer": "2 mol",
+    "points": 10
+  },
+  {
+    "question": "What mass of oxygen gas (O\u2082) is in 2 mol?",
+    "options": [
+      "16 g",
+      "32 g",
+      "64 g",
+      "48 g"
+    ],
+    "answer": "64 g",
+    "points": 10
+  },
+  {
+    "question": "How many moles are in 273 cm\u00b3 of hydrogen gas at r.t.p?",
+    "options": [
+      "0.011 mol",
+      "0.012 mol",
+      "0.015 mol",
+      "0.02 mol"
+    ],
+    "answer": "0.012 mol",
+    "points": 10
+  },
+  {
+    "question": "What is the molar mass of calcium chloride (CaCl\u2082)?",
+    "options": [
+      "56 g/mol",
+      "75 g/mol",
+      "111 g/mol",
+      "147 g/mol"
+    ],
+    "answer": "111 g/mol",
+    "points": 10
+  },
+  {
+    "question": "How many moles are in 50 g of NaCl (Mr = 58.5)?",
+    "options": [
+      "0.5 mol",
+      "0.85 mol",
+      "1 mol",
+      "2 mol"
+    ],
+    "answer": "0.85 mol",
+    "points": 10
+  },
+  {
+    "question": "What mass of HCl is present in 0.2 mol? (Mr = 36.5)",
+    "options": [
+      "3.65 g",
+      "7.3 g",
+      "10 g",
+      "18.25 g"
+    ],
+    "answer": "7.3 g",
+    "points": 10
+  },
+  {
+    "question": "The concentration of a solution is 1 mol/dm\u00b3. How many moles are in 250 cm\u00b3?",
+    "options": [
+      "0.025 mol",
+      "0.25 mol",
+      "2.5 mol",
+      "25 mol"
+    ],
+    "answer": "0.25 mol",
+    "points": 10
+  },
+  {
+    "question": "The concentration of a solution is 2 mol/dm\u00b3. How many moles are in 50 cm\u00b3?",
+    "options": [
+      "0.01 mol",
+      "0.05 mol",
+      "0.1 mol",
+      "0.2 mol"
+    ],
+    "answer": "0.1 mol",
+    "points": 10
+  },
+  {
+    "question": "The concentration of HCl is 0.5 mol/dm\u00b3. How many moles are in 20 cm\u00b3?",
+    "options": [
+      "0.001 mol",
+      "0.005 mol",
+      "0.01 mol",
+      "0.02 mol"
+    ],
+    "answer": "0.01 mol",
+    "points": 10
+  },
+  {
+    "question": "What is the mass of 0.25 mol of Na\u2082CO\u2083 (Mr = 106)?",
+    "options": [
+      "13.25 g",
+      "20 g",
+      "26.5 g",
+      "53 g"
+    ],
+    "answer": "26.5 g",
+    "points": 10
+  },
+  {
+    "question": "How many moles are in 4.4 g of CO\u2082? (Mr = 44)",
+    "options": [
+      "0.05 mol",
+      "0.1 mol",
+      "0.2 mol",
+      "1 mol"
+    ],
+    "answer": "0.1 mol",
+    "points": 10
+  },
+  {
+    "question": "What is the volume of 0.2 mol of gas at r.t.p?",
+    "options": [
+      "2.4 dm\u00b3",
+      "4.8 dm\u00b3",
+      "6 dm\u00b3",
+      "12 dm\u00b3"
+    ],
+    "answer": "4.8 dm\u00b3",
+    "points": 10
+  },
+  {
+    "question": "What is the number of moles in 12 g of magnesium (Mg)? (Ar = 24)",
+    "options": [
+      "0.25 mol",
+      "0.5 mol",
+      "1 mol",
+      "2 mol"
+    ],
+    "answer": "0.5 mol",
+    "points": 10
+  },
+  {
+    "question": "How many moles are in 90 g of water (H\u2082O, Mr = 18)?",
+    "options": [
+      "2 mol",
+      "3 mol",
+      "4 mol",
+      "5 mol"
+    ],
+    "answer": "5 mol",
+    "points": 10
+  },
+  {
+    "question": "Which equation is correct for number of moles?",
+    "options": [
+      "Mass \u00f7 Mr",
+      "Mass \u00d7 Mr",
+      "Volume \u00d7 24",
+      "Volume \u00f7 24"
+    ],
+    "answer": "Mass \u00f7 Mr",
+    "points": 10
+  },
+  {
+    "question": "Which equation is correct for gas volume at r.t.p?",
+    "options": [
+      "n = V/22.4",
+      "n = V/24",
+      "n = M \u00d7 V",
+      "n = V \u00d7 24"
+    ],
+    "answer": "n = V/24",
+    "points": 10
+  },
+  {
+    "question": "Which equation is correct for concentration?",
+    "options": [
+      "C = n \u00d7 V",
+      "C = n/V",
+      "C = V/n",
+      "C = Mr \u00f7 n"
+    ],
+    "answer": "C = n/V",
+    "points": 10
+  },
+  {
+    "question": "Which equation is correct for mass?",
+    "options": [
+      "Mass = Mr \u00d7 n",
+      "Mass = Mr/n",
+      "Mass = n/Mr",
+      "Mass = n/V"
+    ],
+    "answer": "Mass = Mr \u00d7 n",
+    "points": 10
+  },
+  {
+    "question": "Which equation links moles, concentration, volume?",
+    "options": [
+      "n = C/V",
+      "n = C \u00d7 V",
+      "n = V/C",
+      "n = C \u2013 V"
+    ],
+    "answer": "n = C \u00d7 V",
+    "points": 10
+  },
+  {
+    "question": "Which equation is correct for relative atomic mass?",
+    "options": [
+      "Ar = Average mass compared to \u00b9\u00b2C",
+      "Ar = Mass \u00f7 Mole",
+      "Ar = Mr \u00d7 Mass",
+      "Ar = Mass \u00d7 Volume"
+    ],
+    "answer": "Ar = Average mass compared to \u00b9\u00b2C",
+    "points": 10
+  },
+  {
+    "question": "Which equation is correct for relative molecular mass?",
+    "options": [
+      "Mr = Sum of Ar of atoms",
+      "Mr = Mass \u00f7 Ar",
+      "Mr = Ar \u00d7 n",
+      "Mr = Ar \u00f7 Mass"
+    ],
+    "answer": "Mr = Sum of Ar of atoms",
+    "points": 10
+  },
+  {
+    "question": "Which gas is measured using a gas syringe?",
+    "options": [
+      "Oxygen",
+      "Hydrogen",
+      "Carbon dioxide",
+      "All gases"
+    ],
+    "answer": "All gases",
+    "points": 10
+  },
+  {
+    "question": "Which apparatus is used to measure 25 cm\u00b3 of solution accurately?",
+    "options": [
+      "Beaker",
+      "Measuring cylinder",
+      "Burette",
+      "Pipette"
+    ],
+    "answer": "Pipette",
+    "points": 10
+  },
+  {
+    "question": "Which apparatus is used to deliver varying volumes in titration?",
+    "options": [
+      "Pipette",
+      "Burette",
+      "Measuring cylinder",
+      "Beaker"
+    ],
+    "answer": "Burette",
+    "points": 10
+  },
+  {
+    "question": "Which apparatus is used to hold liquids during titration?",
+    "options": [
+      "Burette",
+      "Pipette",
+      "Conical flask",
+      "Test tube"
+    ],
+    "answer": "Conical flask",
+    "points": 10
+  },
+  {
+    "question": "Which type of reaction is combustion of methane?",
+    "options": [
+      "Endothermic",
+      "Exothermic",
+      "Neutralisation",
+      "Precipitation"
+    ],
+    "answer": "Exothermic",
+    "points": 10
+  },
+  {
+    "question": "Which type of reaction absorbs heat?",
+    "options": [
+      "Endothermic",
+      "Exothermic",
+      "Neutralisation",
+      "Oxidation"
+    ],
+    "answer": "Endothermic",
+    "points": 10
+  },
+  {
+    "question": "Which type of reaction releases heat?",
+    "options": [
+      "Endothermic",
+      "Exothermic",
+      "Neutralisation",
+      "Reduction"
+    ],
+    "answer": "Exothermic",
+    "points": 10
+  },
+  {
+    "question": "Which type of bonding is between metals and nonmetals?",
+    "options": [
+      "Ionic",
+      "Covalent",
+      "Metallic",
+      "Hydrogen"
+    ],
+    "answer": "Ionic",
+    "points": 10
+  },
+  {
+    "question": "Which type of bonding is between two nonmetals?",
+    "options": [
+      "Ionic",
+      "Covalent",
+      "Metallic",
+      "Hydrogen"
+    ],
+    "answer": "Covalent",
+    "points": 10
+  },
+  {
+    "question": "Which type of bonding occurs in metals?",
+    "options": [
+      "Ionic",
+      "Covalent",
+      "Metallic",
+      "Hydrogen"
+    ],
+    "answer": "Metallic",
+    "points": 10
+  },
+  {
+    "question": "Which ion gives a white precipitate with silver nitrate solution?",
+    "options": [
+      "Cl⁻",
+      "SO₄²⁻",
+      "CO₃²⁻",
+      "OH⁻"
+    ],
+    "answer": "Cl⁻",
+    "points": 10
+  },
+  {
+    "question": "Which ion gives a white precipitate with barium chloride solution?",
+    "options": [
+      "Cl⁻",
+      "SO₄²⁻",
+      "CO₃²⁻",
+      "OH⁻"
+    ],
+    "answer": "SO₄²⁻",
+    "points": 10
+  },
+  {
+    "question": "Which ion gives effervescence with dilute HCl?",
+    "options": [
+      "Cl⁻",
+      "SO₄²⁻",
+      "CO₃²⁻",
+      "OH⁻"
+    ],
+    "answer": "CO₃²⁻",
+    "points": 10
+  }
+]

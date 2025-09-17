@@ -1,0 +1,1243 @@
+[
+  {
+    "question": "Name an enzyme",
+    "options": [
+      "urea",
+      "lignin",
+      "trypsin",
+      "amylase"
+    ],
+    "answer": "trypsin",
+    "points": 10
+  },
+  {
+    "question": "What is the beginning of the small intestine called?",
+    "options": [
+      "villi",
+      "duodenum",
+      "sphincter",
+      "caecum"
+    ],
+    "answer": "duodenum",
+    "points": 10
+  },
+  {
+    "question": "What is the flap in the throat that prevents food from entering the lungs called?",
+    "options": [
+      "pharynx",
+      "larynx",
+      "trachea",
+      "epiglottis"
+    ],
+    "answer": "epiglottis",
+    "points": 10
+  },
+  {
+    "question": "Where is bile produced?",
+    "options": [
+      "liver",
+      "gall bladder",
+      "bile duct",
+      "pancreas"
+    ],
+    "answer": "liver",
+    "points": 10
+  },
+  {
+    "question": "Give one component of saliva",
+    "options": [
+      "villi",
+      "milk",
+      "mucin",
+      "collagen"
+    ],
+    "answer": "mucin",
+    "points": 10
+  },
+  {
+    "question": "What is caused when you have too little protein?",
+    "options": [
+      "scurvy",
+      "marasmus",
+      "kwashiorkor",
+      "beri-beri"
+    ],
+    "answer": "kwashiorkor",
+    "points": 10
+  },
+  {
+    "question": "Which of these organs does peristalsis not occur in?",
+    "options": [
+      "large intestine",
+      "stomach",
+      "small intestine",
+      "oesophagus"
+    ],
+    "answer": "stomach",
+    "points": 10
+  },
+  {
+    "question": "Function of premolars?",
+    "options": [
+      "tear and bite",
+      "tear and hook",
+      "tear and crush",
+      "crush and grind"
+    ],
+    "answer": "crush and grind",
+    "points": 10
+  },
+  {
+    "question": "Which of the following is found in the stomach?",
+    "options": [
+      "gastric pit",
+      "sulfuric acid",
+      "villi",
+      "cardiac muscles"
+    ],
+    "answer": "gastric pit",
+    "points": 10
+  },
+  {
+    "question": "What is the main function of bile?",
+    "options": [
+      "digests fats",
+      "emulsifies fat",
+      "provides acidic environment",
+      "digests food"
+    ],
+    "answer": "emulsifies fat",
+    "points": 10
+  },
+  {
+    "question": "Name the enzyme that is not produced by the human pancreas",
+    "options": [
+      "lipase",
+      "lignase",
+      "amylase",
+      "pepsin"
+    ],
+    "answer": "pepsin",
+    "points": 10
+  },
+  {
+    "question": "Which of the following is in pancreatic juice?",
+    "options": [
+      "mucus",
+      "sodium hydrogencarbonate",
+      "bile",
+      "sweat"
+    ],
+    "answer": "sodium hydrogencarbonate",
+    "points": 10
+  },
+  {
+    "question": "What is the name of the specialised capillary that carries fat",
+    "options": [
+      "arteries",
+      "veins",
+      "lacteal",
+      "blood capillaries"
+    ],
+    "answer": "lacteal",
+    "points": 10
+  },
+  {
+    "question": "What is the simplest base form of carbohydrates",
+    "options": [
+      "fructose",
+      "glucose",
+      "maltose",
+      "starch"
+    ],
+    "answer": "glucose",
+    "points": 10
+  },
+  {
+    "question": "What is the smallest organelle?",
+    "options": [
+      "ribosome",
+      "mitochondria",
+      "nucleus",
+      "chloroplast"
+    ],
+    "answer": "ribosome",
+    "points": 10
+  },
+  {
+    "question": "Which of the following are found in plant but not animal cells?",
+    "options": [
+      "mitochondria",
+      "chloroplasts",
+      "cytoplasm",
+      "cell membrane"
+    ],
+    "answer": "chloroplasts",
+    "points": 10
+  },
+  {
+    "question": "What is the formula for aerobic respiration?",
+    "options": [
+      "C6H6O6 + 6O2 < 6CO2 + 6H2O + ATP",
+      "C6H6O6 > 6CO2 + 6H2O + ATP",
+      "C6H6O6 + 6O2 > 6CO2 + 6H2O + ATP",
+      "C6H6O6 + 6CO2 > 6O2 + 6H2O + ATP"
+    ],
+    "answer": "C6H6O6 + 6O2 > 6CO2 + 6H2O + ATP",
+    "points": 10
+  },
+  {
+    "question": "How does a carrier protein mainly work?",
+    "options": [
+      "diffusion",
+      "osmosis",
+      "active transport",
+      "reverse osmosis"
+    ],
+    "answer": "active transport",
+    "points": 10
+  },
+  {
+    "question": "What does the nucleus do?",
+    "options": [
+      "control centre of cell",
+      "withstands turgor pressure",
+      "maintains turgor pressure",
+      "photosynthesis"
+    ],
+    "answer": "control centre of cell",
+    "points": 10
+  },
+  {
+    "question": "What describes the lipid tail in the cell membrane?",
+    "options": [
+      "fat",
+      "hydrophobic",
+      "hydrophilic",
+      "thin"
+    ],
+    "answer": "hydrophobic",
+    "points": 10
+  },
+  {
+    "question": "How many pairs of chromosomes does a human have?",
+    "options": [
+      "36",
+      "23",
+      "46",
+      "33"
+    ],
+    "answer": "23",
+    "points": 10
+  },
+  {
+    "question": "How many types of vertebrates are there?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": "5",
+    "points": 10
+  },
+  {
+    "question": "How many types of invertebrates are there?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": "7",
+    "points": 10
+  },
+  {
+    "question": "How many parts are there in the body of an insect?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": "3",
+    "points": 10
+  },
+  {
+    "question": "Which of the following is a myriapod?",
+    "options": [
+      "scorpion",
+      "woodlice",
+      "jellyfish",
+      "lobster"
+    ],
+    "answer": "woodlice",
+    "points": 10
+  },
+  {
+    "question": "Which of these is a feature of dicotyledons?",
+    "options": [
+      "petals in multiples of 3",
+      "fibrous roots",
+      "ringed vascular bundles",
+      "parallel leaf veins"
+    ],
+    "answer": "ringed vascular bundles",
+    "points": 10
+  },
+  {
+    "question": "What can increase the rate of diffusion?",
+    "options": [
+      "higher distance",
+      "lower concentration",
+      "higher surface area",
+      "lower temperature"
+    ],
+    "answer": "higher surface area",
+    "points": 10
+  },
+  {
+    "question": "What will happen to an animal cell if placed in a hypotonic solution?",
+    "options": [
+      "burst",
+      "shrivel",
+      "nothing",
+      "turgid"
+    ],
+    "answer": "burst",
+    "points": 10
+  },
+  {
+    "question": "Which of these is an example of active transport?",
+    "options": [
+      "gaseous exchange",
+      "movement through channel protein",
+      "absorption of water",
+      "glucose uptake"
+    ],
+    "answer": "glucose uptake",
+    "points": 10
+  },
+  {
+    "question": "What is the main function of protein?",
+    "options": [
+      "stores protein soluble vitamins",
+      "insulation",
+      "source of energy",
+      "growth and repair"
+    ],
+    "answer": "growth and repair",
+    "points": 10
+  },
+  {
+    "question": "Name one layer in a leaf",
+    "options": [
+      "protein layer",
+      "palisade layer",
+      "spongy mesophyll layer",
+      "adipose tissue layer"
+    ],
+    "answer": "spongy mesophyll layer",
+    "points": 10
+  },
+  {
+    "question": "What is used to directly make chlorophyll?",
+    "options": [
+      "magnesium",
+      "nitrates",
+      "phosphates",
+      "vitamin C"
+    ],
+    "answer": "magnesium",
+    "points": 10
+  },
+  {
+    "question": "Which of these can be a limiting factor of photosynthesis?",
+    "options": [
+      "temperature",
+      "height",
+      "size",
+      "greenity"
+    ],
+    "answer": "temperature",
+    "points": 10
+  },
+  {
+    "question": "What does the xylem transport?",
+    "options": [
+      "glucose and amino acids",
+      "water and minerals",
+      "water and amino acids",
+      "glucose and minerals"
+    ],
+    "answer": "water and minerals",
+    "points": 10
+  },
+  {
+    "question": "What factor affects transpiration rate?",
+    "options": [
+      "speed",
+      "strength",
+      "height",
+      "wind speed"
+    ],
+    "answer": "wind speed",
+    "points": 10
+  },
+  {
+    "question": "Where does translocation happen?",
+    "options": [
+      "source > sink",
+      "source < sink",
+      "up < down",
+      "up > down"
+    ],
+    "answer": "source > sink",
+    "points": 10
+  },
+  {
+    "question": "How many valves are there in the heart?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": "4",
+    "points": 10
+  },
+  {
+    "question": "What is a symptom of angina?",
+    "options": [
+      "breathing better",
+      "pain in right arm",
+      "pain in left arm",
+      "pain in lungs"
+    ],
+    "answer": "pain in left arm",
+    "points": 10
+  },
+  {
+    "question": "How many main components does blood have?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "4",
+    "points": 10
+  },
+  {
+    "question": "Where are neurotransmitters found?",
+    "options": [
+      "synaptic cleft",
+      "synaptic vesicles",
+      "dendrites",
+      "axons"
+    ],
+    "answer": "synaptic vesicles",
+    "points": 10
+  },
+  {
+    "question": "What type of neuron controls the effector?",
+    "options": [
+      "motor neuron",
+      "thinking neuron",
+      "relay neuron",
+      "sensory neuron"
+    ],
+    "answer": "motor neuron",
+    "points": 10
+  },
+  {
+    "question": "Name one feature of the small intestine that maximises absorption of nutrients",
+    "answer": [
+      "Villi",
+      "villi",
+      "Microvilli",
+      "microvilli",
+      "Long length",
+      "long length",
+      "longlength",
+      "Thin walls",
+      "thin walls",
+      "thinwalls",
+      "Rich blood supply",
+      "rich blood supply",
+      "richbloodsupply"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What is the test for vitamin C called?",
+    "answer": [
+      "DCPIP test",
+      "dcpip test",
+      "dcpiptest"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Name one of the 3 layers of the teeth",
+    "answer": [
+      "Enamel",
+      "enamel",
+      "Dentine",
+      "dentine",
+      "Pulp",
+      "pulp"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Around how big is the large intestine?",
+    "answer": [
+      "About 1.5 metres",
+      "about 1.5 metres",
+      "about1.5metres"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What is the longest part of the small intestine?",
+    "answer": [
+      "Ileum",
+      "ileum"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What is the tube that carries bile called?",
+    "answer": [
+      "Bile duct",
+      "bile duct",
+      "bileduct"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What withstands turgor pressure?",
+    "answer": [
+      "Cell wall",
+      "cell wall",
+      "cellwall"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What is the scientific name for the cell membrane?",
+    "answer": [
+      "Plasma membrane",
+      "plasma membrane",
+      "plasmamembrane"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Definition of tissues",
+    "answer": [
+      "A group of similar cells working together to perform a specific function",
+      "a group of similar cells working together to perform a specific function",
+      "agroupofsimilarcellsworkingtogethertoperformaspecificfunction"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Magnification formula",
+    "answer": [
+      "Image size \u00f7 Actual size",
+      "image size \u00f7 actual size",
+      "imagesize\u00f7actualsize"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Main component of cytoplasm",
+    "answer": [
+      "Water",
+      "water"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What is the naming system for organisms?",
+    "answer": [
+      "Binomial nomenclature",
+      "binomial nomenclature",
+      "binomialnomenclature"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Can fungi produce their own food?",
+    "answer": [
+      "No, they are heterotrophic",
+      "no, they are heterotrophic",
+      "no,theyareheterotrophic"
+    ],
+    "points": 15
+  },
+  {
+    "question": "How do we separate different species into groups of 2 using physical characteristics?",
+    "answer": [
+      "Dichotomous key",
+      "dichotomous key",
+      "dichotomouskey"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What cell is specially adapted for photosynthesis?",
+    "answer": [
+      "Palisade mesophyll cell",
+      "palisade mesophyll cell",
+      "palisademesophyllcell"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What is the breakdown of monosaccharides and disaccharides using water called?",
+    "answer": [
+      "Hydrolysis",
+      "hydrolysis"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What is the test for fat presence?",
+    "answer": [
+      "Ethanol emulsion test",
+      "ethanol emulsion test",
+      "ethanolemulsiontest"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What does catalase break down?",
+    "answer": [
+      "Hydrogen peroxide",
+      "hydrogen peroxide",
+      "hydrogenperoxide"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What pH do stomach enzymes operate at?",
+    "answer": [
+      "pH 2 (acidic)",
+      "ph 2 (acidic)",
+      "ph2(acidic)"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What specialised cell is in charge of mineral uptake from the soil?",
+    "answer": [
+      "Root hair cell",
+      "root hair cell",
+      "roothaircell"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What is the strongest chamber of the heart?",
+    "answer": [
+      "Left ventricle",
+      "left ventricle",
+      "leftventricle"
+    ],
+    "points": 15
+  },
+  {
+    "question": "How does the heart receive oxygen?",
+    "answer": [
+      "Through the coronary arteries",
+      "through the coronary arteries",
+      "throughthecoronaryarteries"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What is the largest vein?",
+    "answer": [
+      "Vena cava",
+      "vena cava",
+      "venacava"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What is the smallest blood vessel?",
+    "answer": [
+      "Capillary",
+      "capillary"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What is a surgical method to remove plaques from arteries?",
+    "answer": [
+      "Angioplasty",
+      "angioplasty",
+      "Bypass surgery",
+      "bypass surgery",
+      "bypasssurgery"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What artery sends blood to the liver?",
+    "answer": [
+      "Hepatic artery",
+      "hepatic artery",
+      "hepaticartery"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What separates the chambers of the heart?",
+    "answer": [
+      "Septum",
+      "septum"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What sets the heart rhythm?",
+    "answer": [
+      "Pacemaker (sinoatrial node)",
+      "pacemaker (sinoatrial node)",
+      "pacemaker(sinoatrialnode)"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What blood vessel has the largest lumen?",
+    "answer": [
+      "Vein",
+      "vein"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What component of blood carries carbon dioxide?",
+    "answer": [
+      "Plasma (as bicarbonate ions)",
+      "plasma (as bicarbonate ions)",
+      "plasma(asbicarbonateions)"
+    ],
+    "points": 15
+  },
+  {
+    "question": "How many types of neurons are there?",
+    "answer": [
+      "Three (sensory, relay, motor)",
+      "three (sensory, relay, motor)",
+      "three(sensory,relay,motor)"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What part of a neuron receives signals from other cells?",
+    "answer": [
+      "Dendrites",
+      "dendrites"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Which organelle is known as the powerhouse of the cell?",
+    "options": [
+      "Mitochondria",
+      "Nucleus",
+      "Ribosome",
+      "Chloroplast"
+    ],
+    "answer": "Mitochondria",
+    "points": 10
+  },
+  {
+    "question": "What is the process by which plants make their food?",
+    "options": [
+      "Respiration",
+      "Photosynthesis",
+      "Digestion",
+      "Transpiration"
+    ],
+    "answer": "Photosynthesis",
+    "points": 10
+  },
+  {
+    "question": "Which type of blood cell helps fight infections?",
+    "options": [
+      "Red blood cells",
+      "White blood cells",
+      "Platelets",
+      "Plasma"
+    ],
+    "answer": "White blood cells",
+    "points": 10
+  },
+  {
+    "question": "Which blood vessel carries blood away from the heart?",
+    "options": [
+      "Vein",
+      "Artery",
+      "Capillary",
+      "Venule"
+    ],
+    "answer": "Artery",
+    "points": 10
+  },
+  {
+    "question": "What is the function of xylem vessels?",
+    "options": [
+      "Transport of glucose",
+      "Transport of oxygen",
+      "Transport of water and minerals",
+      "Transport of amino acids"
+    ],
+    "answer": "Transport of water and minerals",
+    "points": 10
+  },
+  {
+    "question": "Which process allows oxygen to move from alveoli into the blood?",
+    "options": [
+      "Osmosis",
+      "Active transport",
+      "Diffusion",
+      "Respiration"
+    ],
+    "answer": "Diffusion",
+    "points": 10
+  },
+  {
+    "question": "What is the function of the epiglottis?",
+    "options": [
+      "Prevents food entering trachea",
+      "Produces bile",
+      "Absorbs water",
+      "Pumps blood"
+    ],
+    "answer": "Prevents food entering trachea",
+    "points": 10
+  },
+  {
+    "question": "Which part of the plant cell contains chlorophyll?",
+    "options": [
+      "Nucleus",
+      "Vacuole",
+      "Chloroplast",
+      "Cytoplasm"
+    ],
+    "answer": "Chloroplast",
+    "points": 10
+  },
+  {
+    "question": "Where are sperm cells produced in humans?",
+    "options": [
+      "Testes",
+      "Ovaries",
+      "Prostate gland",
+      "Uterus"
+    ],
+    "answer": "Testes",
+    "points": 10
+  },
+  {
+    "question": "What is the function of root hair cells?",
+    "options": [
+      "Photosynthesis",
+      "Absorbing water and minerals",
+      "Producing seeds",
+      "Transport of sugars"
+    ],
+    "answer": "Absorbing water and minerals",
+    "points": 10
+  },
+  {
+    "question": "Name the process of cell division that produces identical cells.",
+    "answer": [
+      "Mitosis",
+      "mitosis"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Name the process of cell division that produces gametes.",
+    "answer": [
+      "Meiosis",
+      "meiosis"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Which tissue transports glucose in plants?",
+    "options": [
+      "Xylem",
+      "Phloem",
+      "Cambium",
+      "Epidermis"
+    ],
+    "answer": "Phloem",
+    "points": 10
+  },
+  {
+    "question": "Which gas is absorbed during photosynthesis?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon dioxide",
+      "Methane"
+    ],
+    "answer": "Carbon dioxide",
+    "points": 10
+  },
+  {
+    "question": "Which gas is released during respiration?",
+    "options": [
+      "Oxygen",
+      "Hydrogen",
+      "Carbon dioxide",
+      "Nitrogen"
+    ],
+    "answer": "Carbon dioxide",
+    "points": 10
+  },
+  {
+    "question": "What type of joint is found at the shoulder?",
+    "options": [
+      "Ball and socket",
+      "Hinge",
+      "Fixed",
+      "Pivot"
+    ],
+    "answer": "Ball and socket",
+    "points": 10
+  },
+  {
+    "question": "What type of muscle is found in the heart?",
+    "options": [
+      "Skeletal muscle",
+      "Smooth muscle",
+      "Cardiac muscle",
+      "Voluntary muscle"
+    ],
+    "answer": "Cardiac muscle",
+    "points": 10
+  },
+  {
+    "question": "What is the primary function of red blood cells?",
+    "options": [
+      "Carry oxygen",
+      "Fight infection",
+      "Clot blood",
+      "Produce hormones"
+    ],
+    "answer": "Carry oxygen",
+    "points": 10
+  },
+  {
+    "question": "Which part of the digestive system absorbs most nutrients?",
+    "options": [
+      "Stomach",
+      "Small intestine",
+      "Large intestine",
+      "Pancreas"
+    ],
+    "answer": "Small intestine",
+    "points": 10
+  },
+  {
+    "question": "What is the role of bile in digestion?",
+    "options": [
+      "Breaks down proteins",
+      "Neutralises acid and emulsifies fats",
+      "Absorbs glucose",
+      "Produces enzymes"
+    ],
+    "answer": "Neutralises acid and emulsifies fats",
+    "points": 10
+  },
+  {
+    "question": "Which enzyme breaks down starch into maltose?",
+    "options": [
+      "Lipase",
+      "Protease",
+      "Amylase",
+      "Catalase"
+    ],
+    "answer": "Amylase",
+    "points": 10
+  },
+  {
+    "question": "Which part of the brain controls balance and coordination?",
+    "options": [
+      "Cerebrum",
+      "Cerebellum",
+      "Medulla",
+      "Hypothalamus"
+    ],
+    "answer": "Cerebellum",
+    "points": 10
+  },
+  {
+    "question": "Name the structure that connects muscles to bones.",
+    "answer": [
+      "Tendons",
+      "tendons"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Name the structure that connects bones to bones.",
+    "answer": [
+      "Ligaments",
+      "ligaments"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What is the main function of platelets?",
+    "answer": [
+      "Blood clotting",
+      "blood clotting",
+      "bloodclotting"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Which blood group is the universal donor?",
+    "options": [
+      "A",
+      "B",
+      "AB",
+      "O"
+    ],
+    "answer": "O",
+    "points": 10
+  },
+  {
+    "question": "Which blood group is the universal recipient?",
+    "options": [
+      "A",
+      "B",
+      "AB",
+      "O"
+    ],
+    "answer": "AB",
+    "points": 10
+  },
+  {
+    "question": "Which part of the nephron filters blood?",
+    "options": [
+      "Bowman\u2019s capsule",
+      "Loop of Henle",
+      "Collecting duct",
+      "Ureter"
+    ],
+    "answer": "Bowman\u2019s capsule",
+    "points": 10
+  },
+  {
+    "question": "What is the structural unit of the kidney?",
+    "answer": [
+      "Nephron",
+      "nephron"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What is the male gamete in plants called?",
+    "options": [
+      "Pollen",
+      "Ovule",
+      "Seed",
+      "Anther"
+    ],
+    "answer": "Pollen",
+    "points": 10
+  },
+  {
+    "question": "What is the female gamete in plants called?",
+    "options": [
+      "Ovary",
+      "Ovule",
+      "Carpel",
+      "Stigma"
+    ],
+    "answer": "Ovule",
+    "points": 10
+  },
+  {
+    "question": "Which part of the flower produces pollen?",
+    "options": [
+      "Stigma",
+      "Ovary",
+      "Anther",
+      "Style"
+    ],
+    "answer": "Anther",
+    "points": 10
+  },
+  {
+    "question": "Which process results in the release of energy from glucose without oxygen?",
+    "options": [
+      "Aerobic respiration",
+      "Anaerobic respiration",
+      "Photosynthesis",
+      "Fermentation"
+    ],
+    "answer": "Anaerobic respiration",
+    "points": 10
+  },
+  {
+    "question": "What is the chemical equation for aerobic respiration?",
+    "answer": [
+      "Glucose + Oxygen \u2192 Carbon dioxide + Water + Energy",
+      "glucose + oxygen \u2192 carbon dioxide + water + energy",
+      "glucose+oxygen\u2192carbondioxide+water+energy"
+    ],
+    "points": 10
+  },
+  {
+    "question": "Name the sugar found in DNA.",
+    "answer": [
+      "Deoxyribose",
+      "deoxyribose"
+    ],
+    "points": 10
+  },
+  {
+    "question": "Name the sugar found in RNA.",
+    "answer": [
+      "Ribose",
+      "ribose"
+    ],
+    "points": 10
+  },
+  {
+    "question": "Which base pairs with adenine in DNA?",
+    "options": [
+      "Cytosine",
+      "Guanine",
+      "Thymine",
+      "Uracil"
+    ],
+    "answer": "Thymine",
+    "points": 10
+  },
+  {
+    "question": "Which base pairs with adenine in RNA?",
+    "options": [
+      "Cytosine",
+      "Guanine",
+      "Thymine",
+      "Uracil"
+    ],
+    "answer": "Uracil",
+    "points": 10
+  },
+  {
+    "question": "What is the term for organisms that make their own food?",
+    "options": [
+      "Autotrophs",
+      "Heterotrophs",
+      "Parasites",
+      "Saprophytes"
+    ],
+    "answer": "Autotrophs",
+    "points": 10
+  },
+  {
+    "question": "What is the term for organisms that feed on others?",
+    "options": [
+      "Autotrophs",
+      "Heterotrophs",
+      "Producers",
+      "Consumers"
+    ],
+    "answer": "Heterotrophs",
+    "points": 10
+  },
+  {
+    "question": "What is the main nitrogenous waste in humans?",
+    "answer": [
+      "Urea",
+      "urea"
+    ],
+    "points": 10
+  },
+  {
+    "question": "Which organ produces insulin?",
+    "options": [
+      "Kidney",
+      "Pancreas",
+      "Liver",
+      "Stomach"
+    ],
+    "answer": "Pancreas",
+    "points": 10
+  },
+  {
+    "question": "Which organ stores glycogen?",
+    "answer": [
+      "Liver",
+      "liver"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What type of reproduction produces offspring genetically identical to parents?",
+    "answer": [
+      "Asexual reproduction",
+      "asexual reproduction",
+      "asexualreproduction"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What type of reproduction involves gametes?",
+    "answer": [
+      "Sexual reproduction",
+      "sexual reproduction",
+      "sexualreproduction"
+    ],
+    "points": 15
+  },
+  {
+    "question": "Which organ is responsible for maintaining water balance in the body?",
+    "answer": [
+      "Kidney",
+      "kidney"
+    ],
+    "points": 15
+  },
+  {
+    "question": "What is the term for maintaining stable internal conditions?",
+    "answer": [
+      "Homeostasis",
+      "homeostasis"
+    ],
+    "points": 15
+  },
+  {
+    "question": "biologyheart - What is A?",
+    "answer": [
+      "vena cava",
+      "venacava"
+    ],
+    "points": 15,
+    "image": "images/biology_heart.png"
+  },
+  {
+    "question": "biologyheart - Why is B thicker than C?",
+    "answer": [
+      "pump blood, entire body",
+      "pumpblood,entirebody"
+    ],
+    "points": 15,
+    "image": "images/biology_heart.png"
+  }
+]
