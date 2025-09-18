@@ -1,561 +1,638 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
-<!-- Google Identity Services -->
+<meta charset="utf-8" />
+<meta content="width=device-width,initial-scale=1" name="viewport" />
+<title>Year 10 — Quiz & Packs (Pokémon)</title>
+<link href="favicon.png" rel="icon" />
+<!-- Google fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Google Identity Services (GSI) + jwt-decode (kept like your previous file) -->
 <script async="" defer src="https://accounts.google.com/gsi/client"></script>
 <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
-<!-- Firebase (compat CDN - keep this if you're using compat init below) -->
+<!-- Firebase (compat) - leave as you had it so main.js works -->
 <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
-<meta charset="utf-8" />
-<title>Pokémon Quiz & Packs (All-in-one)</title>
-<meta content="width=device-width,initial-scale=1" name="viewport" />
-<link href="favicon.png" rel="icon">
+<meta content="#0d47a1" name="theme-color" />
 <style>
-/* (your existing styles - unchanged except small additions for carddex/market) */
 :root {
-	--blue-deep: #0d47a1;
-	--blue-mid: #1976d2;
-	--teal-dark: #006064;
-	--sv-red: #e53935;
-	--sv-violet: #7b1fa2;
-	--sv-accent: linear-gradient(135deg, var(--sv-red), var(--sv-violet));
+	--bg-1: linear-gradient(180deg,#e8f6ff,#f7fbff);
+	--accent-1: #0d47a1;
+	--accent-2: #1976d2;
+	--muted: #6b7a90;
+	--card: #ffffff;
+	--glass: rgba(255,255,255,0.55);
+	--radius: 14px;
+	--glass-border: rgba(11,37,69,0.06);
+	--accent-3: #006064;
 }
-* {
-	box-sizing: border-box;
-}
-body {
-	font-family: Arial, sans-serif;
+html, body {
+	height: 100%;
 	margin: 0;
-	background: linear-gradient(to bottom, #e0f7fa, #b2ebf2);
-	color: #0b2545;
+	font-family: Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+	background: var(--bg-1);
+	color: #07213a;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 header {
-	background: var(--teal-dark);
-	color: white;
-	padding: 14px 16px;
+	height: 64px;
 	display: flex;
 	align-items: center;
 	gap: 12px;
-}
-.hamburger {
-	font-size: 22px;
-	background: none;
-	border: none;
+	padding: 0 18px;
+	background: linear-gradient(90deg,var(--accent-1),var(--accent-2));
 	color: white;
-	cursor: pointer;
+	box-shadow: 0 6px 20px rgba(11,37,69,0.12);
+	position: sticky;
+	top: 0;
+	z-index: 1200;
+}
+.brand {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+}
+.brand .logo {
+	width: 44px;
+	height: 44px;
+	border-radius: 10px;
+	background: linear-gradient(135deg,#ffd54f,#ff7043);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 800;
+	color: #07213a;
+	box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 h1 {
+	font-size: 16px;
 	margin: 0;
-	font-size: 18px;
+	font-weight: 700;
+	letter-spacing: -0.2px;
 }
-/* Sidebar */
-#sidebar {
-	position: fixed;
-	top: 0;
-	left: -260px;
+header .right {
+	margin-left: auto;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+/* Layout */
+.wrap {
+	display: flex;
+	min-height: calc(100vh - 64px);
+}
+nav#sidebar {
 	width: 260px;
-	height: 100%;
-	background: var(--blue-deep);
+	background: linear-gradient(180deg,#07213a,#0d2a57);
 	color: white;
-	padding-top: 60px;
-	transition: left 0.28s ease;
-	z-index: 1000;
+	padding: 18px;
+	box-sizing: border-box;
+	border-right: 1px solid rgba(255,255,255,0.03);
+	transform: translateX(0);
 }
-#sidebar.active {
-	left: 0;
+nav#sidebar .profile-compact {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	margin-bottom: 16px;
 }
-#sidebar ul {
+.avatar-mini {
+	width: 56px;
+	height: 56px;
+	border-radius: 10px;
+	background-image: url('default_avatar.png');
+	background-size: cover;
+	background-position: center;
+	border: 3px solid rgba(255,255,255,0.06);
+}
+.sidebar-name {
+	font-weight: 700;
+}
+.sidebar-sub {
+	font-size: 12px;
+	color: rgba(255,255,255,0.85);
+}
+nav#sidebar ul {
 	list-style: none;
 	padding: 0;
-	margin: 0;
+	margin: 12px 0 0 0;
 }
-#sidebar li {
-	margin: 6px 0;
+nav#sidebar li {
+	margin: 8px 0;
 }
-#sidebar button {
+nav#sidebar button {
 	width: 100%;
-	background: none;
-	border: none;
-	color: white;
-	font-size: 16px;
 	text-align: left;
-	padding: 10px 18px;
+	border: none;
+	background: transparent;
+	color: rgba(255,255,255,0.95);
+	padding: 10px 12px;
+	font-size: 15px;
+	border-radius: 10px;
 	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 8px;
 }
-#sidebar button:hover {
-	background: var(--blue-mid);
+nav#sidebar button:hover {
+	background: rgba(255,255,255,0.04);
+	transform: translateX(4px);
 }
-/* overlay */
-#overlay {
-	position: fixed;
-	inset: 0;
-	display: none;
-	background: none;
-	z-index: 600;
-}
-#overlay.active {
-	display: block;
-}
-/* layout */
 main {
-	padding: 18px;
-	margin-left: 0;
+	flex: 1;
+	padding: 22px;
+	box-sizing: border-box;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 .section {
 	display: none;
-	max-width: 1100px;
-	margin: 0 auto;
 }
 .section.active {
 	display: block;
 }
 .box {
-	background: #fff;
-	border-radius: 10px;
-	padding: 14px;
-	margin: 12px 0;
-	border: 2px solid var(--teal-dark);
-	box-shadow: 0 2px 6px rgba(0,0,0,.08);
+	background: var(--card);
+	border-radius: var(--radius);
+	padding: 16px;
+	box-shadow: 0 8px 30px rgba(11,37,69,0.06);
+	border: 1px solid var(--glass-border);
+	margin-bottom: 18px;
 }
-/* --- home cover styles --- */
+/* Home cover */
 .home-cover {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: calc(70vh);
-	padding: 16px;
+	min-height: 380px;
+	border-radius: 12px;
+	overflow: hidden;
+	position: relative;
 }
-.home-cover img {
+.home-card {
+	display: flex;
+	gap: 20px;
+	align-items: center;
 	width: 100%;
 	max-width: 1100px;
-	height: auto;
-	border-radius: 14px;
-	box-shadow: 0 12px 30px rgba(11,37,69,0.18);
-	object-fit: cover;
-	border: 6px solid rgba(255,255,255,0.6);
 }
-/* pack overlay + stack */
+.home-left {
+	flex: 1;
+	padding: 24px;
+}
+.home-right {
+	flex: 1;
+	padding: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.hero-art {
+	width: 100%;
+	max-width: 420px;
+	border-radius: 12px;
+	box-shadow: 0 18px 50px rgba(11,37,69,0.12);
+}
+/* Packs grid */
+.pack-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+	gap: 14px;
+}
+.pack-option {
+	background: linear-gradient(180deg,#fff,#f6fbff);
+	border-radius: 12px;
+	padding: 12px;
+	text-align: center;
+	cursor: pointer;
+	box-shadow: 0 6px 18px rgba(11,37,69,0.06);
+	border: 1px solid var(--glass-border);
+	transition: transform .12s ease;
+}
+.pack-option:hover {
+	transform: translateY(-6px);
+}
+.pack-option img {
+	width: 100%;
+	height: 140px;
+	object-fit: contain;
+	border-radius: 8px;
+}
+/* Pack overlay */
 #packOverlay {
 	position: fixed;
 	inset: 0;
 	display: none;
-	justify-content: center;
 	align-items: center;
-	flex-direction: column;
-	z-index: 999;
-	background: url("prismatic_bg.png") center/cover no-repeat;
+	justify-content: center;
+	z-index: 1400;
+	backdrop-filter: blur(4px);
+	background: linear-gradient(180deg, rgba(7,33,58,0.45), rgba(7,33,58,0.65));
 }
 #packOverlay.show {
 	display: flex;
 }
-.pack-stage, #overlayStack, #revealedGrid {
-	position: relative;
-	z-index: 2;
+.overlay-stage {
 	width: 100%;
 	max-width: 980px;
+	padding: 28px;
 	box-sizing: border-box;
+	display: flex;
+	gap: 24px;
+	align-items: flex-start;
+	justify-content: center;
+	color: white;
 }
-.overlay-close {
-	position: absolute;
-	top: 18px;
-	right: 18px;
-	z-index: 3;
-}
-/* pack visuals */
 .overlay-stack {
+	width: 260px;
+	height: 370px;
 	position: relative;
-	width: 240px;
-	height: 340px;
-	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .overlay-card {
 	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	width: 240px;
+	height: 340px;
 	transition: transform .45s ease, opacity .45s ease;
+	border-radius: 12px;
+	overflow: hidden;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .overlay-card img {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
-	border-radius: 12px;
 }
 .overlay-card.slide-up {
-	transform: translateY(-380px);
+	transform: translateY(-420px);
 	opacity: 0;
 }
-/* small utilities */
-button.primary {
-	background: #00838f;
-	color: white;
-	border: none;
-	padding: 8px 14px;
-	border-radius: 8px;
-	cursor: pointer;
-	font-size: 14px;
-}
-button.primary:hover {
-	background: var(--teal-dark);
-}
-/* SV-styled profile accents */
-.profile-card {
-	background: var(--sv-accent);
-	color: white;
-	border: none;
-	padding: 18px;
-	border-radius: 14px;
-	box-shadow: 0 12px 30px rgba(123,31,162,0.18);
-	max-width: 780px;
-	margin: 18px auto;
-	display: flex;
-	gap: 14px;
-	align-items: center;
-}
-.profile-left {
-	width: 160px;
-	text-align: center;
-}
-.profile-left .avatar {
-	width: 140px;
-	height: 140px;
-	border-radius: 12px;
-	background-size: cover;
-	background-position: center;
-	margin: 0 auto 10px;
-	border: 4px solid rgba(255,255,255,0.12);
-}
-.profile-right {
+.overlay-meta {
 	flex: 1;
 }
-.profile-right h3 {
-	color: #fff;
-	margin: 0 0 6px;
-	font-size: 22px;
-	text-shadow: 0 2px 8px rgba(0,0,0,0.25);
-}
-.profile-right p {
-	color: rgba(255,255,255,0.95);
-	margin: 6px 0;
-}
-/* small Google UI tweaks */
-#gsiButton {
-	display: inline-block;
-	margin-bottom: 8px;
-}
-#googleLogoutBtn {
-	display: none;
-	margin-left: 8px;
-	padding: 6px 10px;
-	font-size: 13px;
+.overlay-close {
+	position: absolute;
+	top: 18px;
+	right: 18px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.12);
+	color: white;
+	padding: 8px 10px;
 	border-radius: 8px;
 	cursor: pointer;
-	background: rgba(255,255,255,0.12);
-	border: 1px solid rgba(255,255,255,0.12);
-	color: #fff;
 }
-#googleLogoutBtn:hover {
-	background: rgba(255,255,255,0.2);
+/* pack overlay background per pack */
+#packOverlay {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
-/* card dex and market */
+/* classes added by JS: overlay.classList.add(key) where key is 'prismatic' | 'twilight' | 'sv151' */
+#packOverlay.prismatic {
+	background-image: url('prismatic_bg.png');
+}
+#packOverlay.twilight {
+	background-image: url('yellow.png');
+}
+#packOverlay.sv151 {
+	background-image: url('blue.png');
+}
+/* ensure overlay content remains readable on mobile */
+#packOverlay .overlay-stage {
+	backdrop-filter: none;
+}
+@media (max-width:720px) {
+#packOverlay {
+	background-attachment: scroll;
+}
+.overlay-stage {
+	padding: 16px;
+	flex-direction: column;
+	gap: 12px;
+	align-items: center;
+}
+}
+/* Card dex */
 .card-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(160px,1fr));
 	gap: 12px;
 }
 .card-tile {
-	background: #fff;
-	border-radius: 8px;
+	background: linear-gradient(180deg,#ffffff,#f8fbff);
+	border-radius: 10px;
 	padding: 8px;
 	text-align: center;
-	box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+	border: 1px solid var(--glass-border);
 }
 .card-tile img {
 	width: 100%;
 	height: 120px;
 	object-fit: contain;
-	border-radius: 6px;
+	border-radius: 8px;
 }
+/* Bazaar listings */
 .market-listings {
 	display: grid;
-	gap: 8px;
+	gap: 10px;
 }
 .listing {
 	display: flex;
 	align-items: center;
-	gap: 8px;
-	padding: 8px;
-	border-radius: 8px;
-	background: #fff;
+	gap: 10px;
+	padding: 10px;
+	border-radius: 10px;
+	background: linear-gradient(180deg,#fff,#f7fbff);
+	border: 1px solid var(--glass-border);
 }
 .listing img {
-	width: 56px;
-	height: 56px;
+	width: 64px;
+	height: 64px;
 	object-fit: cover;
-	border-radius: 6px;
+	border-radius: 8px;
 }
-.listing .meta {
-	flex: 1;
-}
-.listing .actions {
+/* profile card */
+.profile-card {
 	display: flex;
-	gap: 8px;
+	gap: 16px;
 	align-items: center;
-}
-/* responsive tweaks */
-@media (max-width: 720px) {
-.profile-card {
-	flex-direction: column;
-	gap: 10px;
-}
-.profile-left {
-	width: 100%;
-}
-/* ---------------- Mobile / Responsive Tweaks ---------------- */
-@media (max-width: 720px) {
-header {
-	flex-direction: row;
-	justify-content: space-between;
-	padding: 10px 12px;
-}
-h1 {
-	font-size: 16px;
-}
-/* Sidebar takes full width on mobile */
-#sidebar {
-	width: 100%;
-	left: -100%;
-}
-#sidebar.active {
-	left: 0;
-}
-/* Overlay dims background when menu open */
-#overlay.active {
-	display: block;
-	background: rgba(0,0,0,0.5);
-}
-/* Profile card stacks */
-.profile-card {
-	flex-direction: column;
-	text-align: center;
-}
-.profile-left {
-	width: 100%;
+	border-radius: 12px;
+	padding: 16px;
+	background: linear-gradient(90deg,#7b1fa2,#e53935);
+	color: white;
+	box-shadow: 0 18px 40px rgba(123,31,162,0.08);
 }
 .profile-left .avatar {
 	width: 120px;
 	height: 120px;
+	border-radius: 12px;
+	background-size: cover;
+	background-position: center;
+	border: 4px solid rgba(255,255,255,0.12);
 }
-/* Pack options grid */
-.pack-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-	gap: 12px;
+/* responsive */
+@media (max-width:880px){
+nav#sidebar {
+	display: none;
 }
-.pack-option img {
-	width: 100%;
-	max-width: 140px;
-}
-/* Card grid smaller on mobile */
-.card-grid {
-	grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-}
-.card-tile img {
-	height: 100px;
-}
-/* Listings shrink */
-.listing {
+.wrap {
 	flex-direction: column;
-	align-items: flex-start;
 }
-.listing img {
-	width: 80px;
-	height: 80px;
+header {
+	position: sticky;
+	top: 0;
+	z-index: 1200;
 }
-.listing .actions {
-	width: 100%;
-	justify-content: space-between;
 }
+footer.note {
+	text-align: center;
+	color: var(--muted);
+	font-size: 13px;
+	padding: 20px 0;
+}
+/* subtle utility */
+.muted {
+	color: var(--muted);
+	font-size: 13px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Pack Overlay -->
-<div id="packOverlay">
-	<button id="packOverlayClose" class="overlay-close">✕</button>
-	<div class="pack-stage">
-		<div id="overlayStack" class="overlay-stack">
-		</div>
-		<div id="overlayRemaining" style="color: white; margin-top: 12px;">
-		</div>
-	</div>
-</div>
 <header>
-	<button id="menu-btn" aria-label="Open menu" class="hamburger">☰</button>
-	<h1>Year 10 — Quiz &amp; Packs</h1>
+	<div class="brand" role="banner">
+		<div class="logo">
+			PK</div>
+		<div>
+			<h1>Year 10 — Quiz &amp; Packs</h1>
+			<div style="font-size: 12px; color: rgba(255,255,255,0.9); margin-top: 2px">
+				Revision game — collect cards, trade, and learn</div>
+		</div>
+	</div>
+	<div class="right">
+		<div id="gsiButton" aria-hidden="false">
+		</div>
+		<button id="googleLogoutBtn" title="Logout">Logout</button></div>
 </header>
-<nav id="sidebar" aria-label="Main menu">
-	<ul>
-		<li><button data-section="home">🏠 Home</button></li>
-		<li><button data-section="quiz">❓ Quiz</button></li>
-		<li><button data-section="packs">🎴 Packs</button></li>
-		<li><button data-section="carddex">📚 Card Dex</button></li>
-		<li><button data-section="bazaar">💱 Bazaar</button></li>
-		<li><button data-section="leaderboard">🏆 Leaderboard</button></li>
-		<li><button data-section="profile">👤 Profile</button></li>
-	</ul>
-</nav>
-<div id="overlay" aria-hidden="true">
-</div>
+<div class="wrap">
+	<!-- Sidebar (desktop) -->
+	<nav id="sidebar" aria-label="Main menu">
+		<div class="profile-compact">
+			<div id="sidebarAvatar" class="avatar-mini" style="background-image: url('default_avatar.png')">
+			</div>
+			<div>
+				<div id="sidebarName" class="sidebar-name">
+					Player</div>
+				<div class="sidebar-sub">
+					Coins: <strong id="playerCoins">0</strong></div>
+			</div>
+		</div>
+		<ul>
+			<li><button data-section="home">🏠 Home</button></li>
+			<li><button data-section="quiz">❓ Quiz</button></li>
+			<li><button data-section="packs">🎴 Packs</button></li>
+			<li><button data-section="carddex">📚 Card Dex</button></li>
+			<li><button data-section="bazaar">💱 Bazaar</button></li>
+			<li><button data-section="leaderboard">🏆 Leaderboard</button></li>
+			<li><button data-section="profile">👤 Profile</button></li>
+		</ul>
+		<div style="margin-top: 18px; border-top: 1px dashed rgba(255,255,255,0.04); padding-top: 12px; font-size: 13px; color: rgba(255,255,255,0.8)">
+			Tip: sign in to sync your profile. </div>
+	</nav>
 
-<main>
-  <!-- Home -->
-<section id="home" class="section active">
-	<div class="home-cover">
-		<img id="homeCoverImg" alt="Home cover" src="home_cover.png" /> </div>
-</section>
-<!-- Quiz -->
-<section id="quiz" class="section">
-	<h2>Quiz — Choose category</h2>
-	<div class="box">
-		<div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
-			<button class="primary quiz-cat" data-cat="biology">Biology</button>
-			<button class="primary quiz-cat" data-cat="chemistry">Chemistry
-			</button><button class="primary quiz-cat" data-cat="physics">Physics
-			</button><button class="primary quiz-cat" data-cat="accounting">Accounting
-			</button><button class="primary quiz-cat" data-cat="econs">Econs
-			</button></div>
-		<div id="quizControls" style="margin-bottom: 12px;">
-		</div>
-		<div id="quizContainer" style="min-height: 140px;">
-		</div>
-	</div>
-</section>
-<!-- Packs -->
-<section id="packs" class="section">
-	<h2>Packs</h2>
-	<div class="box">
-		<p>Each pack costs <strong>150 coins</strong>. Click a pack to open:</p>
-		<div id="packMessage">
-		</div>
-		<div class="pack-grid">
-			<div class="pack-option" onclick="openPack('cards.json')">
-				<img alt="Prismatic Evolutions" src="prismatic_evolutions_art.png">
-				<div class="pack-title">
-					Prismatic Evolutions</div>
-			</div>
-			<div class="pack-option" onclick="openPack('twilightcards.json')">
-				<img alt="Twilight Masquerade" src="twilight_masquerade_art.png">
-				<div class="pack-title">
-					Twilight Masquerade</div>
-			</div>
-			<div class="pack-option" onclick="openPack('151cards.json')">
-				<img alt="Scarlet &amp; Violet 151" src="pokemon_151_art.png">
-				<div class="pack-title">
-					Scarlet &amp; Violet 151</div>
+  <main>
+    <!-- Home -->
+	<section id="home" class="section active">
+		<div class="home-cover box">
+			<div class="home-card">
+				<div class="home-left">
+					<h2 style="margin-top: 0">Welcome,
+					<span id="playerNameDisplay">Player</span> 👋</h2>
+					<p class="muted">Use the menu to start a quiz, open packs, browse 
+					your card dex, or visit the bazaar.</p>
+					<div style="display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap">
+						<button class="primary" onclick="showSection('quiz')" style="background: #fff; color: #07213a; border-radius: 10px; padding: 10px 14px; border: none; font-weight: 700">
+						Start Quiz</button>
+						<button class="primary" onclick="showSection('packs')" style="background: var(--accent-3); color: white; border-radius: 10px; padding: 10px 14px; border: none; font-weight: 700">
+						Open Packs</button></div>
+					<div style="margin-top: 18px">
+						<div class="box" style="background: linear-gradient(180deg,#fff,#fbfeff); padding: 12px">
+							<strong>Quick stats</strong>
+							<div style="display: flex; gap: 10px; margin-top: 8px; flex-wrap: wrap">
+								<div class="muted">
+									Packs opened: <strong id="packsOpened">0</strong></div>
+								<div class="muted">
+									Unique cards: <strong id="uniqueCards">0</strong></div>
+								<div class="muted">
+									Quiz score: <strong id="quizScore">0</strong></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="home-right">
+					<img alt="Home cover" class="hero-art" src="home_cover.png" />
+				</div>
 			</div>
 		</div>
-		<!-- hidden packLauncher to keep renderPackLauncher safe -->
-		<div id="packLauncher" style="display: none">
+	</section>
+	<!-- Quiz -->
+	<section id="quiz" class="section">
+		<h2>Quiz — Choose category</h2>
+		<div class="box">
+			<div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px">
+				<button class="primary quiz-cat" data-cat="biology">Biology
+				</button><button class="primary quiz-cat" data-cat="chemistry">Chemistry
+				</button><button class="primary quiz-cat" data-cat="physics">Physics
+				</button><button class="primary quiz-cat" data-cat="accounting">
+				Accounting</button>
+				<button class="primary quiz-cat" data-cat="econs">Econs</button>
+			</div>
+			<div id="quizControls" style="margin-bottom: 12px;">
+			</div>
+			<div id="quizContainer" style="min-height: 160px;">
+			</div>
 		</div>
-	</div>
-</section>
-<!-- Card Dex -->
-<section id="carddex" class="section">
-	<h2>Card Dex</h2>
-	<div class="box">
-		<p>Browse cards from each pack and see how many you own.</p>
-		<div id="cardDexContainer">
-			<div style="display: flex; gap: 8px; align-items: center; margin-bottom: 12px;">
-				<input id="cardDexSearch" placeholder="Search cards by name..." style="flex: 1; padding: 8px; border-radius: 8px; border: 1px solid #ddd" />
-				<label style="display: flex; gap: 6px; align-items: center;">
+	</section>
+	<!-- Packs -->
+	<section id="packs" class="section">
+		<h2>Packs</h2>
+		<div class="box">
+			<p>Each pack costs <strong>150 coins</strong>. Click a pack to open.</p>
+			<div id="packMessage" class="muted">
+			</div>
+			<div class="pack-grid" style="margin-top: 12px">
+				<div class="pack-option" onclick="openPack('cards.json')">
+					<img alt="Prismatic Evolutions" src="prismatic_evolutions_art.png" />
+					<div style="font-weight: 700; margin-top: 8px">
+						Prismatic Evolutions</div>
+				</div>
+				<div class="pack-option" onclick="openPack('twilightcards.json')">
+					<img alt="Twilight Masquerade" src="twilight_masquerade_art.png" />
+					<div style="font-weight: 700; margin-top: 8px">
+						Twilight Masquerade</div>
+				</div>
+				<div class="pack-option" onclick="openPack('151cards.json')">
+					<img alt="Scarlet &amp; Violet 151" src="pokemon_151_art.png" />
+					<div style="font-weight: 700; margin-top: 8px">
+						Scarlet &amp; Violet 151</div>
+				</div>
+			</div>
+			<div id="packLauncher" style="display: none; margin-top: 14px">
+			</div>
+		</div>
+	</section>
+	<!-- Card Dex -->
+	<section id="carddex" class="section">
+		<h2>Card Dex</h2>
+		<div class="box">
+			<div style="display: flex; gap: 8px; align-items: center; margin-bottom: 12px">
+				<input id="cardDexSearch" placeholder="Search cards by name..." style="flex: 1; padding: 10px; border-radius: 10px; border: 1px solid var(--glass-border)" />
+				<label style="display: flex; gap: 6px; align-items: center">
 				<input id="cardDexOnlyOwned" type="checkbox" />
 				<span style="font-size: 14px; color: #333">Only show owned</span>
-				</label><button id="cardDexRefresh" class="primary">Refresh
-				</button></div>
+				</label>
+				<button id="cardDexRefresh" class="primary" style="padding: 10px 12px; border-radius: 10px">
+				Refresh</button></div>
 			<div id="cardDexResults">
-				<!-- injected by JS --></div>
-		</div>
-	</div>
-</section>
-<!-- Bazaar / Market -->
-<section id="bazaar" class="section">
-	<h2>Bazaar</h2>
-	<div class="box">
-		<p>Create or buy listings (localStorage if not connected to Firebase).</p>
-		<div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 12px;">
-			<select id="bazaarPackSelect">
-			<option value="prismatic">Prismatic</option>
-			<option value="twilight">Twilight</option>
-			<option value="sv151">SV151</option>
-			</select>
-			<input id="bazaarCardName" placeholder="Card name (exact match from pack JSON)" />
-			<input id="bazaarPrice" placeholder="Price (coins)" style="width: 120px" type="number" />
-			<label style="display: flex; gap: 6px; align-items: center;">
-			<input id="bazaarFromInventory" type="checkbox" />
-			<span style="font-size: 13px">From inventory</span> </label>
-			<button id="listCardBtn" class="primary">List Card</button></div>
-		<div id="marketListings" class="market-listings">
-		</div>
-	</div>
-</section>
-<!-- Leaderboard -->
-<section id="leaderboard" class="section">
-	<h2>Leaderboard</h2>
-	<div id="leaderboardBox2" class="box">
-	</div>
-</section>
-<!-- Profile -->
-<section id="profile" class="section">
-	<h2>Trainer Profile</h2>
-	<!-- SV-styled profile card -->
-	<div id="profileCardWrapper" class="profile-card">
-		<div class="profile-left">
-			<div id="avatarImg" class="avatar" style="background-image: url('default_avatar.png')">
-			</div>
-			<!-- Google sign-in / logout area -->
-			<div id="gsiButton">
-			</div>
-			<button id="googleLogoutBtn">Logout</button></div>
-		<div class="profile-right">
-			<h3 id="playerNameDisplay">Player</h3>
-			<!-- Manual name input (hidden on Google sign-in) -->
-			<div style="margin: 8px 0;">
-				<input id="playerNameInput" placeholder="Enter name" type="text" />
-				<button id="saveNameBtn" class="primary">Save</button></div>
-			<div id="profileBox2" class="box" style="background: transparent; border: none; padding: 0;">
-				<p><strong>ID:</strong> <span id="playerID">000001</span></p>
-				<p><strong>Coins:</strong> <span id="playerCoins">0</span></p>
-				<p><strong>Packs Opened:</strong> <span id="packsOpened">0</span></p>
-				<p><strong>Total Cards:</strong> <span id="totalCards">0</span></p>
-				<p><strong>Unique Cards:</strong> <span id="uniqueCards">0</span></p>
-				<ul>
-					<li>Prismatic: <span id="uniquePrismatic">0</span></li>
-					<li>Twilight: <span id="uniqueTwilight">0</span></li>
-					<li>SV151: <span id="uniqueSV151">0</span></li>
-				</ul>
-				<p><strong>Quiz Score:</strong> <span id="quizScore">0</span></p>
 			</div>
 		</div>
+	</section>
+	<!-- Bazaar -->
+	<section id="bazaar" class="section">
+		<h2>Bazaar</h2>
+		<div class="box">
+			<p class="muted">Create or buy listings (localStorage used if Firestore 
+			not connected).</p>
+			<div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 12px">
+				<select id="bazaarPackSelect">
+				<option value="prismatic">Prismatic</option>
+				<option value="twilight">Twilight</option>
+				<option value="sv151">SV151</option>
+				</select>
+				<input id="bazaarCardName" placeholder="Card name (exact match from pack JSON)" />
+				<input id="bazaarPrice" placeholder="Price (coins)" style="width: 120px" type="number" />
+				<label style="display: flex; gap: 6px; align-items: center">
+				<input id="bazaarFromInventory" type="checkbox" />
+				<span style="font-size: 13px">From inventory</span> </label>
+				<button id="listCardBtn" class="primary">List Card</button>
+			</div>
+			<div id="marketListings" class="market-listings">
+			</div>
+		</div>
+	</section>
+	<!-- Leaderboard -->
+	<section id="leaderboard" class="section">
+		<h2>Leaderboard</h2>
+		<div id="leaderboardBox2" class="box">
+		</div>
+	</section>
+	<!-- Profile -->
+	<section id="profile" class="section">
+		<h2>Trainer Profile</h2>
+		<div id="profileCardWrapper" class="profile-card">
+			<div class="profile-left">
+				<div id="avatarImg" class="avatar" style="background-image: url('default_avatar.png')">
+				</div>
+				<div style="margin-top: 12px">
+					<div id="gsiButton">
+					</div>
+					<button id="googleLogoutBtn" style="display: none; margin-top: 8px">
+					Logout</button></div>
+			</div>
+			<div class="profile-right">
+				<h3 id="playerNameDisplay">Player</h3>
+				<div style="margin: 8px 0">
+					<input id="playerNameInput" placeholder="Enter name" style="padding: 8px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12)" type="text" />
+					<button id="saveNameBtn" class="primary" style="margin-left: 8px">
+					Save</button></div>
+				<div id="profileBox2" class="box" style="background: transparent; border: none; padding: 0;">
+					<p><strong>ID:</strong> <span id="playerID">000001</span></p>
+					<p><strong>Coins:</strong> <span id="playerCoins">0</span></p>
+					<p><strong>Packs Opened:</strong> <span id="packsOpened">0</span></p>
+					<p><strong>Total Cards:</strong> <span id="totalCards">0</span></p>
+					<p><strong>Unique Cards:</strong> <span id="uniqueCards">0</span></p>
+					<ul style="margin: 6px 0 0 18px">
+						<li>Prismatic: <span id="uniquePrismatic">0</span></li>
+						<li>Twilight: <span id="uniqueTwilight">0</span></li>
+						<li>SV151: <span id="uniqueSV151">0</span></li>
+					</ul>
+					<p><strong>Quiz Score:</strong> <span id="quizScore">0</span></p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="note">
+		Files to place in same folder: card JSONs for packs (<code>cards.json</code>,
+		<code>twilightcards.json</code>, <code>151cards.json</code>) and quiz JSONs 
+		(e.g. <code>biology.json</code>).
+	</footer>
+  </main>
+</div>
+<!-- Pack Overlay -->
+<div id="packOverlay" aria-hidden="true">
+	<button id="packOverlayClose" class="overlay-close">✕</button>
+	<div class="overlay-stage">
+		<div id="overlayStack" class="overlay-stack">
+		</div>
+		<div class="overlay-meta">
+			<div id="overlayRemaining" style="font-size: 16px; font-weight: 700; margin-bottom: 8px">
+			</div>
+			<div id="packDropDetails" class="muted">
+				Click the stack to reveal cards one-by-one.</div>
+		</div>
 	</div>
-</section>
-
-</main>
-
-<footer class="note">
-	Files to place in same folder: card JSONs for packs (<code>cards.json</code>,
-	<code>twilightcards.json</code>, <code>151cards.json</code>) and quiz JSONs 
-	(e.g. <code>biology.json</code>).
-</footer>
-<!-- Firebase App (compat) - keep this initialization here and ensure values are correct -->
+</div>
+<!-- Firebase App (compat) - keep your config here -->
 <script>
-  // Your Firebase config - KEEP this (already in your project). This script must execute before main.js
   const firebaseConfig = {
     apiKey: "AIzaSyAUvR4sCv3mkMF7hqfgvxU2q3HOsEL3dbQ",
     authDomain: "y10pkmnrevisiongame-532c9.firebaseapp.com",
@@ -565,12 +642,11 @@ h1 {
     appId: "1:907520433089:web:5cde712de4d3a2c80b6d40",
     measurementId: "G-HR2BCPKLPC"
   };
-  // initialize firebase compat (if not already)
   if (window.firebase && (!firebase.apps || !firebase.apps.length)) {
     firebase.initializeApp(firebaseConfig);
   }
 </script>
-<!-- main script -->
+<!-- Your main script (keeps same filename) -->
 <script src="main.js"></script>
 
 </body>

@@ -7,7 +7,6 @@ const PACKS = {
   twilight:  { name: "Twilight Masquerade", image: "twilight_masquerade_art.png", pool: "twilightcards.json", background: "yellow.png" },
   sv151:     { name: "Scarlet & Violet 151", image: "pokemon_151_art.png", pool: "151cards.json", background: "blue.png" }
 };
-// math removed
 const QUIZ_CATEGORIES = ['biology','chemistry','physics','accounting','econs'];
 
 // -----------------
@@ -155,6 +154,88 @@ function pickWeighted(pool, total) {
 }
 
 // -----------------
+// Small UI helpers: coin toast & wrong-overlay
+// -----------------
+function showCoinToast(amount=0) {
+  if (!amount) return;
+  let t = document.getElementById("coinToast");
+  if (!t) {
+    t = document.createElement("div");
+    t.id = "coinToast";
+    Object.assign(t.style, {
+      position: "fixed", top: "18px", right: "18px", zIndex: 3500,
+      background: "linear-gradient(90deg,#ffd54f,#ff7043)", color: "#07213a",
+      padding: "10px 14px", borderRadius: "12px", fontWeight: 700, boxShadow: "0 8px 24px rgba(0,0,0,0.18)"
+    });
+    document.body.appendChild(t);
+  }
+  t.textContent = `+${amount} coins`;
+  t.style.opacity = "1";
+  // appear then vanish
+  setTimeout(()=>{ t.style.opacity = "0"; }, 1300);
+  setTimeout(()=>{ try{ t.remove(); } catch(e){} }, 2000);
+}
+
+async function showWrongOverlay(durationMs = 3000, correctAnswers = []) {
+  // create or update overlay content
+  let o = document.getElementById("wrongOverlay");
+  if (!o) {
+    o = document.createElement("div");
+    o.id = "wrongOverlay";
+    Object.assign(o.style, {
+      position: "fixed", inset: "0", display: "flex",
+      justifyContent: "center", alignItems: "center",
+      zIndex: "3200", background: "rgba(0,0,0,0.5)",
+      color: "#fff", transition: "opacity 200ms ease", opacity: "0"
+    });
+    document.body.appendChild(o);
+  } else {
+    o.innerHTML = "";
+  }
+
+  const panel = document.createElement("div");
+  Object.assign(panel.style, {
+    background: "linear-gradient(180deg,#ff7a7a,#ff4e4e)", padding: "22px", borderRadius: "12px",
+    boxShadow: "0 18px 50px rgba(0,0,0,0.4)", textAlign: "center", maxWidth: "88%", fontWeight: 700
+  });
+
+  const cross = document.createElement("div");
+  cross.textContent = "✕";
+  Object.assign(cross.style, { fontSize: "90px", marginBottom: "8px", lineHeight: "0.8" });
+  panel.appendChild(cross);
+
+  const text = document.createElement("div");
+  text.textContent = "Incorrect";
+  Object.assign(text.style, { fontSize: "20px", marginBottom: "8px" });
+  panel.appendChild(text);
+
+  if (Array.isArray(correctAnswers) && correctAnswers.length) {
+    const ca = correctAnswers.filter(a => a && String(a).trim().length);
+    if (ca.length) {
+      const small = document.createElement("div");
+      small.style.fontWeight = 500;
+      small.style.marginTop = "6px";
+      small.style.fontSize = "14px";
+      small.innerHTML = "Correct answer" + (ca.length>1 ? "s" : "") + `: <strong>${ca.join(", ")}</strong>`;
+      panel.appendChild(small);
+    }
+  }
+
+  o.appendChild(panel);
+  // show
+  requestAnimationFrame(()=>{ o.style.opacity = "1"; });
+
+  // hide after duration
+  return new Promise(resolve => {
+    setTimeout(()=> {
+      if (!o) return resolve();
+      o.style.opacity = "0";
+      setTimeout(()=> { try { o.remove(); } catch(e){}; resolve(); }, 240);
+    }, durationMs);
+  });
+}
+
+// -----------------
 // UI functions
 // -----------------
 function updateProfile() {
@@ -186,6 +267,11 @@ function updateProfile() {
     const url = playerProfile.avatar || "default_avatar.png";
     avatarEl.style.backgroundImage = `url('${url}')`;
   }
+  // also update sidebar compact view if present
+  const sAv = document.getElementById("sidebarAvatar");
+  if (sAv) sAv.style.backgroundImage = `url('${playerProfile.avatar || 'default_avatar.png'}')`;
+  const sName = document.getElementById("sidebarName");
+  if (sName) sName.textContent = playerProfile.name || "Player";
 
   saveLocalState();
 
@@ -252,7 +338,6 @@ function updateLeaderboard() {
   // local fallback: read saved leaderboard array, ensure current player is included and sorted
   try {
     const local = Array.isArray(leaderboard) ? leaderboard.slice() : [];
-    // ensure current player exists in array (match by uid or name)
     const unique = getTotalUniqueCards(playerProfile);
     const ident = playerProfile.uid || playerProfile.name || "local-player";
     let found = false;
@@ -265,11 +350,8 @@ function updateLeaderboard() {
     }
     if (!found) local.push({ uid: playerProfile.uid || null, name: playerProfile.name || "Player", uniqueCards: unique });
 
-    // sort descending
     local.sort((a,b) => (b.uniqueCards || 0) - (a.uniqueCards || 0));
-    // keep top 20
     const shown = local.slice(0,20);
-    // render
     document.querySelectorAll("#leaderboardBox, #leaderboardBox2, .leaderboard-box").forEach(box => {
       let html = "<h3>Leaderboard</h3>";
       shown.forEach((e, idx) => {
@@ -277,7 +359,6 @@ function updateLeaderboard() {
       });
       box.innerHTML = html;
     });
-    // persist
     leaderboard = local;
     localStorage.setItem(LS_LEADERBOARD, JSON.stringify(leaderboard));
   } catch (e) {
@@ -303,6 +384,13 @@ async function loadPack(keyOrFile) {
   playerProfile.packsOpened++;
   updateProfile();
 
+  // set overlay pack-specific class so background CSS picks up right image
+  const overlay = document.getElementById("packOverlay");
+  if (overlay) {
+    overlay.classList.remove("prismatic","twilight","sv151");
+    overlay.classList.add(key);
+  }
+
   let parsed;
   try {
     const txt = await fetchTextWithEncodingFallback(cfg.pool);
@@ -323,9 +411,6 @@ async function loadPack(keyOrFile) {
 
   const pack = Array.from({ length: 10 }, () => pickWeighted(pool, total));
 
-  const overlay = document.getElementById("packOverlay");
-  if (!overlay) { alert("Pack UI not found in page"); return; }
-
   let stackEl = document.getElementById("overlayStack");
   if (!stackEl) {
     stackEl = document.createElement("div");
@@ -341,8 +426,7 @@ async function loadPack(keyOrFile) {
     overlay.appendChild(remainingEl);
   }
 
-  overlay.classList.remove("prismatic","twilight","sv151");
-  overlay.classList.add("show", key);
+  overlay.classList.add("show");
   stackEl.innerHTML = "";
 
   pack.forEach((card,i) => {
@@ -388,64 +472,44 @@ async function loadPack(keyOrFile) {
 function openPack(file) { return loadPack(file); }
 
 // -----------------
-// Quiz (spammable, points from JSON, images, typing answers, wrong -> 3s X overlay)
+// Quiz
 // -----------------
 let currentQuiz = {
-  fullQuestions: [],   // all loaded questions for the category
-  pool: [],            // remaining questions to ask (popped)
-  scoreThisSession: 0, // optional local counter (playerProfile.quizScore is global/cumulative)
+  fullQuestions: [],
+  pool: [],
+  scoreThisSession: 0,
   category: null
 };
 
-// utility to create a fullscreen X overlay for wrong answers (re-used)
-function showWrongOverlay(durationMs = 3000) {
-  // if overlay already exists, don't duplicate
-  let o = document.getElementById("wrongOverlay");
-  if (!o) {
-    o = document.createElement("div");
-    o.id = "wrongOverlay";
-    // inline styles so no HTML/CSS edits required
-    Object.assign(o.style, {
-      position: "fixed",
-      inset: "0",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      zIndex: "3200",
-      background: "rgba(255,0,0,0.12)",
-      backdropFilter: "blur(2px)",
-      transition: "opacity 200ms ease",
-      opacity: "0"
-    });
-    const cross = document.createElement("div");
-    cross.innerHTML = "✕";
-    Object.assign(cross.style, {
-      fontSize: "120px",
-      color: "rgba(255,0,0,0.92)",
-      textShadow: "0 6px 18px rgba(0,0,0,0.25)",
-      transform: "scale(0.9)",
-      transition: "transform 180ms ease"
-    });
-    o.appendChild(cross);
-    document.body.appendChild(o);
-    // force reflow to animate
-    requestAnimationFrame(()=> { o.style.opacity = "1"; cross.style.transform = "scale(1)"; });
+// normalize answer list and ensure no empty answers
+function normalizeAnswersField(raw) {
+  if (Array.isArray(raw)) {
+    return raw.map(a => String(a || "").toLowerCase().trim()).filter(a => a && a.length > 0);
   } else {
-    // ensure visible
-    o.style.opacity = "1";
-    if (o.firstChild) o.firstChild.style.transform = "scale(1)";
+    const s = String(raw || "").toLowerCase().trim();
+    return s ? [s] : [];
   }
+}
 
-  // hide after duration
-  return new Promise(resolve => {
-    setTimeout(()=> {
-      if (!o) return resolve();
-      o.style.opacity = "0";
-      if (o.firstChild) o.firstChild.style.transform = "scale(0.9)";
-      // remove after animation
-      setTimeout(()=> { try { o.remove(); } catch(e){}; resolve(); }, 220);
-    }, durationMs);
-  });
+// robust answer matching (avoid accepting empty answers)
+function isUserAnswerCorrect(userRaw, answers) {
+  const user = String(userRaw || "").toLowerCase().trim();
+  if (!user) return false;
+  if (!Array.isArray(answers) || !answers.length) return false;
+
+  for (const a of answers) {
+    if (!a || !a.length) continue;
+    if (user === a) return true; // exact
+    // allow substring match only for longer tokens (reduce false positives)
+    if (a.length >= 3 && user.includes(a)) return true;
+    if (user.length >= 3 && a.includes(user)) return true;
+  }
+  return false;
+}
+
+// show question wrong overlay now passes correct answers
+async function showWrongWithAnswers(ms, answers) {
+  return showWrongOverlay(ms, answers || []);
 }
 
 // shuffle in-place
@@ -470,27 +534,19 @@ async function loadQuizCategory(cat) {
     }
     if (!qarr.length) { container.innerHTML = "<p>No questions found for this category.</p>"; return; }
 
-    // Normalize: ensure 'answer' maybe array, ensure points numeric, optional image
+    // Normalize: ensure '_answers' array (non-empty), ensure points numeric, optional image
     qarr = qarr.map(q => {
       const copy = Object.assign({}, q);
-      // unify answer to either array or string as given (we accept either)
-      if (Array.isArray(copy.answer)) {
-        copy._answers = copy.answer.map(a => String(a).toLowerCase().trim());
-      } else {
-        copy._answers = [String(copy.answer || "").toLowerCase().trim()];
-      }
+      copy._answers = normalizeAnswersField(copy.answer);
       copy.points = Number(copy.points || 1);
       return copy;
     });
 
-    // store fullQuestions (clone & shuffle)
     currentQuiz.fullQuestions = shuffleArray(qarr.slice());
-    // pool starts as a copy; we'll pop from it, and when empty refill with shuffle of fullQuestions
     currentQuiz.pool = currentQuiz.fullQuestions.slice();
     currentQuiz.category = cat;
     currentQuiz.scoreThisSession = 0;
 
-    // render immediately the first question and then continue infinitely
     renderQuizQuestion();
   } catch (e) {
     console.error("loadQuizCategory", e);
@@ -498,34 +554,28 @@ async function loadQuizCategory(cat) {
   }
 }
 
-// pick next question from pool, refill if empty
 function getNextQuestion() {
   if (!currentQuiz.pool || !currentQuiz.pool.length) {
-    // refill a shuffled copy of fullQuestions
     currentQuiz.pool = shuffleArray(currentQuiz.fullQuestions.slice());
   }
   return currentQuiz.pool.pop();
 }
 
-// render a single question (no Next button) — after answering we immediately show another
 function renderQuizQuestion() {
   const container = document.getElementById("quizContainer");
   const controls = document.getElementById("quizControls");
   container.innerHTML = "";
   controls.innerHTML = "";
 
-  // choose question
   const q = getNextQuestion();
   if (!q) {
     container.innerHTML = "<p>No questions available.</p>";
     return;
   }
 
-  // show question
   const qBox = document.createElement("div");
   qBox.innerHTML = `<h3 style="margin:0 0 8px"> ${q.question || "(no question text)"} </h3>`;
 
-  // optional image
   if (q.image) {
     const img = document.createElement("img");
     img.src = q.image;
@@ -536,22 +586,17 @@ function renderQuizQuestion() {
     qBox.appendChild(img);
   }
 
-  // show controls (score display)
   controls.innerHTML = `<div>Score: ${playerProfile.quizScore || 0}</div>`;
 
-  // if options exist, render buttons; otherwise typing box
   const options = (q.options && Array.isArray(q.options) && q.options.length) ? q.options.slice() : null;
 
-  // helper to continue to next question
   const continueToNext = (delayMs = 400) => {
     setTimeout(()=> {
-      // immediately render next question
       renderQuizQuestion();
     }, delayMs);
   };
 
   if (options) {
-    // shuffle options
     shuffleArray(options);
     const list = document.createElement("div");
     list.style.marginTop = "8px";
@@ -562,28 +607,28 @@ function renderQuizQuestion() {
       btn.style.cursor = "pointer";
       btn.style.marginBottom = "8px";
       btn.addEventListener("click", async () => {
-        // disable all options
         Array.from(list.querySelectorAll("button")).forEach(b => b.disabled = true);
         const guess = String(opt).trim().toLowerCase();
         const isCorrect = q._answers.some(a => a === guess);
         if (isCorrect) {
-          // award points
-          playerProfile.quizScore = Number(playerProfile.quizScore || 0) + Number(q.points || 1);
-          currentQuiz.scoreThisSession += Number(q.points || 1);
-          // visual feedback
+          const pts = Number(q.points || 1);
+          playerProfile.quizScore = Number(playerProfile.quizScore || 0) + pts;
+          currentQuiz.scoreThisSession += pts;
+          // award coins: simple policy => 5 coins per point
+          const coinReward = pts * 5;
+          playerProfile.coins = Number(playerProfile.coins || 0) + coinReward;
+          showCoinToast(coinReward);
           btn.classList.add("correct");
           updateProfile();
-          // continue quickly
           continueToNext(450);
         } else {
           btn.classList.add("wrong");
-          // highlight the correct option if present
           Array.from(list.querySelectorAll("button")).forEach(b => {
             if (String(b.textContent).trim().toLowerCase() === q._answers[0]) b.classList.add("correct");
             b.disabled = true;
           });
-          // show big overlay X for 3s then continue (no points)
-          await showWrongOverlay(3000);
+          // show overlay with correct answers
+          await showWrongWithAnswers(3000, q._answers);
           continueToNext(120);
         }
       });
@@ -591,7 +636,6 @@ function renderQuizQuestion() {
     });
     qBox.appendChild(list);
   } else {
-    // typing input mode
     const row = document.createElement("div");
     row.style.marginTop = "10px";
     const input = document.createElement("input");
@@ -612,22 +656,21 @@ function renderQuizQuestion() {
       input.disabled = true;
       submit.disabled = true;
       const user = String(input.value || "").trim().toLowerCase();
-      // correct if user's answer contains any acceptable answer OR matches exactly any answer
-      let isCorrect = q._answers.some(a => {
-        if (!a) return false;
-        return user.includes(a) || a.includes(user) || user === a;
-      });
+      const isCorrect = isUserAnswerCorrect(user, q._answers);
 
       if (isCorrect) {
-        playerProfile.quizScore = Number(playerProfile.quizScore || 0) + Number(q.points || 1);
-        currentQuiz.scoreThisSession += Number(q.points || 1);
+        const pts = Number(q.points || 1);
+        playerProfile.quizScore = Number(playerProfile.quizScore || 0) + pts;
+        currentQuiz.scoreThisSession += pts;
+        const coinReward = pts * 5;
+        playerProfile.coins = Number(playerProfile.coins || 0) + coinReward;
+        showCoinToast(coinReward);
         updateProfile();
-        // quick success flash
         input.style.border = "2px solid green";
         continueToNext(500);
       } else {
         input.style.border = "2px solid red";
-        await showWrongOverlay(3000);
+        await showWrongWithAnswers(3000, q._answers);
         continueToNext(120);
       }
     };
@@ -640,7 +683,7 @@ function renderQuizQuestion() {
   }
 
   container.appendChild(qBox);
-  // show small meta about points
+
   const pts = document.createElement("div");
   pts.style.fontSize = "13px";
   pts.style.color = "#444";
@@ -656,7 +699,6 @@ function startQuiz(category) {
     container.innerHTML = "<p>Select a category above to start the quiz.</p>";
     return;
   }
-  // if loaded and different category, reload
   if (currentQuiz.category && currentQuiz.category !== category) {
     currentQuiz.fullQuestions = [];
     currentQuiz.pool = [];
@@ -664,12 +706,12 @@ function startQuiz(category) {
   if (!currentQuiz.fullQuestions.length || currentQuiz.category !== category) {
     loadQuizCategory(category);
   } else {
-    // already loaded: just render next question
     renderQuizQuestion();
   }
 }
+
 // -----------------
-// Card Dex (unchanged)
+// Card Dex & Marketplace (unchanged aside from minor robustness)
 // -----------------
 async function loadPackJson(poolFile) {
   try {
@@ -685,51 +727,6 @@ async function loadPackJson(poolFile) {
   }
 }
 
-async function renderCardDex() {
-  const container = document.getElementById("cardDexResults");
-  container.innerHTML = "<p>Loading card dex...</p>";
-  const packs = [
-    { key: "prismatic", file: PACKS.prismatic.pool, title: PACKS.prismatic.name },
-    { key: "twilight", file: PACKS.twilight.pool, title: PACKS.twilight.name },
-    { key: "sv151", file: PACKS.sv151.pool, title: PACKS.sv151.name }
-  ];
-
-  const searchInput = document.getElementById("cardDexSearch");
-  const onlyOwned = document.getElementById("cardDexOnlyOwned");
-  const searchText = (searchInput && searchInput.value) ? searchInput.value.trim().toLowerCase() : "";
-  const ownedOnly = (onlyOwned && onlyOwned.checked);
-
-  container.innerHTML = "";
-  for (const p of packs) {
-    const items = await loadPackJson(p.file);
-    if (!items.length) continue;
-    const section = document.createElement("div");
-    section.innerHTML = `<h3>${p.title}</h3>`;
-    const grid = document.createElement("div");
-    grid.className = "card-grid";
-
-    items.forEach(card => {
-      const id = card.name || card.id || JSON.stringify(card);
-      const count = (playerProfile.inventoryCounts && playerProfile.inventoryCounts[p.key] && playerProfile.inventoryCounts[p.key][id]) ? playerProfile.inventoryCounts[p.key][id] : 0;
-      if (searchText && !(String(id).toLowerCase().includes(searchText))) return;
-      if (ownedOnly && count <= 0) return;
-
-      const tile = document.createElement("div");
-      tile.className = "card-tile";
-      tile.innerHTML = `<div style="font-weight:700;text-transform:capitalize">${card.name || "(unknown)"}</div>
-                        <div style="margin:8px 0"><img src="${card.img || 'default_avatar.png'}" alt="${card.name || ''}" /></div>
-                        <div>Owned: <strong>${count}</strong></div>`;
-      grid.appendChild(tile);
-    });
-
-    section.appendChild(grid);
-    container.appendChild(section);
-  }
-}
-
-// -----------------
-// Marketplace (unchanged except keys)
-// -----------------
 function loadMarketLocal() {
   try {
     const raw = localStorage.getItem(LS_MARKET);
@@ -910,7 +907,6 @@ function toggleMenu() {
 // Wire up UI controls
 // -----------------
 function wireUI() {
-  // quiz category buttons
   document.querySelectorAll(".quiz-cat").forEach(btn => {
     btn.addEventListener("click", () => {
       const cat = btn.dataset.cat;
@@ -919,7 +915,6 @@ function wireUI() {
     });
   });
 
-  // menu buttons (also close menu when selecting)
   document.querySelectorAll('#sidebar button[data-section]').forEach(btn => {
     btn.addEventListener('click', () => {
       showSection(btn.dataset.section);
@@ -929,12 +924,10 @@ function wireUI() {
     });
   });
 
-  // pack close
   document.getElementById("packOverlayClose")?.addEventListener("click", () => {
     document.getElementById("packOverlay")?.classList.remove("show");
   });
 
-  // name save (manual)
   const nameInput = document.getElementById("playerNameInput");
   const saveBtn = document.getElementById("saveNameBtn");
   const nameDisplay = document.getElementById("playerNameDisplay");
@@ -955,12 +948,10 @@ function wireUI() {
     nameInput.addEventListener("keydown", (e) => { if (e.key === "Enter") saveBtn.click(); });
   }
 
-  // card dex filters
   document.getElementById("cardDexSearch")?.addEventListener("input", () => renderCardDex());
   document.getElementById("cardDexOnlyOwned")?.addEventListener("change", () => renderCardDex());
   document.getElementById("cardDexRefresh")?.addEventListener("click", () => renderCardDex());
 
-  // bazaar form
   document.getElementById("listCardBtn")?.addEventListener("click", () => {
     const pack = document.getElementById("bazaarPackSelect").value;
     const cardName = document.getElementById("bazaarCardName").value.trim();
@@ -995,7 +986,6 @@ window.addEventListener("DOMContentLoaded", () => {
       if (u) {
         dbg("User signed in:", u.uid);
         playerProfile.uid = u.uid;
-        // sync name/avatar if firebase knows it
         playerProfile.name = playerProfile.name || u.displayName || playerProfile.name;
         playerProfile.avatar = playerProfile.avatar || u.photoURL || playerProfile.avatar;
         initFirebase();
@@ -1030,10 +1020,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("googleLogoutBtn")?.addEventListener("click", handleGoogleLogout);
 
-  // menu toggle
   document.getElementById("menu-btn")?.addEventListener("click", () => toggleMenu());
   document.getElementById("overlay")?.addEventListener("click", () => closeMenu());
-  // close on Esc
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
 });
 
