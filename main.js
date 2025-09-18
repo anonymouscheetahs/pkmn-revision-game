@@ -297,6 +297,7 @@ async function saveProfileToFirestore() {
   if (!firestore || !playerProfile.uid) return;
   try {
     const uniqueCards = getTotalUniqueCards(playerProfile);
+    // Keep write minimal & deterministic
     await firestore.collection("players").doc(playerProfile.uid).set({
       name: playerProfile.name,
       uniqueCards,
@@ -304,10 +305,37 @@ async function saveProfileToFirestore() {
       packsOpened: playerProfile.packsOpened,
       totalCards: playerProfile.totalCards,
       avatar: playerProfile.avatar || null,
+      quizScore: playerProfile.quizScore || 0,
       updated: firebase.firestore.FieldValue.serverTimestamp()
     }, { merge: true });
     dbg("Saved profile to Firestore");
   } catch(e) { console.warn("saveProfileToFirestore failed", e); }
+}
+
+// New: load a player's profile from Firestore and merge into local state
+async function loadProfileFromFirestore(uid) {
+  if (!firestore || !uid) return;
+  try {
+    const doc = await firestore.collection("players").doc(uid).get();
+    if (!doc.exists) {
+      // create initial document from local profile
+      await saveProfileToFirestore();
+      return;
+    }
+    const data = doc.data() || {};
+    // Merge safe fields only
+    playerProfile.name = (data.name) ? String(data.name) : playerProfile.name;
+    playerProfile.coins = (typeof data.coins === 'number') ? data.coins : playerProfile.coins;
+    playerProfile.packsOpened = (typeof data.packsOpened === 'number') ? data.packsOpened : playerProfile.packsOpened;
+    playerProfile.totalCards = (typeof data.totalCards === 'number') ? data.totalCards : playerProfile.totalCards;
+    playerProfile.quizScore = (typeof data.quizScore === 'number') ? data.quizScore : playerProfile.quizScore;
+    playerProfile.avatar = data.avatar || playerProfile.avatar;
+    // Note: we purposely do not attempt to import complex inventory/collection structures here
+    updateProfile();
+    dbg("Loaded profile from Firestore", uid, data);
+  } catch (e) {
+    console.warn("loadProfileFromFirestore failed", e);
+  }
 }
 
 async function loadLeaderboardFromFirebase(limit=20) {
@@ -982,13 +1010,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
   if (window.firebase && firebase.auth) {
     firebaseAuth = firebase.auth();
-    firebaseAuth.onAuthStateChanged(u => {
+    firebaseAuth.onAuthStateChanged(async (u) => {
       if (u) {
         dbg("User signed in:", u.uid);
         playerProfile.uid = u.uid;
+        // if Firestore is available, load saved profile (this will also call updateProfile)
+        initFirebase();
+        await loadProfileFromFirestore(u.uid).catch(()=>{});
+        // merge firebase auth displayName/photo if present but prefer stored profile values
         playerProfile.name = playerProfile.name || u.displayName || playerProfile.name;
         playerProfile.avatar = playerProfile.avatar || u.photoURL || playerProfile.avatar;
-        initFirebase();
+        updateProfile();
         loadLeaderboardFromFirebase().catch(()=>{});
       }
     });
@@ -1057,7 +1089,7 @@ function handleGoogleLogin(response) {
     if (window.firebase && firebase.auth) {
       const cred = firebase.auth.GoogleAuthProvider.credential(response.credential);
       firebase.auth().signInWithCredential(cred)
-        .then(userCred => {
+        .then(async userCred => {
           dbg("Signed into Firebase as:", userCred.user.uid);
           playerProfile.uid = userCred.user.uid;
           try {
@@ -1066,6 +1098,11 @@ function handleGoogleLogin(response) {
             }
           } catch(e){}
           initFirebase();
+          // load the stored profile from Firestore to sync coins/name/avatar if present
+          await loadProfileFromFirestore(userCred.user.uid).catch(()=>{});
+          // merge the displayName if profile had none
+          playerProfile.name = playerProfile.name || finalName;
+          playerProfile.avatar = playerProfile.avatar || data.picture || playerProfile.avatar;
           updateProfile();
         })
         .catch(err => { console.warn("Firebase sign-in failed", err); updateProfile(); });
